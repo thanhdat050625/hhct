@@ -25,6 +25,13 @@ class AffairService extends BaseService {
       name: 'Sự Vụ Triều Đình',
       listenedMsgIds: [102207, 102226]
     });
+    this.lastWorkResult = null;
+  }
+
+  onPacket(msgId, data) {
+    if (msgId === 102207) {
+      this.lastWorkResult = data;
+    }
   }
 
   getRemainSec() {
@@ -66,16 +73,22 @@ class AffairService extends BaseService {
           chosenOptName = details.option2;
         }
 
+        this.lastWorkResult = null;
+        this.client.lastReturnCode = null;
         this.send(102102, { workId: work.workId, type: chooseType });
-        await this.sleepRandom(0.8, 1.2);
 
-        if (this.client.lastReturnCode && this.client.lastReturnCode.reqId === 102102 && this.client.lastReturnCode.code !== 0) {
-          console.warn(`[${this.client.email}] ⚠️ Phê duyệt sự vụ [${details.description}] phản hồi lỗi: ${this.client.lastReturnCode.code}`);
+        const success = await this.waitFor(() => Boolean(this.lastWorkResult) || (this.client.lastReturnCode && this.client.lastReturnCode.reqId === 102102), 3000, 100);
+
+        if (!success || (this.client.lastReturnCode && this.client.lastReturnCode.code !== 0)) {
+          if (this.client.lastReturnCode && this.client.lastReturnCode.code !== 0) {
+            console.warn(`[${this.client.email}] ⚠️ Phê duyệt sự vụ [${details.description}] phản hồi lỗi: ${this.client.lastReturnCode.code}`);
+          }
           continue;
         }
 
         handledCount++;
         console.log(`[${this.client.email}] 📜 [Cung Vụ Tự Nhiên] "${details.description}" -> [Chọn: "${chosenOptName}"] -> Nhận: ${expectedReward}`);
+        await this.sleepRandom(0.8, 1.2);
       }
 
       await this.sleepRandom(0.5, 0.8);

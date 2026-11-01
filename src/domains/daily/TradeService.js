@@ -7,6 +7,13 @@ class TradeService extends BaseService {
       name: 'Sắp Xếp Nội Vụ',
       listenedMsgIds: [102206, 102226]
     });
+    this.lastTradeResult = null;
+  }
+
+  onPacket(msgId, data) {
+    if (msgId === 102206) {
+      this.lastTradeResult = data;
+    }
   }
 
   getMinRemainSec() {
@@ -48,10 +55,6 @@ class TradeService extends BaseService {
         timeSec = Math.max(0, timeSec - elapsed);
       }
 
-      if (curNum <= 0 && timeSec === 0) {
-        curNum = 1;
-      }
-
       if (curNum <= 0) {
         summary.push(`${t.short}: 0 lượt (Hồi sau: ${formatDuration(timeSec)})`);
         continue;
@@ -59,17 +62,19 @@ class TradeService extends BaseService {
 
       let harvestTries = 0;
       while (harvestTries < curNum) {
-        harvestTries++;
+        this.lastTradeResult = null;
         this.client.lastReturnCode = null;
         this.send(102101, { type: t.type });
-        await this.sleepRandom(0.8, 1.2);
 
-        if (this.client.lastReturnCode && this.client.lastReturnCode.reqId === 102101 && this.client.lastReturnCode.code !== 0) {
-          harvestTries--;
+        const success = await this.waitFor(() => Boolean(this.lastTradeResult) || (this.client.lastReturnCode && this.client.lastReturnCode.reqId === 102101), 3000, 100);
+
+        if (!success || (this.client.lastReturnCode && this.client.lastReturnCode.code !== 0)) {
           break;
         }
 
+        harvestTries++;
         totalHarvested++;
+        await this.sleepRandom(0.8, 1.2);
       }
 
       item.num = Math.max(0, curNum - harvestTries);
