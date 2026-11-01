@@ -187,7 +187,7 @@ class KitchenService extends BaseService {
       cookedCount,
       minRemainSec,
       isCooking,
-      hasAction: reapedCount > 0 || cookedCount > 0
+      hasAction: cookedCount > 0
     };
   }
 }

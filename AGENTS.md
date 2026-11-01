@@ -1,5 +1,5 @@
 # 👑 AGENT RULES & ARCHITECTURE SPECIFICATIONS
-
+commit cấm contribute claude vào commit/PR
 > **Scope:** Áp dụng cho toàn bộ Bot Game (`hhct`, `hhgl`, `hhgl-dau-tai-nghe`, `hhgl-ngan`, `hhgl-dk`, `hhgl-source`).  
 > **Authority:** Bắt buộc tuân thủ 100% trong mọi tương tác, lập trình, refactor và bảo trì, không được tự ý tham gia server mới và tạo nhân vật mới chỉ dùng ở những server acc đó đã từng tạo nhân vật.
 > có thể dùng bộ tool ở D:\GAME\tools hoặc mcp rea để phân tích source game, có thể giải mã ra tại _source_game
