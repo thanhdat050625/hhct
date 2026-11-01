@@ -28,7 +28,8 @@ const CONFIG = {
   NOTE_SAVE_URL: getRequiredEnv('NOTE_SAVE_URL'),
   NOTE_PASSWORD: getRequiredEnv('NOTE_PASSWORD'),
   NOTE_ID: getRequiredEnv('NOTE_ID'),
-  NOTE_TITLE: getRequiredEnv('NOTE_TITLE')
+  NOTE_TITLE: getRequiredEnv('NOTE_TITLE'),
+  NOTIFY_API_URL: getRequiredEnv('NOTIFY_API_URL')
 };
 
 function isInBlackoutWindow(dateInput = new Date()) {

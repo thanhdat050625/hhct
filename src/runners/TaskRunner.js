@@ -5,6 +5,7 @@ const KitchenService = require('../domains/kitchen/KitchenService');
 const AffairService = require('../domains/daily/AffairService');
 const TradeService = require('../domains/daily/TradeService');
 const { isInBlackoutWindow, getBlackoutResumeTime } = require('../config/constants');
+const { sendNotification } = require('../core/Notifier');
 
 function getTomorrowMidnightGMT7() {
   const vnMs = Date.now() + (7 * 3600 * 1000);
@@ -193,10 +194,59 @@ class TaskRunner {
       const updatedCungvu = currentCungvu + (cungvuResult.hasAction ? 1 : 0);
       const updatedNoivu = currentNoivu + (noivuResult.hasAction ? 1 : 0);
 
+      if (naudanResult.hasAction) {
+        const diThao = naudanResult.materials ? naudanResult.materials.diThao : 0;
+        const hoaLa = naudanResult.materials ? naudanResult.materials.hoaLa : 0;
+        const tranQua = naudanResult.materials ? naudanResult.materials.tranQua : 0;
+        const msg = [
+          `🍲 <b>[NẤU ĐAN THÀNH CÔNG +1]</b>`,
+          `👤 <b>Nhân vật:</b> ${roleName}`,
+          `📧 <b>Tài khoản:</b> ${account.email} (S${account.serverId})`,
+          `📈 <b>Tiến độ hôm nay:</b> ${updatedNaudan}/6 lần`,
+          `📦 <b>Nguyên liệu còn lại:</b>`,
+          `  • Dị Thảo: <b>${diThao}</b>`,
+          `  • Hoa Lạ: <b>${hoaLa}</b>`,
+          `  • Trân Quả: <b>${tranQua}</b>`
+        ].join('\n');
+        await sendNotification(msg);
+        console.log(`[${account.email}] 📢 Đã gửi thông báo nấu đan thành công qua API.`);
+      }
+
+      if (updatedNaudan < 6 && naudanResult.isOutOfMaterials) {
+        const diThao = naudanResult.materials ? naudanResult.materials.diThao : 0;
+        const hoaLa = naudanResult.materials ? naudanResult.materials.hoaLa : 0;
+        const tranQua = naudanResult.materials ? naudanResult.materials.tranQua : 0;
+        const emptyCount = naudanResult.emptyStovesCount || 0;
+        const msg = [
+          `⚠️ <b>[CẢNH BÁO THIẾU NGUYÊN LIỆU NẤU ĐAN]</b>`,
+          `👤 <b>Nhân vật:</b> ${roleName}`,
+          `📧 <b>Tài khoản:</b> ${account.email} (S${account.serverId})`,
+          `🍲 <b>Tiến độ hôm nay:</b> ${updatedNaudan}/6 lần`,
+          `🔥 <b>Bếp trống chờ nấu:</b> ${emptyCount} bếp`,
+          `📦 <b>Nguyên liệu hiện có:</b>`,
+          `  • Dị Thảo: <b>${diThao}</b>`,
+          `  • Hoa Lạ: <b>${hoaLa}</b>`,
+          `  • Trân Quả: <b>${tranQua}</b>`,
+          `⏳ <i>Bot sẽ tự động kiểm tra lại sau 10 phút. Vui lòng bổ sung nguyên liệu để tiếp tục.</i>`
+        ].join('\n');
+        await sendNotification(msg);
+        console.log(`[${account.email}] 📢 Đã gửi thông báo thiếu nguyên liệu nấu đan qua API.`);
+      }
+
       let nextRunTime;
       if (updatedNaudan >= 6) {
         nextRunTime = getTomorrowMidnightGMT7();
         console.log(`[${account.email}] 🎉 Đã hoàn tất toàn bộ 6/6 lượt nấu đan trong ngày (Cung vụ: ${updatedCungvu}, Nội vụ: ${updatedNoivu}). Đặt lịch chạy tiếp vào ngày mai lúc 00h01: ${nextRunTime}`);
+      } else if (naudanResult.isOutOfMaterials) {
+        const effectiveCooldown = 600;
+        const calculatedNext = new Date(Date.now() + effectiveCooldown * 1000);
+        if (isInBlackoutWindow(calculatedNext)) {
+          nextRunTime = getBlackoutResumeTime(calculatedNext);
+          console.log(`[${account.email}] ⚠️ Thiếu nguyên liệu nấu đan nhưng rơi vào khung giờ nghỉ (18h29 - 21h00), chuyển lịch sang 21h01 (${nextRunTime.toISOString()})`);
+        } else {
+          nextRunTime = calculatedNext;
+          console.log(`[${account.email}] ⚠️ Thiếu nguyên liệu nấu đan. Lên lịch kiểm tra lại sau 10 phút (${nextRunTime.toISOString()})`);
+        }
       } else {
         const cookCooldown = Number(naudanResult.minRemainSec) || 3600;
         const effectiveCooldown = Math.max(300, cookCooldown + 30);

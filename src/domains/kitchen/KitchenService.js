@@ -10,6 +10,7 @@ class KitchenService extends BaseService {
 
     this.cookList = [];
     this.bagInfoList = [];
+    this.materialStock = {};
     this.lastReapResult = null;
     this.lastCookResult = null;
   }
@@ -25,6 +26,14 @@ class KitchenService extends BaseService {
     } else if (msgId === 144203) {
       this.lastCookResult = data;
     }
+  }
+
+  getMaterialStock() {
+    const stock = {};
+    for (const item of (this.bagInfoList || [])) {
+      stock[item.configId] = (stock[item.configId] || 0) + (Number(item.num) || 0);
+    }
+    return stock;
   }
 
   async fetchKitchenInfo() {
@@ -54,14 +63,10 @@ class KitchenService extends BaseService {
     return true;
   }
 
-  hasAnyCookableRecipe(bagInfoList = this.bagInfoList) {
-    if (!bagInfoList || bagInfoList.length === 0) return false;
-    const materialStock = {};
-    for (const item of bagInfoList) {
-      materialStock[item.configId] = (materialStock[item.configId] || 0) + (Number(item.num) || 0);
-    }
+  hasAnyCookableRecipe(stock = this.materialStock) {
+    if (!stock) return false;
     for (const recipe of COOKBOOK_RECIPES) {
-      if (this.canCookRecipe(recipe, materialStock)) {
+      if (this.canCookRecipe(recipe, stock)) {
         return true;
       }
     }
@@ -75,7 +80,7 @@ class KitchenService extends BaseService {
     if (unlocked.length === 0) return 3600;
 
     let minRemain = Infinity;
-    const canCookMore = this.hasAnyCookableRecipe(this.bagInfoList);
+    const canCookMore = this.hasAnyCookableRecipe(this.materialStock);
 
     for (const s of unlocked) {
       if (s.status === STOVE_STATUS.FINISHED) {
@@ -126,17 +131,12 @@ class KitchenService extends BaseService {
     const emptyStoves = (this.cookList || []).filter(s => s.status === STOVE_STATUS.EMPTY);
     if (emptyStoves.length === 0) return 0;
 
-    const materialStock = {};
-    for (const item of (this.bagInfoList || [])) {
-      materialStock[item.configId] = (materialStock[item.configId] || 0) + (Number(item.num) || 0);
-    }
-
     let cookedCount = 0;
 
     for (const stove of emptyStoves) {
       let selectedRecipe = null;
       for (const recipe of COOKBOOK_RECIPES) {
-        if (this.canCookRecipe(recipe, materialStock)) {
+        if (this.canCookRecipe(recipe, this.materialStock)) {
           selectedRecipe = recipe;
           break;
         }
@@ -155,7 +155,7 @@ class KitchenService extends BaseService {
       const success = await this.waitFor(() => Boolean(this.lastCookResult), 3000, 100);
       if (success) {
         for (const req of selectedRecipe.ingredients) {
-          materialStock[req.id] = (materialStock[req.id] || 0) - req.count;
+          this.materialStock[req.id] = (this.materialStock[req.id] || 0) - req.count;
         }
         stove.status = STOVE_STATUS.COOKING;
         stove.foodId = selectedRecipe.id;
@@ -173,6 +173,7 @@ class KitchenService extends BaseService {
   async execute() {
     console.log(`[${this.client.email}] 🍲 Bắt đầu kiểm tra Ngự Thiện Phòng...`);
     await this.fetchKitchenInfo();
+    this.materialStock = this.getMaterialStock();
 
     const reapedCount = await this.reapAllFinishedStoves();
     const cookedCount = await this.cookInEmptyStoves();
@@ -181,13 +182,23 @@ class KitchenService extends BaseService {
     console.log(`[${this.client.email}] 🍲 [Ngự Thiện Hoàn Tất] Thu hoạch: ${reapedCount} | Đã nấu: ${cookedCount} | Món kế tiếp chín sau: ${formatDuration(minRemainSec)}`);
 
     const isCooking = (this.cookList || []).some(s => s.status === STOVE_STATUS.COOKING);
+    const remainingEmptyStoves = (this.cookList || []).filter(s => s.status === STOVE_STATUS.EMPTY);
+    const hasCookableRecipe = this.hasAnyCookableRecipe(this.materialStock);
+    const isOutOfMaterials = remainingEmptyStoves.length > 0 && !hasCookableRecipe;
 
     return {
       reapedCount,
       cookedCount,
       minRemainSec,
       isCooking,
-      hasAction: cookedCount > 0
+      hasAction: cookedCount > 0,
+      isOutOfMaterials,
+      emptyStovesCount: remainingEmptyStoves.length,
+      materials: {
+        diThao: this.materialStock[25301] || 0,
+        hoaLa: this.materialStock[25302] || 0,
+        tranQua: this.materialStock[25303] || 0
+      }
     };
   }
 }
