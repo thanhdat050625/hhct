@@ -98,9 +98,7 @@ function formatDuration(sec) {
 }
 
 const COOKBOOK_RECIPES = [
-  { id: 8, name: 'Thuộc Tính Đan', page: 2, time: 10800, ingredients: [{ id: 25302, name: 'Nhân Sâm', count: 10 }, { id: 25303, name: 'Linh Chi', count: 10 }] },
-  { id: 7, name: 'Thuộc Tính Hoàn', page: 2, time: 7200, ingredients: [{ id: 25301, name: 'Tuyết Liên', count: 5 }, { id: 25303, name: 'Linh Chi', count: 5 }] },
-  { id: 6, name: 'Thuộc Tính Tán', page: 2, time: 3600, ingredients: [{ id: 25301, name: 'Tuyết Liên', count: 1 }, { id: 25302, name: 'Nhân Sâm', count: 1 }] }
+  { id: 8, name: 'Thuộc Tính Đan', page: 2, time: 10800, ingredients: [{ id: 25302, name: 'Hoa Lạ', count: 10 }, { id: 25303, name: 'Trân Quả', count: 10 }] }
 ];
 
 const STOVE_STATUS = {

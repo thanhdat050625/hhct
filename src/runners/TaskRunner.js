@@ -127,7 +127,7 @@ class TaskRunner {
       const roleName = client.playerData.name;
       console.log(`[${account.email}] ✅ Đăng nhập thành công! Nhân vật: [${roleName}] | Cấp: ${client.playerData.lv} | Lực chiến: ${client.playerData.power.toLocaleString('vi-VN')}`);
 
-      let naudanResult = { reapedCount: 0, cookedCount: 0, minRemainSec: 3600, hasAction: false };
+      let naudanResult = { reapedCount: 0, cookedCount: 0, unlockedCount: 0, minRemainSec: 3600, hasAction: false };
       let cungvuResult = { handledCount: 0, remainSec: 1800, hasAction: false };
       let noivuResult = { totalHarvested: 0, minRemainSec: 600, hasAction: false };
 
@@ -194,14 +194,40 @@ class TaskRunner {
       const updatedCungvu = currentCungvu + (cungvuResult.hasAction ? 1 : 0);
       const updatedNoivu = currentNoivu + (noivuResult.hasAction ? 1 : 0);
 
+      if (naudanResult.boughtMaterials) {
+        const diThao = naudanResult.materials ? naudanResult.materials.diThao : 0;
+        const hoaLa = naudanResult.materials ? naudanResult.materials.hoaLa : 0;
+        const tranQua = naudanResult.materials ? naudanResult.materials.tranQua : 0;
+        const boughtHoaLa = naudanResult.boughtMaterials.hoaLa || 0;
+        const boughtTranQua = naudanResult.boughtMaterials.tranQua || 0;
+        const msg = [
+          `🛒 <b>[MUA NGUYÊN LIỆU THÀNH CÔNG]</b>`,
+          `👤 <b>Nhân vật:</b> ${roleName}`,
+          `📧 <b>Tài khoản:</b> ${account.email} (S${account.serverId})`,
+          `📦 <b>Đã mua bổ sung:</b>`,
+          `  • Hoa Lạ: <b>+${boughtHoaLa}</b>`,
+          `  • Trân Quả: <b>+${boughtTranQua}</b>`,
+          `📊 <b>Tồn kho hiện tại:</b>`,
+          `  • Hoa Lạ: <b>${hoaLa}</b>`,
+          `  • Trân Quả: <b>${tranQua}</b>`,
+          `  • Dị Thảo: <b>${diThao}</b>`
+        ].join('\n');
+        await sendNotification(msg);
+        console.log(`[${account.email}] 📢 Đã gửi thông báo mua nguyên liệu thành công qua API.`);
+      }
+
       if (naudanResult.hasAction) {
         const diThao = naudanResult.materials ? naudanResult.materials.diThao : 0;
         const hoaLa = naudanResult.materials ? naudanResult.materials.hoaLa : 0;
         const tranQua = naudanResult.materials ? naudanResult.materials.tranQua : 0;
+        const unlockedCount = naudanResult.unlockedCount || 0;
+        const cookedCount = naudanResult.cookedCount || 0;
         const msg = [
           `🍲 <b>[NẤU ĐAN THÀNH CÔNG +1]</b>`,
           `👤 <b>Nhân vật:</b> ${roleName}`,
           `📧 <b>Tài khoản:</b> ${account.email} (S${account.serverId})`,
+          `🔥 <b>Bếp đã mở khóa:</b> ${unlockedCount} bếp`,
+          `👨‍🍳 <b>Đã nấu lượt này:</b> ${cookedCount}/${unlockedCount} bếp`,
           `📈 <b>Tiến độ hôm nay:</b> ${updatedNaudan}/6 lần`,
           `📦 <b>Nguyên liệu còn lại:</b>`,
           `  • Dị Thảo: <b>${diThao}</b>`,
@@ -210,27 +236,6 @@ class TaskRunner {
         ].join('\n');
         await sendNotification(msg);
         console.log(`[${account.email}] 📢 Đã gửi thông báo nấu đan thành công qua API.`);
-      }
-
-      if (updatedNaudan < 6 && naudanResult.isOutOfMaterials) {
-        const diThao = naudanResult.materials ? naudanResult.materials.diThao : 0;
-        const hoaLa = naudanResult.materials ? naudanResult.materials.hoaLa : 0;
-        const tranQua = naudanResult.materials ? naudanResult.materials.tranQua : 0;
-        const emptyCount = naudanResult.emptyStovesCount || 0;
-        const msg = [
-          `⚠️ <b>[CẢNH BÁO THIẾU NGUYÊN LIỆU NẤU ĐAN]</b>`,
-          `👤 <b>Nhân vật:</b> ${roleName}`,
-          `📧 <b>Tài khoản:</b> ${account.email} (S${account.serverId})`,
-          `🍲 <b>Tiến độ hôm nay:</b> ${updatedNaudan}/6 lần`,
-          `🔥 <b>Bếp trống chờ nấu:</b> ${emptyCount} bếp`,
-          `📦 <b>Nguyên liệu hiện có:</b>`,
-          `  • Dị Thảo: <b>${diThao}</b>`,
-          `  • Hoa Lạ: <b>${hoaLa}</b>`,
-          `  • Trân Quả: <b>${tranQua}</b>`,
-          `⏳ <i>Bot sẽ tự động kiểm tra lại sau 10 phút. Vui lòng bổ sung nguyên liệu để tiếp tục.</i>`
-        ].join('\n');
-        await sendNotification(msg);
-        console.log(`[${account.email}] 📢 Đã gửi thông báo thiếu nguyên liệu nấu đan qua API.`);
       }
 
       let nextRunTime;

@@ -5,7 +5,7 @@ class KitchenService extends BaseService {
   constructor(client) {
     super(client, {
       name: 'Ngự Thiện Phòng',
-      listenedMsgIds: [144201, 144203, 144204]
+      listenedMsgIds: [144201, 144203, 144204, 144206]
     });
 
     this.cookList = [];
@@ -13,6 +13,7 @@ class KitchenService extends BaseService {
     this.materialStock = {};
     this.lastReapResult = null;
     this.lastCookResult = null;
+    this.lastBuyResult = null;
   }
 
   onPacket(msgId, data) {
@@ -25,6 +26,8 @@ class KitchenService extends BaseService {
       this.lastReapResult = data;
     } else if (msgId === 144203) {
       this.lastCookResult = data;
+    } else if (msgId === 144206) {
+      this.lastBuyResult = data;
     }
   }
 
@@ -50,27 +53,21 @@ class KitchenService extends BaseService {
   }
 
   getRecipe(foodId) {
-    return COOKBOOK_RECIPES.find(r => r.id === foodId) || { name: `Món #${foodId}`, time: 0, ingredients: [] };
+    return COOKBOOK_RECIPES.find(r => r.id === foodId) || { name: `Món #${foodId}`, time: 10800, ingredients: [] };
   }
 
-  canCookRecipe(recipe, materialStock) {
-    for (const req of recipe.ingredients) {
-      const current = materialStock[req.id] || 0;
-      if (current < req.count) {
-        return false;
-      }
+  async buyMaterial(shopConfigId, num = 60) {
+    this.lastBuyResult = null;
+    this.client.lastReturnCode = null;
+    this.send(144106, { shopConfigId, num });
+    const success = await this.waitFor(() => Boolean(this.lastBuyResult) || (this.client.lastReturnCode && this.client.lastReturnCode.reqId === 144106), 3000, 100);
+    if (!success || (this.client.lastReturnCode && this.client.lastReturnCode.code !== 0)) {
+      console.warn(`[${this.client.email}] [Ngự Thiện] Mua nguyên liệu (${shopConfigId}) không thành công.`);
+      return false;
     }
+    const awardText = this.lastBuyResult && this.lastBuyResult.awardBeans ? formatAwards(this.lastBuyResult.awardBeans) : `x${num}`;
+    console.log(`[${this.client.email}] 🛒 [Ngự Thiện] Mua thành công: ${awardText}`);
     return true;
-  }
-
-  hasAnyCookableRecipe(stock = this.materialStock) {
-    if (!stock) return false;
-    for (const recipe of COOKBOOK_RECIPES) {
-      if (this.canCookRecipe(recipe, stock)) {
-        return true;
-      }
-    }
-    return false;
   }
 
   getMinRemainSec() {
@@ -79,25 +76,16 @@ class KitchenService extends BaseService {
     const unlocked = this.cookList.filter(s => s.status !== STOVE_STATUS.LOCKED);
     if (unlocked.length === 0) return 3600;
 
-    let minRemain = Infinity;
-    const canCookMore = this.hasAnyCookableRecipe(this.materialStock);
+    const cooking = unlocked.filter(s => s.status === STOVE_STATUS.COOKING);
+    if (cooking.length === 0) return 3600;
 
-    for (const s of unlocked) {
-      if (s.status === STOVE_STATUS.FINISHED) {
-        return 0;
-      }
-      if (s.status === STOVE_STATUS.EMPTY && canCookMore) {
-        return 0;
-      }
-      if (s.status === STOVE_STATUS.COOKING) {
-        const recipe = this.getRecipe(s.foodId);
-        const remain = Math.max(0, (Number(s.cropTime) + Number(recipe.time)) - nowSec);
-        if (remain === 0) return 0;
-        if (remain < minRemain) minRemain = remain;
-      }
+    let maxRemain = 0;
+    for (const s of cooking) {
+      const recipe = this.getRecipe(s.foodId);
+      const remain = Math.max(0, (Number(s.cropTime) + Number(recipe.time)) - nowSec);
+      if (remain > maxRemain) maxRemain = remain;
     }
-
-    return minRemain === Infinity ? 3600 : minRemain;
+    return Math.max(60, maxRemain);
   }
 
   async reapAllFinishedStoves() {
@@ -127,73 +115,162 @@ class KitchenService extends BaseService {
     return finished.length;
   }
 
-  async cookInEmptyStoves() {
-    const emptyStoves = (this.cookList || []).filter(s => s.status === STOVE_STATUS.EMPTY);
-    if (emptyStoves.length === 0) return 0;
-
-    let cookedCount = 0;
-
-    for (const stove of emptyStoves) {
-      let selectedRecipe = null;
-      for (const recipe of COOKBOOK_RECIPES) {
-        if (this.canCookRecipe(recipe, this.materialStock)) {
-          selectedRecipe = recipe;
-          break;
-        }
-      }
-
-      if (!selectedRecipe) {
-        continue;
-      }
-
-      this.lastCookResult = null;
-      this.send(144103, {
-        cookId: stove.cookId,
-        foodId: selectedRecipe.id
-      });
-
-      const success = await this.waitFor(() => Boolean(this.lastCookResult), 3000, 100);
-      if (success) {
-        for (const req of selectedRecipe.ingredients) {
-          this.materialStock[req.id] = (this.materialStock[req.id] || 0) - req.count;
-        }
-        stove.status = STOVE_STATUS.COOKING;
-        stove.foodId = selectedRecipe.id;
-        stove.cropTime = Math.floor(Date.now() / 1000);
-        cookedCount++;
-        console.log(`[${this.client.email}] 👨‍🍳 [Ngự Thiện] Bếp #${stove.cookId}: Bắt đầu nấu [${selectedRecipe.name}] (Thời gian: ${formatDuration(selectedRecipe.time)})`);
-      }
-
-      await this.sleepRandom(0.8, 1.2);
-    }
-
-    return cookedCount;
-  }
-
   async execute() {
     console.log(`[${this.client.email}] 🍲 Bắt đầu kiểm tra Ngự Thiện Phòng...`);
     await this.fetchKitchenInfo();
     this.materialStock = this.getMaterialStock();
 
+    const unlockedStoves = (this.cookList || []).filter(s => s.status !== STOVE_STATUS.LOCKED);
+    const unlockedCount = unlockedStoves.length;
+    console.log(`[${this.client.email}] 🍲 [Ngự Thiện] Số bếp đã mở khóa: ${unlockedCount}`);
+
+    if (unlockedCount === 0) {
+      return {
+        reapedCount: 0,
+        cookedCount: 0,
+        unlockedCount: 0,
+        emptyStovesCount: 0,
+        minRemainSec: 3600,
+        isCooking: false,
+        hasAction: false,
+        isOutOfMaterials: false,
+        materials: {
+          diThao: this.materialStock[25301] || 0,
+          hoaLa: this.materialStock[25302] || 0,
+          tranQua: this.materialStock[25303] || 0
+        }
+      };
+    }
+
     const reapedCount = await this.reapAllFinishedStoves();
-    const cookedCount = await this.cookInEmptyStoves();
+
+    const emptyStoves = unlockedStoves.filter(s => s.status === STOVE_STATUS.EMPTY);
+    const cookingStoves = unlockedStoves.filter(s => s.status === STOVE_STATUS.COOKING);
+
+    if (emptyStoves.length < unlockedCount) {
+      const minRemainSec = this.getMinRemainSec();
+      console.log(`[${this.client.email}] 🍲 [Ngự Thiện] Có ${cookingStoves.length}/${unlockedCount} bếp đang nấu. Chờ tất cả bếp chín để nấu đồng loạt (${formatDuration(minRemainSec)}).`);
+      return {
+        reapedCount,
+        cookedCount: 0,
+        unlockedCount,
+        emptyStovesCount: emptyStoves.length,
+        minRemainSec,
+        isCooking: true,
+        hasAction: false,
+        isOutOfMaterials: false,
+        materials: {
+          diThao: this.materialStock[25301] || 0,
+          hoaLa: this.materialStock[25302] || 0,
+          tranQua: this.materialStock[25303] || 0
+        }
+      };
+    }
+
+    const neededHoaLa = unlockedCount * 10;
+    const neededTranQua = unlockedCount * 10;
+    const buyAmount = (unlockedCount * 10) + 10;
+    let curHoaLa = this.materialStock[25302] || 0;
+    let curTranQua = this.materialStock[25303] || 0;
+    let boughtHoaLa = 0;
+    let boughtTranQua = 0;
+
+    let buyTries = 0;
+    while ((curHoaLa < neededHoaLa || curTranQua < neededTranQua) && buyTries < 5) {
+      buyTries++;
+      let didBuy = false;
+
+      if (curHoaLa < neededHoaLa) {
+        console.log(`[${this.client.email}] 🍲 [Ngự Thiện] Thiếu Hoa Lạ (${curHoaLa}/${neededHoaLa}). Đang mua thêm ${buyAmount}...`);
+        const bought = await this.buyMaterial(10004, buyAmount);
+        if (bought) {
+          boughtHoaLa += buyAmount;
+          didBuy = true;
+        }
+        await this.sleepRandom(0.8, 1.2);
+      }
+
+      if (curTranQua < neededTranQua) {
+        console.log(`[${this.client.email}] 🍲 [Ngự Thiện] Thiếu Trân Quả (${curTranQua}/${neededTranQua}). Đang mua thêm ${buyAmount}...`);
+        const bought = await this.buyMaterial(10006, buyAmount);
+        if (bought) {
+          boughtTranQua += buyAmount;
+          didBuy = true;
+        }
+        await this.sleepRandom(0.8, 1.2);
+      }
+
+      if (!didBuy) {
+        break;
+      }
+
+      await this.fetchKitchenInfo();
+      this.materialStock = this.getMaterialStock();
+      curHoaLa = this.materialStock[25302] || 0;
+      curTranQua = this.materialStock[25303] || 0;
+    }
+
+    if (curHoaLa < neededHoaLa || curTranQua < neededTranQua) {
+      console.warn(`[${this.client.email}] ⚠️ [Ngự Thiện] Sau khi mua vẫn không đủ nguyên liệu để nấu đủ ${unlockedCount} bếp (Hoa Lạ: ${curHoaLa}/${neededHoaLa}, Trân Quả: ${curTranQua}/${neededTranQua}).`);
+      return {
+        reapedCount,
+        cookedCount: 0,
+        unlockedCount,
+        emptyStovesCount: unlockedCount,
+        minRemainSec: 600,
+        isCooking: false,
+        hasAction: false,
+        isOutOfMaterials: true,
+        boughtMaterials: (boughtHoaLa > 0 || boughtTranQua > 0) ? {
+          hoaLa: boughtHoaLa,
+          tranQua: boughtTranQua
+        } : null,
+        materials: {
+          diThao: this.materialStock[25301] || 0,
+          hoaLa: curHoaLa,
+          tranQua: curTranQua
+        }
+      };
+    }
+
+    let cookedCount = 0;
+    for (const stove of emptyStoves) {
+      this.lastCookResult = null;
+      this.send(144103, {
+        cookId: stove.cookId,
+        foodId: 8
+      });
+
+      const success = await this.waitFor(() => Boolean(this.lastCookResult), 3000, 100);
+      if (success) {
+        this.materialStock[25302] = Math.max(0, (this.materialStock[25302] || 0) - 10);
+        this.materialStock[25303] = Math.max(0, (this.materialStock[25303] || 0) - 10);
+        stove.status = STOVE_STATUS.COOKING;
+        stove.foodId = 8;
+        stove.cropTime = Math.floor(Date.now() / 1000);
+        cookedCount++;
+        console.log(`[${this.client.email}] 👨‍🍳 [Ngự Thiện] Bếp #${stove.cookId}: Bắt đầu nấu [Thuộc Tính Đan] (Thời gian: 3h)`);
+      }
+      await this.sleepRandom(0.8, 1.2);
+    }
+
     const minRemainSec = this.getMinRemainSec();
-
-    console.log(`[${this.client.email}] 🍲 [Ngự Thiện Hoàn Tất] Thu hoạch: ${reapedCount} | Đã nấu: ${cookedCount} | Món kế tiếp chín sau: ${formatDuration(minRemainSec)}`);
-
-    const isCooking = (this.cookList || []).some(s => s.status === STOVE_STATUS.COOKING);
-    const remainingEmptyStoves = (this.cookList || []).filter(s => s.status === STOVE_STATUS.EMPTY);
-    const hasCookableRecipe = this.hasAnyCookableRecipe(this.materialStock);
-    const isOutOfMaterials = remainingEmptyStoves.length > 0 && !hasCookableRecipe;
+    const allSuccess = cookedCount === unlockedCount && unlockedCount > 0;
+    console.log(`[${this.client.email}] 🍲 [Ngự Thiện Hoàn Tất] Thu hoạch: ${reapedCount} | Đã nấu: ${cookedCount}/${unlockedCount} bếp | Món kế tiếp chín sau: ${formatDuration(minRemainSec)}`);
 
     return {
       reapedCount,
       cookedCount,
+      unlockedCount,
+      emptyStovesCount: unlockedCount - cookedCount,
       minRemainSec,
-      isCooking,
-      hasAction: cookedCount > 0,
-      isOutOfMaterials,
-      emptyStovesCount: remainingEmptyStoves.length,
+      isCooking: cookedCount > 0,
+      hasAction: allSuccess,
+      isOutOfMaterials: false,
+      boughtMaterials: (boughtHoaLa > 0 || boughtTranQua > 0) ? {
+        hoaLa: boughtHoaLa,
+        tranQua: boughtTranQua
+      } : null,
       materials: {
         diThao: this.materialStock[25301] || 0,
         hoaLa: this.materialStock[25302] || 0,
@@ -204,3 +281,4 @@ class KitchenService extends BaseService {
 }
 
 module.exports = KitchenService;
+
