@@ -253,15 +253,15 @@ class TaskRunner {
           console.log(`[${account.email}] ⚠️ Thiếu nguyên liệu nấu đan. Lên lịch kiểm tra lại sau 10 phút (${nextRunTime.toISOString()})`);
         }
       } else {
-        const cookCooldown = Number(naudanResult.minRemainSec) || 3600;
+        const cookCooldown = Number(naudanResult.remainSec || naudanResult.minRemainSec) || 3600;
         const effectiveCooldown = Math.max(300, cookCooldown + 30);
         const calculatedNext = new Date(Date.now() + effectiveCooldown * 1000);
         if (isInBlackoutWindow(calculatedNext)) {
           nextRunTime = getBlackoutResumeTime(calculatedNext);
-          console.log(`[${account.email}] 🍲 Đang chờ mẻ đan chín. Thời gian chín rơi vào khung giờ nghỉ (18h29 - 21h00), chuyển lịch sang 21h01 (${nextRunTime.toISOString()})`);
+          console.log(`[${account.email}] 🍲 Đang chờ toàn bộ bếp đan chín. Thời gian chín rơi vào khung giờ nghỉ (18h29 - 21h00), chuyển lịch sang 21h01 (${nextRunTime.toISOString()})`);
         } else {
           nextRunTime = calculatedNext;
-          console.log(`[${account.email}] 🍲 Đang chờ mẻ đan chín. Lượt chạy tiếp theo sau ${Math.round(effectiveCooldown / 60)} phút (${nextRunTime.toISOString()})`);
+          console.log(`[${account.email}] 🍲 Đang chờ toàn bộ bếp đan chín (bếp cuối cùng + 30s đệm). Lượt chạy tiếp theo sau ${Math.round(effectiveCooldown / 60)} phút (${nextRunTime.toISOString()})`);
         }
       }
 

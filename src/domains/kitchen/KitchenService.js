@@ -70,7 +70,7 @@ class KitchenService extends BaseService {
     return true;
   }
 
-  getMinRemainSec() {
+  getMaxRemainSec() {
     if (!this.cookList || this.cookList.length === 0) return 3600;
     const nowSec = Math.floor(Date.now() / 1000);
     const unlocked = this.cookList.filter(s => s.status !== STOVE_STATUS.LOCKED);
@@ -82,7 +82,8 @@ class KitchenService extends BaseService {
     let maxRemain = 0;
     for (const s of cooking) {
       const recipe = this.getRecipe(s.foodId);
-      const remain = Math.max(0, (Number(s.cropTime) + Number(recipe.time)) - nowSec);
+      const num = Number(s.num) > 0 ? Number(s.num) : 1;
+      const remain = Math.max(0, (Number(s.cropTime) + Number(recipe.time) * num) - nowSec);
       if (remain > maxRemain) maxRemain = remain;
     }
     return Math.max(60, maxRemain);
@@ -148,14 +149,15 @@ class KitchenService extends BaseService {
     const cookingStoves = unlockedStoves.filter(s => s.status === STOVE_STATUS.COOKING);
 
     if (emptyStoves.length < unlockedCount) {
-      const minRemainSec = this.getMinRemainSec();
-      console.log(`[${this.client.email}] 🍲 [Ngự Thiện] Có ${cookingStoves.length}/${unlockedCount} bếp đang nấu. Chờ tất cả bếp chín để nấu đồng loạt (${formatDuration(minRemainSec)}).`);
+      const maxRemainSec = this.getMaxRemainSec();
+      console.log(`[${this.client.email}] 🍲 [Ngự Thiện] Có ${cookingStoves.length}/${unlockedCount} bếp đang nấu. Chờ toàn bộ bếp chín để nấu đồng loạt (Bếp cuối cùng chín sau: ${formatDuration(maxRemainSec)}).`);
       return {
         reapedCount,
         cookedCount: 0,
         unlockedCount,
         emptyStovesCount: emptyStoves.length,
-        minRemainSec,
+        remainSec: maxRemainSec,
+        minRemainSec: maxRemainSec,
         isCooking: true,
         hasAction: false,
         isOutOfMaterials: false,
@@ -247,23 +249,34 @@ class KitchenService extends BaseService {
         this.materialStock[25303] = Math.max(0, (this.materialStock[25303] || 0) - 10);
         stove.status = STOVE_STATUS.COOKING;
         stove.foodId = 8;
-        stove.cropTime = Math.floor(Date.now() / 1000);
+        let cropTime = Math.floor(Date.now() / 1000);
+        let num = 1;
+        if (this.lastCookResult && Array.isArray(this.lastCookResult.cookInfo)) {
+          const info = this.lastCookResult.cookInfo.find(c => c.cookId === stove.cookId);
+          if (info) {
+            if (info.cropTime) cropTime = Number(info.cropTime);
+            if (info.num) num = Number(info.num);
+          }
+        }
+        stove.cropTime = cropTime;
+        stove.num = num;
         cookedCount++;
         console.log(`[${this.client.email}] 👨‍🍳 [Ngự Thiện] Bếp #${stove.cookId}: Bắt đầu nấu [Thuộc Tính Đan] (Thời gian: 3h)`);
       }
       await this.sleepRandom(0.8, 1.2);
     }
 
-    const minRemainSec = this.getMinRemainSec();
+    const maxRemainSec = this.getMaxRemainSec();
     const allSuccess = cookedCount === unlockedCount && unlockedCount > 0;
-    console.log(`[${this.client.email}] 🍲 [Ngự Thiện Hoàn Tất] Thu hoạch: ${reapedCount} | Đã nấu: ${cookedCount}/${unlockedCount} bếp | Món kế tiếp chín sau: ${formatDuration(minRemainSec)}`);
+    console.log(`[${this.client.email}] 🍲 [Ngự Thiện Hoàn Tất] Thu hoạch: ${reapedCount} | Đã nấu: ${cookedCount}/${unlockedCount} bếp | Bếp cuối cùng chín sau: ${formatDuration(maxRemainSec)}`);
 
     return {
       reapedCount,
       cookedCount,
       unlockedCount,
       emptyStovesCount: unlockedCount - cookedCount,
-      minRemainSec,
+      remainSec: maxRemainSec,
+      minRemainSec: maxRemainSec,
       isCooking: cookedCount > 0,
       hasAction: allSuccess,
       isOutOfMaterials: false,
