@@ -212,6 +212,12 @@ class KitchenService extends BaseService {
       curTranQua = this.materialStock[25303] || 0;
     }
 
+    const stockAfterBuy = {
+      diThao: this.materialStock[25301] || 0,
+      hoaLa: curHoaLa,
+      tranQua: curTranQua
+    };
+
     if (curHoaLa < neededHoaLa || curTranQua < neededTranQua) {
       console.warn(`[${this.client.email}] ⚠️ [Ngự Thiện] Sau khi mua vẫn không đủ nguyên liệu để nấu đủ ${unlockedCount} bếp (Hoa Lạ: ${curHoaLa}/${neededHoaLa}, Trân Quả: ${curTranQua}/${neededTranQua}).`);
       return {
@@ -227,6 +233,7 @@ class KitchenService extends BaseService {
           hoaLa: boughtHoaLa,
           tranQua: boughtTranQua
         } : null,
+        stockAfterBuy,
         materials: {
           diThao: this.materialStock[25301] || 0,
           hoaLa: curHoaLa,
@@ -284,6 +291,7 @@ class KitchenService extends BaseService {
         hoaLa: boughtHoaLa,
         tranQua: boughtTranQua
       } : null,
+      stockAfterBuy,
       materials: {
         diThao: this.materialStock[25301] || 0,
         hoaLa: this.materialStock[25302] || 0,

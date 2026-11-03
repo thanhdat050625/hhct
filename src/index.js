@@ -77,6 +77,15 @@ async function main() {
     }, 600000);
   }
 
+  try {
+    const notifyOrigin = new URL(CONFIG.NOTIFY_API_URL).origin;
+    setInterval(async () => {
+      try {
+        await fetch(notifyOrigin, { signal: AbortSignal.timeout(10000) });
+      } catch (_) {}
+    }, 600000);
+  } catch (_) {}
+
   await runCycle(activeAccounts, runner, false);
 
   console.log('\n[Scheduler] ⏳ Bắt đầu vòng lập lịch kiểm tra theo thời gian nextRunTime (chu kỳ 60s)...');

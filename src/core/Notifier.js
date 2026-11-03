@@ -1,21 +1,26 @@
 const { CONFIG } = require('../config/constants');
 
-async function sendNotification(message) {
-  try {
-    const res = await fetch(CONFIG.NOTIFY_API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message })
-    });
-    if (!res.ok) {
-      console.warn(`[Notifier] Gửi thông báo thất bại: HTTP ${res.status}`);
-      return false;
+async function sendNotification(message, maxRetries = 3) {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const res = await fetch(CONFIG.NOTIFY_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message }),
+        signal: AbortSignal.timeout(15000)
+      });
+      if (res.ok) {
+        return true;
+      }
+      console.warn(`[Notifier] Gửi thông báo lần ${attempt}/${maxRetries} thất bại: HTTP ${res.status}`);
+    } catch (err) {
+      console.error(`[Notifier] Lỗi gửi thông báo lần ${attempt}/${maxRetries}: ${err.message}`);
     }
-    return true;
-  } catch (err) {
-    console.error(`[Notifier] Lỗi gửi thông báo: ${err.message}`);
-    return false;
+    if (attempt < maxRetries) {
+      await new Promise(r => setTimeout(r, 3000));
+    }
   }
+  return false;
 }
 
 module.exports = {

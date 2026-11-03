@@ -195,18 +195,23 @@ class TaskRunner {
       const updatedNoivu = currentNoivu + (noivuResult.hasAction ? 1 : 0);
 
       if (naudanResult.boughtMaterials) {
-        const diThao = naudanResult.materials ? naudanResult.materials.diThao : 0;
-        const hoaLa = naudanResult.materials ? naudanResult.materials.hoaLa : 0;
-        const tranQua = naudanResult.materials ? naudanResult.materials.tranQua : 0;
+        const stock = naudanResult.stockAfterBuy || naudanResult.materials || {};
+        const diThao = stock.diThao || 0;
+        const hoaLa = stock.hoaLa || 0;
+        const tranQua = stock.tranQua || 0;
         const boughtHoaLa = naudanResult.boughtMaterials.hoaLa || 0;
         const boughtTranQua = naudanResult.boughtMaterials.tranQua || 0;
+
+        const boughtLines = [];
+        if (boughtHoaLa > 0) boughtLines.push(`  • Hoa Lạ: <b>+${boughtHoaLa}</b>`);
+        if (boughtTranQua > 0) boughtLines.push(`  • Trân Quả: <b>+${boughtTranQua}</b>`);
+
         const msg = [
           `🛒 <b>[MUA NGUYÊN LIỆU THÀNH CÔNG]</b>`,
           `👤 <b>Nhân vật:</b> ${roleName}`,
           `📧 <b>Tài khoản:</b> ${account.email} (S${account.serverId})`,
           `📦 <b>Đã mua bổ sung:</b>`,
-          `  • Hoa Lạ: <b>+${boughtHoaLa}</b>`,
-          `  • Trân Quả: <b>+${boughtTranQua}</b>`,
+          ...boughtLines,
           `📊 <b>Tồn kho hiện tại:</b>`,
           `  • Hoa Lạ: <b>${hoaLa}</b>`,
           `  • Trân Quả: <b>${tranQua}</b>`,
@@ -214,6 +219,7 @@ class TaskRunner {
         ].join('\n');
         await sendNotification(msg);
         console.log(`[${account.email}] 📢 Đã gửi thông báo mua nguyên liệu thành công qua API.`);
+        await new Promise(r => setTimeout(r, 1500));
       }
 
       if (naudanResult.hasAction) {
