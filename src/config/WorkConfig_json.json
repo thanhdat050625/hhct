@@ -1,0 +1,100 @@
+{
+  "colMap": [
+    "resource",
+    "description",
+    "option1",
+    "option2"
+  ],
+  "list": {
+    "10000": [
+      60201,
+      "Tạm thời không có cung vụ phải xử lí",
+      "Trống",
+      "Trống"
+    ],
+    "10001": [
+      60202,
+      "Hoàng Thượng gần đây bị nhiễm phong hàn, thiếu chủ hãy khuyên Hoàng Thượng!",
+      "Hoàng Thượng quá mệt rồi, phải cẩn thận.",
+      "Ta nấu thuốc cho Hoàng Thượng uống."
+    ],
+    "10002": [
+      60202,
+      "Hôm nay mưa gió, không có việc gì,chi bằng uống một chén rượu nho Thổ Phiền.",
+      "Hãy uống một bình nhỏ thôi, không hơn.",
+      " Đây là món yêu thích của Hoàng Thượng"
+    ],
+    "10003": [
+      60202,
+      "Hoàng Thượng biết được người rất sợ lạnh, nên lệnh người tìm thần y chẩn trị cho thiếu chủ",
+      "Cố gắng chữa trị",
+      "Xin bảo trọng long thể."
+    ],
+    "10004": [
+      60203,
+      "Khởi bẩm thiếu chủ, trong Vườn Thuốc có một tiệm thuốc lâu nay chưa tu sửa, Tổng Quản Thái Giám thật sơ suất, mong người định đoạt!",
+      "Phạt một tháng lương và bắt lao dịch!",
+      "Trách mắng là được!"
+    ],
+    "10005": [
+      60203,
+      "Có ngoại thần hiến phân bón dược liệu phương tây, mong thiếu chủ quyết định!",
+      "Sản lượng dược liệu nhất định sẽ tăng!",
+      "Từ chối, hậu cung không được can chính."
+    ],
+    "10006": [
+      60203,
+      "Thái y dùng sai thuốc, khiến phi tử mất mạng, xin thiếu chủ định đoạt!",
+      "Cần xem xét rồi mới xử lý!",
+      "Nếu làm sai, trừng phạt nặng!"
+    ],
+    "10007": [
+      60204,
+      "Phát hiện chủ sự nhân cơ hội moi vét,mong Thiếu Chủ định đoạt?",
+      "Giam vào lao, điều tra lai lịch hắn!",
+      "Điều tra rõ ràng, xử trí theo luật!"
+    ],
+    "10008": [
+      60204,
+      "Vụ trộm trang sức,kẻ trộm là người của Cao công công, nên xử lý thế nào?",
+      "Giao cho tổng quản xử lý!",
+      "Xem mất đồ gì, mau tìm ra rồi trả lại đồ mất!"
+    ],
+    "10009": [
+      60204,
+      "Có cung nữ tố cáo thượng cấp cắt giảm bổng lộc,mong thiếu chủ định đoạt!",
+      "Đuổi khỏi cung!",
+      "Trả lại cung nhân và bồi thường!"
+    ],
+    "10010": [
+      60205,
+      "Phát hiện thi thể trong hồ, hung thủ là thái giám cùng phòng  chờ người xử trí.",
+      "Cầu người xin Hoàng Thượng xung quân!",
+      "Báo Hoàng Thượng định đoạt!"
+    ],
+    "10011": [
+      60205,
+      "Cung nữ đã già cần xuất cung, nhưng họ đã quên quê mình ở đâu, xin thiếu chủ định đoạt!",
+      "Xin Hoàng Thượng cho đến canh giữ Hoàng Lăng!",
+      "Điều tra quê quán rồi đưa về đó!"
+    ],
+    "10012": [
+      60205,
+      "Cột cung nữ vô ý làm ngã nến khiến thư phòng bị cháy, không biết nên xử lý thế nào?",
+      "Đánh 30 gậy, phạt bổng lộc 1 năm!",
+      "Tra rõ tình hình, nếu có thể tha thì tha!"
+    ],
+    "10013": [
+      60205,
+      "Phát hiện thi thể trong hồ, hung thủ là thái giám cùng phòng  chờ người xử trí.",
+      "Cầu người xin Hoàng Thượng xung quân!",
+      "Báo Hoàng Thượng định đoạt!"
+    ],
+    "10014": [
+      60205,
+      "Cung nữ đã già cần xuất cung, nhưng họ đã quên quê mình ở đâu, xin thiếu chủ định đoạt!",
+      "Xin Hoàng Thượng cho đến canh giữ Hoàng Lăng!",
+      "Điều tra quê quán rồi đưa về đó!"
+    ]
+  }
+}

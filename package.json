@@ -1,0 +1,15 @@
+{
+  "name": "hhct-naudan-cungvu-noivu",
+  "version": "1.0.0",
+  "description": "Bot Hoang Hau Cat Tuong - Nau dan, Cung vu, Noi vu (5 lan/ngay, Web Note 31 ngay)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "run:now": "node src/index.js --now"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "protobufjs": "^8.8.0",
+    "ws": "^8.21.3"
+  }
+}

@@ -1,0 +1,7958 @@
+{
+  "cs": {
+    "101101": [
+      "login",
+      "ReqLogin"
+    ],
+    "101102": [
+      "login",
+      "ReqHeart"
+    ],
+    "101103": [
+      "login",
+      "ReqCreatePlayer"
+    ],
+    "101104": [
+      "login",
+      "ReqCheckName"
+    ],
+    "101106": [
+      "login",
+      "ReqLoginPrepare"
+    ],
+    "102101": [
+      "player",
+      "ReqTrade"
+    ],
+    "102102": [
+      "player",
+      "ReqWork"
+    ],
+    "102103": [
+      "player",
+      "ReqGetWelfare"
+    ],
+    "102104": [
+      "player",
+      "ReqLvUp"
+    ],
+    "102105": [
+      "player",
+      "ReqLookOtherPlayer"
+    ],
+    "102106": [
+      "player",
+      "ReqGameSetting"
+    ],
+    "102108": [
+      "player",
+      "ReqServerNotice2Client"
+    ],
+    "102113": [
+      "player",
+      "ReqHeadList"
+    ],
+    "102114": [
+      "player",
+      "ReqChangeHead"
+    ],
+    "102115": [
+      "player",
+      "ReqLoginOut"
+    ],
+    "102116": [
+      "player",
+      "ReqChangeAtt"
+    ],
+    "102117": [
+      "player",
+      "ReqRollNotice"
+    ],
+    "102118": [
+      "player",
+      "ReqAvatarList"
+    ],
+    "102119": [
+      "player",
+      "ReqChangeAvatar"
+    ],
+    "102121": [
+      "player",
+      "ReqChannelReward"
+    ],
+    "102122": [
+      "player",
+      "ReqReport"
+    ],
+    "102123": [
+      "player",
+      "ReqAttInfo"
+    ],
+    "102124": [
+      "player",
+      "ReqNewsReadHistory"
+    ],
+    "102125": [
+      "player",
+      "ReqWxRewardbutton"
+    ],
+    "102132": [
+      "player",
+      "ReqReplyRedPoint"
+    ],
+    "102133": [
+      "player",
+      "ReqClearReplyRedPoint"
+    ],
+    "102134": [
+      "player",
+      "ReqUseMainCitySkin"
+    ],
+    "102135": [
+      "player",
+      "ReqUseMainCityEffect"
+    ],
+    "102137": [
+      "player",
+      "ReqSetUpMainCityEffectStatus"
+    ],
+    "102141": [
+      "player",
+      "ReqShowItems"
+    ],
+    "103102": [
+      "pay",
+      "ReqMeteorPay"
+    ],
+    "104101": [
+      "pack",
+      "ReqUse"
+    ],
+    "104102": [
+      "pack",
+      "ReqPropComposeInfo"
+    ],
+    "104103": [
+      "pack",
+      "ReqPropCompose"
+    ],
+    "104111": [
+      "pack",
+      "ReqChangeName"
+    ],
+    "104112": [
+      "pack",
+      "ReqLockList"
+    ],
+    "105101": [
+      "helper",
+      "ReqHelperUpLv"
+    ],
+    "105102": [
+      "helper",
+      "ReqHelperUpAptitudeLv"
+    ],
+    "105103": [
+      "helper",
+      "ReqHelperUpSkillLv"
+    ],
+    "105104": [
+      "helper",
+      "ReqHelperUpNobility"
+    ],
+    "105108": [
+      "helper",
+      "ReqHelperLetterInfo"
+    ],
+    "105109": [
+      "helper",
+      "ReqUseHelperLetter"
+    ],
+    "105110": [
+      "helper",
+      "ReqOtherPlayerHelperInfo"
+    ],
+    "105111": [
+      "helper",
+      "ReqHelperUpAuraLv"
+    ],
+    "105112": [
+      "helper",
+      "ReqLikeHelper"
+    ],
+    "105113": [
+      "helper",
+      "ReqChangeHelperSkin"
+    ],
+    "105115": [
+      "helper",
+      "ReqHelperSkinRed"
+    ],
+    "106101": [
+      "wife",
+      "ReqCallWife"
+    ],
+    "106102": [
+      "wife",
+      "ReqLoveWife"
+    ],
+    "106103": [
+      "wife",
+      "ReqAwardWife"
+    ],
+    "106104": [
+      "wife",
+      "ReqWifeSkillUp"
+    ],
+    "106107": [
+      "wife",
+      "ReqChatNow"
+    ],
+    "106108": [
+      "wife",
+      "ReqAddHappyValue"
+    ],
+    "106109": [
+      "wife",
+      "ReqEndChat"
+    ],
+    "106110": [
+      "wife",
+      "ReqRewardNearLv"
+    ],
+    "106111": [
+      "wife",
+      "ReqWifeInfo"
+    ],
+    "106112": [
+      "wife",
+      "ReqManScene"
+    ],
+    "106113": [
+      "wife",
+      "ReqScenePlan"
+    ],
+    "106114": [
+      "wife",
+      "ReqFight"
+    ],
+    "106116": [
+      "wife",
+      "ReqFinishFight"
+    ],
+    "106117": [
+      "wife",
+      "ReqRewardBox"
+    ],
+    "106118": [
+      "wife",
+      "ReqRankFight"
+    ],
+    "106119": [
+      "wife",
+      "ReqEnergyInfo"
+    ],
+    "106120": [
+      "wife",
+      "ReqSetFavouriteWife"
+    ],
+    "106121": [
+      "wife",
+      "ReqStarReward"
+    ],
+    "109101": [
+      "visit",
+      "ReqVisitInfo"
+    ],
+    "109102": [
+      "visit",
+      "ReqFootprint"
+    ],
+    "109103": [
+      "visit",
+      "ReqBeginVisit"
+    ],
+    "109104": [
+      "visit",
+      "ReqFinishVisit"
+    ],
+    "110101": [
+      "prison",
+      "ReqPrisonInfo"
+    ],
+    "110102": [
+      "prison",
+      "ReqHitPrisoner"
+    ],
+    "111101": [
+      "chat",
+      "ReqChatRecord"
+    ],
+    "111102": [
+      "chat",
+      "ReqChat"
+    ],
+    "111111": [
+      "chat",
+      "ReqChatBubbleInfo"
+    ],
+    "111112": [
+      "chat",
+      "ReqUseChatBubble"
+    ],
+    "111114": [
+      "chat",
+      "ReqCancelBubbleRedPoint"
+    ],
+    "111115": [
+      "chat",
+      "ReqHasReadVipChatNotice"
+    ],
+    "111116": [
+      "chat",
+      "ReqHasReadNewVipMsg"
+    ],
+    "112101": [
+      "scene",
+      "ReqSceneInfo"
+    ],
+    "112102": [
+      "scene",
+      "ReqSceneFight"
+    ],
+    "112103": [
+      "scene",
+      "ReqSceneFightBoss"
+    ],
+    "112104": [
+      "scene",
+      "ReqSceneHelperRefresh"
+    ],
+    "112105": [
+      "scene",
+      "ReqSceneChoose"
+    ],
+    "112107": [
+      "scene",
+      "ReqCheckSceneChoose"
+    ],
+    "112109": [
+      "scene",
+      "ReqClothesFight"
+    ],
+    "112110": [
+      "scene",
+      "ReqEnemyBossRank"
+    ],
+    "112111": [
+      "scene",
+      "ReqEnemyBossFight"
+    ],
+    "112112": [
+      "scene",
+      "ReqChangeBoss"
+    ],
+    "112113": [
+      "scene",
+      "ReqResetBoss"
+    ],
+    "113101": [
+      "rank",
+      "ReqRankLocalInfo"
+    ],
+    "113102": [
+      "rank",
+      "ReqRankRemoteInfo"
+    ],
+    "113103": [
+      "rank",
+      "ReqRankWorship"
+    ],
+    "113104": [
+      "rank",
+      "ReqRankListInfo"
+    ],
+    "113105": [
+      "rank",
+      "ReqCheckPlayerKeel"
+    ],
+    "113106": [
+      "rank",
+      "ReqPlayerSelfRankInfo"
+    ],
+    "114101": [
+      "palace",
+      "ReqPalaceInfo"
+    ],
+    "114102": [
+      "palace",
+      "ReqPalaceHi"
+    ],
+    "114103": [
+      "palace",
+      "ReqLookKing"
+    ],
+    "114104": [
+      "palace",
+      "ReqPopularity"
+    ],
+    "114105": [
+      "palace",
+      "ReqKingTitleInfo"
+    ],
+    "117101": [
+      "mail",
+      "ReqOpenMail"
+    ],
+    "117102": [
+      "mail",
+      "ReqMailAward"
+    ],
+    "117103": [
+      "mail",
+      "ReqDelMail"
+    ],
+    "117105": [
+      "mail",
+      "ReqMailInfo"
+    ],
+    "117107": [
+      "mail",
+      "ReqCheckTitle"
+    ],
+    "117108": [
+      "mail",
+      "ReqSetupMailSettings"
+    ],
+    "119101": [
+      "court",
+      "ReqCourtInfo"
+    ],
+    "119102": [
+      "court",
+      "ReqCourtFightInfo"
+    ],
+    "119103": [
+      "court",
+      "ReqCourtBuyProperty"
+    ],
+    "119104": [
+      "court",
+      "ReqCourtFight"
+    ],
+    "119105": [
+      "court",
+      "ReqCourtAward"
+    ],
+    "119106": [
+      "court",
+      "ReqCourtEnvoy"
+    ],
+    "119107": [
+      "court",
+      "ReqCourtVisit"
+    ],
+    "119108": [
+      "court",
+      "ReqCourtSearch"
+    ],
+    "119109": [
+      "court",
+      "ReqCourtDispatch"
+    ],
+    "119110": [
+      "court",
+      "ReqCourtLog"
+    ],
+    "119111": [
+      "court",
+      "ReqCourtRank"
+    ],
+    "119112": [
+      "court",
+      "ReqForbiddenHelper"
+    ],
+    "124101": [
+      "quest",
+      "ReqQuestMainInfo"
+    ],
+    "124102": [
+      "quest",
+      "ReqQuestMainAward"
+    ],
+    "124103": [
+      "quest",
+      "ReqQuestEveryDayInfo"
+    ],
+    "124104": [
+      "quest",
+      "ReqQuestEveryDayNewMsg"
+    ],
+    "124105": [
+      "quest",
+      "ReqQuestEveryDayAward"
+    ],
+    "124106": [
+      "quest",
+      "ReqQuestEveryDayActiveAward"
+    ],
+    "124107": [
+      "quest",
+      "ReqPositionQuestInfo"
+    ],
+    "124108": [
+      "quest",
+      "ReqQuestPositionAward"
+    ],
+    "124110": [
+      "quest",
+      "ReqQuestAllAward"
+    ],
+    "125101": [
+      "achievement",
+      "ReqAchievementNewMsg"
+    ],
+    "125102": [
+      "achievement",
+      "ReqAchievementInfo"
+    ],
+    "125103": [
+      "achievement",
+      "ReqAchievementAward"
+    ],
+    "125105": [
+      "achievement",
+      "ReqAchievementPointAward"
+    ],
+    "125301": [
+      "achievement",
+      "ReqNewAllAchievement"
+    ],
+    "125302": [
+      "achievement",
+      "ReqNewAchievement"
+    ],
+    "125303": [
+      "achievement",
+      "ReqNewAchievementReward"
+    ],
+    "125304": [
+      "achievement",
+      "ReqNewAchievementRedPoint"
+    ],
+    "125305": [
+      "achievement",
+      "ReqAllNewAchievementRedPoint"
+    ],
+    "126101": [
+      "shop",
+      "ReqShopInfo"
+    ],
+    "126102": [
+      "shop",
+      "ReqShopBuy"
+    ],
+    "126103": [
+      "shop",
+      "ReqNewShopInfo"
+    ],
+    "126104": [
+      "shop",
+      "ReqBuyCommodity"
+    ],
+    "126105": [
+      "shop",
+      "ReqCancelRedPoint"
+    ],
+    "127111": [
+      "activity",
+      "ReqNewActivityInfoList"
+    ],
+    "127113": [
+      "activity",
+      "ReqActivityPack"
+    ],
+    "127114": [
+      "activity",
+      "ReqActivityBags"
+    ],
+    "127116": [
+      "activity",
+      "ReqActivityRankReward"
+    ],
+    "127117": [
+      "activity",
+      "ReqActivityItemUse"
+    ],
+    "127118": [
+      "activity",
+      "ReqActivityTaskLogs"
+    ],
+    "127119": [
+      "activity",
+      "ReqActivityUnionInnerRank"
+    ],
+    "127120": [
+      "activity",
+      "ReqActivityUnionRankReward"
+    ],
+    "127121": [
+      "activity",
+      "ReqActivityUnionRank"
+    ],
+    "127122": [
+      "activity",
+      "ReqActivityRankRewardStatus"
+    ],
+    "127123": [
+      "activity",
+      "ReqActivityItemLogs"
+    ],
+    "128101": [
+      "lottery",
+      "ReqLotteryList"
+    ],
+    "128102": [
+      "lottery",
+      "ReqLotteryCdTime"
+    ],
+    "128103": [
+      "lottery",
+      "ReqChangeWishCard"
+    ],
+    "128104": [
+      "lottery",
+      "ReqWishCardLottery"
+    ],
+    "129101": [
+      "clothes",
+      "ReqClothesInfo"
+    ],
+    "129102": [
+      "clothes",
+      "ReqWearClothes"
+    ],
+    "129103": [
+      "clothes",
+      "ReqClothesShopBuy"
+    ],
+    "129104": [
+      "clothes",
+      "ReqClothesFindRecordInfo"
+    ],
+    "129105": [
+      "clothes",
+      "ReqClothesFind"
+    ],
+    "129106": [
+      "clothes",
+      "ReqClothesShopInfo"
+    ],
+    "129107": [
+      "clothes",
+      "ReqWardrobeInfo"
+    ],
+    "129108": [
+      "clothes",
+      "ReqDetailsMsg"
+    ],
+    "129109": [
+      "clothes",
+      "ReqDressUpInfo"
+    ],
+    "129110": [
+      "clothes",
+      "ReqIllustration"
+    ],
+    "129111": [
+      "clothes",
+      "ReqIllustrationInfo"
+    ],
+    "129112": [
+      "clothes",
+      "ReqRewardIllustration"
+    ],
+    "129113": [
+      "clothes",
+      "ReqChangeManClothesInfo"
+    ],
+    "129114": [
+      "clothes",
+      "ReqChangeManClothes"
+    ],
+    "129115": [
+      "clothes",
+      "ReqClearRedPoint"
+    ],
+    "129117": [
+      "clothes",
+      "ReqManSuitShop"
+    ],
+    "129118": [
+      "clothes",
+      "ReqChange"
+    ],
+    "129119": [
+      "clothes",
+      "ReqDIYSuitOpen"
+    ],
+    "129120": [
+      "clothes",
+      "ReqSuit"
+    ],
+    "129121": [
+      "clothes",
+      "ReqBreakDownClothes"
+    ],
+    "129122": [
+      "clothes",
+      "ReqChangeBackDrop"
+    ],
+    "129123": [
+      "clothes",
+      "ReqClothesConfigs"
+    ],
+    "129124": [
+      "clothes",
+      "ReqClothesLevelUpData"
+    ],
+    "129125": [
+      "clothes",
+      "ReqClothesLevelUp"
+    ],
+    "129126": [
+      "clothes",
+      "ReqClothesBriefInfo"
+    ],
+    "129127": [
+      "clothes",
+      "ReqPreviewSuit"
+    ],
+    "129128": [
+      "clothes",
+      "ReqRewardCollect"
+    ],
+    "129130": [
+      "clothes",
+      "ReqWifeSuitKeel"
+    ],
+    "129132": [
+      "clothes",
+      "ReqSuitKeel"
+    ],
+    "129133": [
+      "clothes",
+      "ReqRecentInfo"
+    ],
+    "129134": [
+      "clothes",
+      "ReqPickSnap"
+    ],
+    "129135": [
+      "clothes",
+      "ReqLikeCloth"
+    ],
+    "129136": [
+      "clothes",
+      "ReqChangeAmbient"
+    ],
+    "129137": [
+      "clothes",
+      "ReqChangeEffect"
+    ],
+    "129138": [
+      "clothes",
+      "ReqRedSuitEffect"
+    ],
+    "130101": [
+      "assignTask",
+      "ReqAssignTaskInfo"
+    ],
+    "130102": [
+      "assignTask",
+      "ReqAssign"
+    ],
+    "130103": [
+      "assignTask",
+      "ReqAssignTaskReward"
+    ],
+    "130104": [
+      "assignTask",
+      "ReqBuyQueue"
+    ],
+    "131101": [
+      "harem",
+      "ReqHaremInfo"
+    ],
+    "131103": [
+      "harem",
+      "ReqDealWithMsg"
+    ],
+    "131104": [
+      "harem",
+      "ReqChooseHaremList"
+    ],
+    "131105": [
+      "harem",
+      "ReqHarem"
+    ],
+    "131106": [
+      "harem",
+      "ReqSelectPlayer"
+    ],
+    "131107": [
+      "harem",
+      "ReqPurchases"
+    ],
+    "131108": [
+      "harem",
+      "ReqRankInfo"
+    ],
+    "131109": [
+      "harem",
+      "ReqCanHarem"
+    ],
+    "132101": [
+      "title",
+      "ReqTitleInfo"
+    ],
+    "132102": [
+      "title",
+      "ReqUseTitleId"
+    ],
+    "132103": [
+      "title",
+      "ReqActivatedTitle"
+    ],
+    "132104": [
+      "title",
+      "ReqAddTitle"
+    ],
+    "133101": [
+      "dressing",
+      "ReqDressingSimpleInfo"
+    ],
+    "133102": [
+      "dressing",
+      "ReqDressingInfo"
+    ],
+    "133103": [
+      "dressing",
+      "ReqDressingRank"
+    ],
+    "133104": [
+      "dressing",
+      "ReqDressing"
+    ],
+    "133105": [
+      "dressing",
+      "ReqDressingReward"
+    ],
+    "135101": [
+      "activitySprint",
+      "ReqActivitySprintSimpleInfo"
+    ],
+    "135102": [
+      "activitySprint",
+      "ReqActivitySprintInfo"
+    ],
+    "135103": [
+      "activitySprint",
+      "ReqActivitySprintRankInfo"
+    ],
+    "135104": [
+      "activitySprint",
+      "ReqActivitySprintAward"
+    ],
+    "136101": [
+      "activityLimit",
+      "ReqActivityLimitSimpleInfo"
+    ],
+    "136102": [
+      "activityLimit",
+      "ReqActivityLimitInfo"
+    ],
+    "136103": [
+      "activityLimit",
+      "ReqActivityLimitAward"
+    ],
+    "136104": [
+      "activityLimit",
+      "ReqActivityLimitRankInfo"
+    ],
+    "136105": [
+      "activityLimit",
+      "ReqActivityLimitTypeAward"
+    ],
+    "137101": [
+      "activityHelper",
+      "ReqActivityHelperExchangeInfo"
+    ],
+    "137102": [
+      "activityHelper",
+      "ReqActivityHelperExchange"
+    ],
+    "139101": [
+      "activityFree",
+      "ReqActivityFreeInfo"
+    ],
+    "139102": [
+      "activityFree",
+      "ReqActivityFreeAward"
+    ],
+    "139103": [
+      "activityFree",
+      "ReqBuyActivity"
+    ],
+    "140101": [
+      "eventRankPoint",
+      "ReqEventActivityInfo"
+    ],
+    "140102": [
+      "eventRankPoint",
+      "ReqEventActivityUseInfo"
+    ],
+    "140103": [
+      "eventRankPoint",
+      "ReqEventActivityNotice"
+    ],
+    "140104": [
+      "eventRankPoint",
+      "ReqEventActivityItemUse"
+    ],
+    "140105": [
+      "eventRankPoint",
+      "ReqEventActivityExchangeInfo"
+    ],
+    "140106": [
+      "eventRankPoint",
+      "ReqEventActivityExchange"
+    ],
+    "140107": [
+      "eventRankPoint",
+      "ReqEventActivityRankRewardInfo"
+    ],
+    "140108": [
+      "eventRankPoint",
+      "ReqEventActivityRankReward"
+    ],
+    "140109": [
+      "eventRankPoint",
+      "ReqEventActivityShopInfo"
+    ],
+    "140110": [
+      "eventRankPoint",
+      "ReqBuyEventActivityGoods"
+    ],
+    "141101": [
+      "map",
+      "ReqMapInfo"
+    ],
+    "141102": [
+      "map",
+      "ReqRewardMap"
+    ],
+    "142101": [
+      "manor",
+      "ReqManorInfo"
+    ],
+    "142102": [
+      "manor",
+      "ReqOperatePlot"
+    ],
+    "142103": [
+      "manor",
+      "ReqPlantCrop"
+    ],
+    "142104": [
+      "manor",
+      "ReqOperateCrop"
+    ],
+    "142105": [
+      "manor",
+      "ReqReapCrop"
+    ],
+    "142106": [
+      "manor",
+      "ReqManorShop"
+    ],
+    "142107": [
+      "manor",
+      "ReqShopBuyManor"
+    ],
+    "142108": [
+      "manor",
+      "ReqDepotInfo"
+    ],
+    "142109": [
+      "manor",
+      "ReqSendPropChange"
+    ],
+    "142110": [
+      "manor",
+      "ReqOneKeyPlant"
+    ],
+    "142111": [
+      "manor",
+      "ReqOneKeyFertilize"
+    ],
+    "143101": [
+      "pet",
+      "ReqPetInfo"
+    ],
+    "143102": [
+      "pet",
+      "ReqPetSetName"
+    ],
+    "143103": [
+      "pet",
+      "ReqPetEatFood"
+    ],
+    "143104": [
+      "pet",
+      "ReqPetExtend"
+    ],
+    "143105": [
+      "pet",
+      "ReqPetGrowUp"
+    ],
+    "143106": [
+      "pet",
+      "ReqMarriageInfo"
+    ],
+    "143107": [
+      "pet",
+      "ReqMarry"
+    ],
+    "143108": [
+      "pet",
+      "ReqMarriageReject"
+    ],
+    "143109": [
+      "pet",
+      "ReqMarriageConsent"
+    ],
+    "143110": [
+      "pet",
+      "ReqMarriageAskList"
+    ],
+    "143111": [
+      "pet",
+      "ReqMarriageAskOtherList"
+    ],
+    "143112": [
+      "pet",
+      "ReqMarriageStop"
+    ],
+    "143113": [
+      "pet",
+      "ReqMarriedMoreList"
+    ],
+    "143114": [
+      "pet",
+      "ReqMarriageSuc"
+    ],
+    "143115": [
+      "pet",
+      "ReqPetRed"
+    ],
+    "143116": [
+      "pet",
+      "ReqSinglePetInfo"
+    ],
+    "144101": [
+      "cook",
+      "ReqCookInfo"
+    ],
+    "144102": [
+      "cook",
+      "ReqOperateCook"
+    ],
+    "144103": [
+      "cook",
+      "ReqCookingFood"
+    ],
+    "144104": [
+      "cook",
+      "ReqReapCook"
+    ],
+    "144105": [
+      "cook",
+      "ReqCookShop"
+    ],
+    "144106": [
+      "cook",
+      "ReqShopBuyCook"
+    ],
+    "145101": [
+      "funcData",
+      "ReqFuncDataInfo"
+    ],
+    "146101": [
+      "alliance",
+      "ReqCreateAlliance"
+    ],
+    "146102": [
+      "alliance",
+      "ReqAllianceRandomJoin"
+    ],
+    "146103": [
+      "alliance",
+      "ReqAllianceSelect"
+    ],
+    "146104": [
+      "alliance",
+      "ReqAllianceJoin"
+    ],
+    "146105": [
+      "alliance",
+      "ReqAllianceRank"
+    ],
+    "146106": [
+      "alliance",
+      "ReqAllianceLookInfo"
+    ],
+    "146107": [
+      "alliance",
+      "ReqAllianceLogList"
+    ],
+    "146108": [
+      "alliance",
+      "ReqAllianceChangeInfo"
+    ],
+    "146109": [
+      "alliance",
+      "ReqAllianceChangeName"
+    ],
+    "146110": [
+      "alliance",
+      "ReqAllianceChange"
+    ],
+    "146111": [
+      "alliance",
+      "ReqAllianceJoinInfo"
+    ],
+    "146112": [
+      "alliance",
+      "ReqAllianceJoinCheck"
+    ],
+    "146113": [
+      "alliance",
+      "ReqAllianceInfo"
+    ],
+    "146114": [
+      "alliance",
+      "ReqAllianceHeirInfo"
+    ],
+    "146115": [
+      "alliance",
+      "ReqAllianceChangeMaster"
+    ],
+    "146117": [
+      "alliance",
+      "ReqAllianceDelete"
+    ],
+    "146118": [
+      "alliance",
+      "ReqAllianceBuild"
+    ],
+    "146119": [
+      "alliance",
+      "ReqAllianceMemberList"
+    ],
+    "146120": [
+      "alliance",
+      "ReqAllianceQuit"
+    ],
+    "146121": [
+      "alliance",
+      "ReqAllianceChangeJob"
+    ],
+    "146122": [
+      "alliance",
+      "ReqAllianceShop"
+    ],
+    "146123": [
+      "alliance",
+      "ReqAllianceShopExchange"
+    ],
+    "146124": [
+      "alliance",
+      "ReqAllianceBossList"
+    ],
+    "146125": [
+      "alliance",
+      "ReqAllianceOpenBoss"
+    ],
+    "146126": [
+      "alliance",
+      "ReqAllianceFightBoss"
+    ],
+    "146127": [
+      "alliance",
+      "ReqAllianceBossRank"
+    ],
+    "146128": [
+      "alliance",
+      "ReqAllianceBossLog"
+    ],
+    "146129": [
+      "alliance",
+      "ReqAllianceHelperRefresh"
+    ],
+    "146130": [
+      "alliance",
+      "ReqAllianceSettingRandomJoin"
+    ],
+    "146131": [
+      "alliance",
+      "ReqAllianceBossNotice"
+    ],
+    "146132": [
+      "alliance",
+      "ReqAllianceCancelApply"
+    ],
+    "146133": [
+      "alliance",
+      "ReqAlliancePermissionUpdate"
+    ],
+    "146134": [
+      "alliance",
+      "ReqAlliancePermission"
+    ],
+    "146136": [
+      "alliance",
+      "ReqAllianceChangeBg"
+    ],
+    "147101": [
+      "activityLottery",
+      "ReqActivityLotteryInfo"
+    ],
+    "147102": [
+      "activityLottery",
+      "ReqFlop"
+    ],
+    "147103": [
+      "activityLottery",
+      "ReqMsgInfoList"
+    ],
+    "148101": [
+      "friend",
+      "ReqFriendInfo"
+    ],
+    "148102": [
+      "friend",
+      "ReqPrivateChat"
+    ],
+    "148103": [
+      "friend",
+      "ReqAddFriend"
+    ],
+    "148104": [
+      "friend",
+      "ReqAddBlackList"
+    ],
+    "148105": [
+      "friend",
+      "ReqFindRole"
+    ],
+    "148106": [
+      "friend",
+      "ReqDelFriend"
+    ],
+    "148107": [
+      "friend",
+      "ReqAgreeFriend"
+    ],
+    "148109": [
+      "friend",
+      "ReqSendFlower"
+    ],
+    "148111": [
+      "friend",
+      "ReqAllFriendChat"
+    ],
+    "148112": [
+      "friend",
+      "ReqClearChat"
+    ],
+    "148114": [
+      "friend",
+      "ReqSetLimitLv"
+    ],
+    "148115": [
+      "friend",
+      "ReqFlowerLog"
+    ],
+    "148116": [
+      "friend",
+      "ReqReadFlowerLog"
+    ],
+    "149101": [
+      "fsmatch",
+      "ReqFsmatchSimpleInfo"
+    ],
+    "149102": [
+      "fsmatch",
+      "ReqFsmatchInfo"
+    ],
+    "149103": [
+      "fsmatch",
+      "ReqFsmatchRank"
+    ],
+    "149104": [
+      "fsmatch",
+      "ReqFsmatchRankPlayerInfo"
+    ],
+    "149105": [
+      "fsmatch",
+      "ReqFsmatchShopBuy"
+    ],
+    "149106": [
+      "fsmatch",
+      "ReqFsmatchJoin"
+    ],
+    "149107": [
+      "fsmatch",
+      "ReqFsmatchSelectionInfo"
+    ],
+    "149108": [
+      "fsmatch",
+      "ReqFsmatchSelection"
+    ],
+    "149109": [
+      "fsmatch",
+      "ReqBuyFsmatchCount"
+    ],
+    "149110": [
+      "fsmatch",
+      "ReqReceiveSelectionReward"
+    ],
+    "149111": [
+      "fsmatch",
+      "ReqFsmatchShopInfo"
+    ],
+    "149112": [
+      "fsmatch",
+      "ReqFsmatchRankHistory"
+    ],
+    "149113": [
+      "fsmatch",
+      "ReqFsmatchClothesInfo"
+    ],
+    "150101": [
+      "activityDessert",
+      "ReqDessertInfo"
+    ],
+    "150102": [
+      "activityDessert",
+      "ReqDessertActivityInfo"
+    ],
+    "150103": [
+      "activityDessert",
+      "ReqGetDessert"
+    ],
+    "150106": [
+      "activityDessert",
+      "ReqDessertResult"
+    ],
+    "150107": [
+      "activityDessert",
+      "ReqDessertRankInfo"
+    ],
+    "150108": [
+      "activityDessert",
+      "ReqDessertSprintInfo"
+    ],
+    "150109": [
+      "activityDessert",
+      "ReqDessertSprintRankInfo"
+    ],
+    "150110": [
+      "activityDessert",
+      "ReqDessertSprintAward"
+    ],
+    "150111": [
+      "activityDessert",
+      "ReqReadyDessert"
+    ],
+    "151101": [
+      "online",
+      "ReqOnlineInfo"
+    ],
+    "151102": [
+      "online",
+      "ReqOnlineReward"
+    ],
+    "152101": [
+      "sevenDay",
+      "ReqSevenDayInfo"
+    ],
+    "152102": [
+      "sevenDay",
+      "ReqSevenDayReward"
+    ],
+    "153101": [
+      "embroidery",
+      "ReqEnterEmbroideredGarden"
+    ],
+    "153102": [
+      "embroidery",
+      "ReqVisitEmbroideredGarden"
+    ],
+    "153103": [
+      "embroidery",
+      "ReqCollectNeedleworkBubble"
+    ],
+    "153104": [
+      "embroidery",
+      "ReqClickNeedleworkBubble"
+    ],
+    "153105": [
+      "embroidery",
+      "ReqUnlockAssistantBar"
+    ],
+    "153106": [
+      "embroidery",
+      "ReqSelectAssistant"
+    ],
+    "153107": [
+      "embroidery",
+      "ReqGiveFriendNeedlework"
+    ],
+    "153108": [
+      "embroidery",
+      "ReqEmbroideredGardenLeaveWord"
+    ],
+    "153109": [
+      "embroidery",
+      "ReqStartEmbroider"
+    ],
+    "153110": [
+      "embroidery",
+      "ReqEmbroider"
+    ],
+    "153111": [
+      "embroidery",
+      "ReqReceiveEmbroideryAward"
+    ],
+    "153112": [
+      "embroidery",
+      "ReqLeaveEmbroideredGarden"
+    ],
+    "153113": [
+      "embroidery",
+      "ReqMedelRankList"
+    ],
+    "154101": [
+      "preferentialPack",
+      "ReqPreferentialPackInfos"
+    ],
+    "155101": [
+      "activityAllianceSprint",
+      "ReqActivityAllianceSprintSimpleInfo"
+    ],
+    "155102": [
+      "activityAllianceSprint",
+      "ReqActivityAllianceSprintInfo"
+    ],
+    "155103": [
+      "activityAllianceSprint",
+      "ReqActivityAllianceSprintRankInfo"
+    ],
+    "155104": [
+      "activityAllianceSprint",
+      "ReqActivityAllianceSprintAward"
+    ],
+    "155105": [
+      "activityAllianceSprint",
+      "ReqActivityAllianceInnerSprint"
+    ],
+    "156101": [
+      "activityBack",
+      "ReqActivityBackInfo"
+    ],
+    "156102": [
+      "activityBack",
+      "ReqBackReward"
+    ],
+    "156103": [
+      "activityBack",
+      "ReqChangePoint"
+    ],
+    "157101": [
+      "mission",
+      "ReqAllMissionInfo"
+    ],
+    "157102": [
+      "mission",
+      "ReqMissionSourceTypeInfo"
+    ],
+    "157103": [
+      "mission",
+      "ReqAcceptMission"
+    ],
+    "157104": [
+      "mission",
+      "ReqSubmitMission"
+    ],
+    "157105": [
+      "mission",
+      "ReqAbortMission"
+    ],
+    "158101": [
+      "coloredGlaze",
+      "ReqColoredGlazeShopInfo"
+    ],
+    "158102": [
+      "coloredGlaze",
+      "ReqRefreshColoredGlazeShop"
+    ],
+    "158103": [
+      "coloredGlaze",
+      "ReqExchangeColoredGlaze"
+    ],
+    "159101": [
+      "invite",
+      "ReqInviteInfo"
+    ],
+    "159102": [
+      "invite",
+      "ReqInviteReward"
+    ],
+    "160101": [
+      "milleCelebration",
+      "ReqMilleCelebrationInfo"
+    ],
+    "160102": [
+      "milleCelebration",
+      "ReqMilleCelebrationSpruceUp"
+    ],
+    "160103": [
+      "milleCelebration",
+      "ReqMilleCelebrationReceiveStageReward"
+    ],
+    "160104": [
+      "milleCelebration",
+      "ReqMilleCelebrationReceiveRankReward"
+    ],
+    "160105": [
+      "milleCelebration",
+      "ReqMilleCelebrationHistory"
+    ],
+    "160106": [
+      "milleCelebration",
+      "ReqTargetMilleCelebrationInfo"
+    ],
+    "161101": [
+      "meet",
+      "ReqMeetInfo"
+    ],
+    "161102": [
+      "meet",
+      "ReqUnlockMission"
+    ],
+    "161103": [
+      "meet",
+      "ReqMeetReward"
+    ],
+    "161104": [
+      "meet",
+      "ReqCompleteMission"
+    ],
+    "161105": [
+      "meet",
+      "ReqMeetCardInfo"
+    ],
+    "162101": [
+      "sevenGoal",
+      "ReqSevenGoalInfo"
+    ],
+    "162102": [
+      "sevenGoal",
+      "ReqSevenGoalReward"
+    ],
+    "162103": [
+      "sevenGoal",
+      "ReqBuySevenGoal"
+    ],
+    "162104": [
+      "sevenGoal",
+      "ReqGetSevenGoalScore"
+    ],
+    "162105": [
+      "sevenGoal",
+      "ReqSevenGoalTaskComplete"
+    ],
+    "162106": [
+      "sevenGoal",
+      "ReqSevenGoalScore"
+    ],
+    "163101": [
+      "resource",
+      "ReqAllResourceInfo"
+    ],
+    "163102": [
+      "resource",
+      "ReqResourceInfo"
+    ],
+    "164101": [
+      "lookAdvert",
+      "ReqLookAdvertReward"
+    ],
+    "164103": [
+      "lookAdvert",
+      "ReqLookAdvert"
+    ],
+    "165101": [
+      "subscribe",
+      "ReqAllSubcribeInfos"
+    ],
+    "165102": [
+      "subscribe",
+      "ReqSubcribeSuccess"
+    ],
+    "166101": [
+      "dailySpecial",
+      "ReqDailySpecialInfo"
+    ],
+    "166102": [
+      "dailySpecial",
+      "ReqBuySpecialGift"
+    ],
+    "167101": [
+      "chargeRebate",
+      "ReqAccumulateChargeInfo"
+    ],
+    "167102": [
+      "chargeRebate",
+      "ReqAccumulateChargeReward"
+    ],
+    "167111": [
+      "chargeRebate",
+      "ReqAccumulateDayChargeInfo"
+    ],
+    "167112": [
+      "chargeRebate",
+      "ReqAccumulateDayChargeReward"
+    ],
+    "167121": [
+      "chargeRebate",
+      "ReqDailyChargeInfo"
+    ],
+    "167122": [
+      "chargeRebate",
+      "ReqDailyChargeReward"
+    ],
+    "168101": [
+      "cardStory",
+      "ReqCardScene"
+    ],
+    "168102": [
+      "cardStory",
+      "ReqCardPlan"
+    ],
+    "168103": [
+      "cardStory",
+      "ReqCardFight"
+    ],
+    "168104": [
+      "cardStory",
+      "ReqCardFight1"
+    ],
+    "168105": [
+      "cardStory",
+      "ReqCardFinishFight"
+    ],
+    "168106": [
+      "cardStory",
+      "ReqCardRewardBox"
+    ],
+    "168107": [
+      "cardStory",
+      "ReqCardEnergyInfo"
+    ],
+    "168108": [
+      "cardStory",
+      "ReqCardMenScene"
+    ],
+    "169101": [
+      "collectGift",
+      "ReqCollectReward"
+    ],
+    "169103": [
+      "collectGift",
+      "ReqCollectSuccess"
+    ],
+    "170101": [
+      "extraIns",
+      "ReqExtraInsInfo"
+    ],
+    "170102": [
+      "extraIns",
+      "ReqOpenBox"
+    ],
+    "170104": [
+      "extraIns",
+      "ReqOpenChapter"
+    ],
+    "170105": [
+      "extraIns",
+      "ReqChapterFight"
+    ],
+    "170106": [
+      "extraIns",
+      "ReqSelectOption"
+    ],
+    "170107": [
+      "extraIns",
+      "ReqSceneReward"
+    ],
+    "170108": [
+      "extraIns",
+      "ReqEffectLevel"
+    ],
+    "171101": [
+      "rushToPurchase",
+      "ReqRushToPurchaseInfo"
+    ],
+    "171102": [
+      "rushToPurchase",
+      "ReqRefreshRushToPurchase"
+    ],
+    "172101": [
+      "puzzle",
+      "ReqPuzzleInfos"
+    ],
+    "172103": [
+      "puzzle",
+      "ReqRewardPuzzleBox"
+    ],
+    "173101": [
+      "share",
+      "ReqShare"
+    ],
+    "173102": [
+      "share",
+      "ReqShareInfo"
+    ],
+    "174101": [
+      "perfectMovement",
+      "ReqPerfectMovementInfo"
+    ],
+    "174102": [
+      "perfectMovement",
+      "ReqBuyClothes"
+    ],
+    "174103": [
+      "perfectMovement",
+      "ReqGetReward"
+    ],
+    "174104": [
+      "perfectMovement",
+      "ReqMysteryBox"
+    ],
+    "175101": [
+      "eliminate",
+      "ReqEliminateInfo"
+    ],
+    "175102": [
+      "eliminate",
+      "ReqStartEliminate"
+    ],
+    "175103": [
+      "eliminate",
+      "ReqBuyEliminateStep"
+    ],
+    "175104": [
+      "eliminate",
+      "ReqSettleEliminate"
+    ],
+    "175105": [
+      "eliminate",
+      "ReqEliminateRankReward"
+    ],
+    "175106": [
+      "eliminate",
+      "ReqEliminateCommands"
+    ],
+    "176101": [
+      "loginReward",
+      "ReqLoginRewardInfo"
+    ],
+    "176102": [
+      "loginReward",
+      "ReqGetLoginReward"
+    ],
+    "177101": [
+      "realName",
+      "ReqRealNameInfo"
+    ],
+    "177102": [
+      "realName",
+      "ReqRealNameBirth"
+    ],
+    "178101": [
+      "findGoods",
+      "ReqFindGoodsInfo"
+    ],
+    "178102": [
+      "findGoods",
+      "ReqStartGame"
+    ],
+    "178103": [
+      "findGoods",
+      "ReqSelectIcon"
+    ],
+    "178104": [
+      "findGoods",
+      "ReqUseItem"
+    ],
+    "178105": [
+      "findGoods",
+      "ReqGetRankReward"
+    ],
+    "178106": [
+      "findGoods",
+      "ReqResultGame"
+    ],
+    "178109": [
+      "findGoods",
+      "ReqStartGameConfirm"
+    ],
+    "179101": [
+      "payRenewal",
+      "ReqPayRenewalReward"
+    ],
+    "180101": [
+      "redPacket",
+      "ReqRedPacketList"
+    ],
+    "180102": [
+      "redPacket",
+      "ReqSendPacket"
+    ],
+    "180103": [
+      "redPacket",
+      "ReqTakeRedPacket"
+    ],
+    "180104": [
+      "redPacket",
+      "ReqPlayerLog"
+    ],
+    "180105": [
+      "redPacket",
+      "ReqRedPacketLog"
+    ],
+    "180106": [
+      "redPacket",
+      "ReqNewRedPacket"
+    ],
+    "180107": [
+      "redPacket",
+      "ReqRedPacketInfo"
+    ],
+    "180108": [
+      "redPacket",
+      "ReqPushTakeRedPacket"
+    ],
+    "180109": [
+      "redPacket",
+      "ReqTakeRedPacketCount"
+    ],
+    "181101": [
+      "noble",
+      "ReqNobeInfo"
+    ],
+    "181102": [
+      "noble",
+      "ReqNobeRope"
+    ],
+    "181103": [
+      "noble",
+      "ReqNobleAlienativeList"
+    ],
+    "181104": [
+      "noble",
+      "ReqNobleAlienative"
+    ],
+    "181105": [
+      "noble",
+      "ReqNobleFriendShipChange"
+    ],
+    "181106": [
+      "noble",
+      "ReqNobleNewLog"
+    ],
+    "181107": [
+      "noble",
+      "ReqNobleHistory"
+    ],
+    "181108": [
+      "noble",
+      "ReqNobleRankInfo"
+    ],
+    "181109": [
+      "noble",
+      "ReqNobleAllianceRankInfo"
+    ],
+    "181110": [
+      "noble",
+      "ReqNobleReward"
+    ],
+    "181111": [
+      "noble",
+      "ReqNobleQuestionList"
+    ],
+    "181112": [
+      "noble",
+      "ReqNobleAnswer"
+    ],
+    "181113": [
+      "noble",
+      "ReqRefreshQuestion"
+    ],
+    "181114": [
+      "noble",
+      "ReqUnlockQuestionList"
+    ],
+    "182101": [
+      "replace",
+      "ReqReplaceDown"
+    ],
+    "182102": [
+      "replace",
+      "ReqReplaceGet"
+    ],
+    "183101": [
+      "hotSpring",
+      "ReqChooseManHot"
+    ],
+    "183102": [
+      "hotSpring",
+      "ReqCreateRoom"
+    ],
+    "183103": [
+      "hotSpring",
+      "ReqJoinRoom"
+    ],
+    "183105": [
+      "hotSpring",
+      "ReqPlayerHost"
+    ],
+    "183106": [
+      "hotSpring",
+      "ReqRewardEgg"
+    ],
+    "183107": [
+      "hotSpring",
+      "ReqRewardHotSpring"
+    ],
+    "183108": [
+      "hotSpring",
+      "ReqBackRoom"
+    ],
+    "183110": [
+      "hotSpring",
+      "ReqHotSpringInfo"
+    ],
+    "184101": [
+      "discount",
+      "ReqDiscountInfo"
+    ],
+    "184102": [
+      "discount",
+      "ReqBuyDiscountGoods"
+    ],
+    "185101": [
+      "crossActivity2Client",
+      "ReqCrossChat"
+    ],
+    "185102": [
+      "crossActivity2Client",
+      "ReqCrossGroupInfo"
+    ],
+    "185105": [
+      "crossActivity2Client",
+      "ReqCrossChatInfo"
+    ],
+    "186101": [
+      "goddessCome",
+      "ReqGoddessInfo"
+    ],
+    "186102": [
+      "goddessCome",
+      "ReqGetFreeItem"
+    ],
+    "187101": [
+      "gashapon",
+      "ReqGashaponMain"
+    ],
+    "187102": [
+      "gashapon",
+      "ReqGashaponLottery"
+    ],
+    "187103": [
+      "gashapon",
+      "ReqGashaponOpen"
+    ],
+    "188101": [
+      "cmShow",
+      "ReqCmShowInfo"
+    ],
+    "188102": [
+      "cmShow",
+      "ReqJoinCmShow"
+    ],
+    "188103": [
+      "cmShow",
+      "ReqCmShowCode"
+    ],
+    "189101": [
+      "rewardactivity",
+      "ReqTakeReward"
+    ],
+    "190101": [
+      "crossSoloRankActivity",
+      "ReqCrossSoloRankActivitySimpleInfo"
+    ],
+    "190102": [
+      "crossSoloRankActivity",
+      "ReqCrossSoloRankActivityInfo"
+    ],
+    "190103": [
+      "crossSoloRankActivity",
+      "ReqCrossSoloRankInfo"
+    ],
+    "190104": [
+      "crossSoloRankActivity",
+      "ReqCrossSoloRankReward"
+    ],
+    "191101": [
+      "buff",
+      "ReqBuffChange"
+    ],
+    "192101": [
+      "birthday",
+      "ReqBirthdayInfo"
+    ],
+    "192102": [
+      "birthday",
+      "ReqBirthdayDailyAward"
+    ],
+    "192103": [
+      "birthday",
+      "ReqBirthdayTargetAward"
+    ],
+    "192104": [
+      "birthday",
+      "ReqSendAward"
+    ],
+    "192105": [
+      "birthday",
+      "ReqMakeGift"
+    ],
+    "192106": [
+      "birthday",
+      "ReqTaskComplete"
+    ],
+    "192107": [
+      "birthday",
+      "ReqBuyMaterial"
+    ],
+    "193101": [
+      "learnCommunity",
+      "ReqLearnCommunityInfo"
+    ],
+    "193102": [
+      "learnCommunity",
+      "ReqReceiveReward"
+    ],
+    "193103": [
+      "learnCommunity",
+      "ReqReceiveCommandExp"
+    ],
+    "193105": [
+      "learnCommunity",
+      "ReqFastAddExp"
+    ],
+    "193106": [
+      "learnCommunity",
+      "ReqOldLearnCommunity"
+    ],
+    "193107": [
+      "learnCommunity",
+      "ReqBuyOldLearnCommunity"
+    ],
+    "194101": [
+      "trial",
+      "ReqTrialMain"
+    ],
+    "194102": [
+      "trial",
+      "ReqTrialDispatch"
+    ],
+    "194103": [
+      "trial",
+      "ReqTrialDispatchGet"
+    ],
+    "194104": [
+      "trial",
+      "ReqTrialMissionGet"
+    ],
+    "194105": [
+      "trial",
+      "ReqTrialProp"
+    ],
+    "194106": [
+      "trial",
+      "ReqTrialBigReward"
+    ],
+    "194107": [
+      "trial",
+      "ReqTrialRankReward"
+    ],
+    "195101": [
+      "verifyName",
+      "ReqVerifyNameBase"
+    ],
+    "195102": [
+      "verifyName",
+      "ReqVerifyNameBrith"
+    ],
+    "196101": [
+      "mysteryTrade",
+      "ReqMysteryTradeGiftInfo"
+    ],
+    "196102": [
+      "mysteryTrade",
+      "ReqBuyMysteryTradeGift"
+    ],
+    "197101": [
+      "antifraudActivity",
+      "ReqTakeAntifraudReward"
+    ],
+    "197102": [
+      "antifraudActivity",
+      "ReqAntifraudInfo"
+    ],
+    "197103": [
+      "antifraudActivity",
+      "ReqUpdateAntifraudStatus"
+    ],
+    "198101": [
+      "foxLegend",
+      "ReqFoxLegendMain"
+    ],
+    "198102": [
+      "foxLegend",
+      "ReqFoxLegendDice"
+    ],
+    "198103": [
+      "foxLegend",
+      "ReqFoxLegendReject"
+    ],
+    "198104": [
+      "foxLegend",
+      "ReqFoxLegendStart"
+    ],
+    "198105": [
+      "foxLegend",
+      "ReqFoxLegendMission"
+    ],
+    "198106": [
+      "foxLegend",
+      "ReqFoxLegendDiceInfo"
+    ],
+    "199101": [
+      "gm",
+      "ReqGMComm"
+    ],
+    "199102": [
+      "gm",
+      "ReqToolGMComm"
+    ],
+    "202101": [
+      "user",
+      "ReqCheckVersion"
+    ],
+    "202102": [
+      "user",
+      "ReqRegisterUser"
+    ],
+    "202103": [
+      "user",
+      "ReqUserLogin"
+    ],
+    "202104": [
+      "user",
+      "ReqServerInfo"
+    ],
+    "202105": [
+      "user",
+      "ReqSDKLogin"
+    ],
+    "202106": [
+      "user",
+      "ReqValid"
+    ],
+    "210101": [
+      "foxWish",
+      "ReqFoxWishInfo"
+    ],
+    "210102": [
+      "foxWish",
+      "ReqFoxWish"
+    ],
+    "210103": [
+      "foxWish",
+      "ReqFoxWishList"
+    ],
+    "210104": [
+      "foxWish",
+      "ReqFoxStageReward"
+    ],
+    "211101": [
+      "cumulativeSign",
+      "ReqCumulativeSignMain"
+    ],
+    "211102": [
+      "cumulativeSign",
+      "ReqCumulativeSignGet"
+    ],
+    "211103": [
+      "cumulativeSign",
+      "ReqCumulativeSignReset"
+    ],
+    "211104": [
+      "cumulativeSign",
+      "ReqCumulativeFundReset"
+    ],
+    "212101": [
+      "fairTeam",
+      "ReqFairTeamInfo"
+    ],
+    "213101": [
+      "fairDragon",
+      "ReqFairDragonInfo"
+    ],
+    "213102": [
+      "fairDragon",
+      "ReqGetFairBigGift"
+    ],
+    "213103": [
+      "fairDragon",
+      "ReqGetFairTicketGift"
+    ],
+    "214101": [
+      "fairLogin",
+      "ReqFairLoginInfo"
+    ],
+    "214102": [
+      "fairLogin",
+      "ReqReceiveDayReward"
+    ],
+    "214103": [
+      "fairLogin",
+      "ReqOpenGiftBox"
+    ],
+    "214104": [
+      "fairLogin",
+      "ReqBuyGiftBox"
+    ],
+    "215101": [
+      "apply",
+      "ReqApplyMain"
+    ],
+    "215102": [
+      "apply",
+      "ReqApply"
+    ],
+    "215103": [
+      "apply",
+      "ReqApplyReward"
+    ],
+    "216102": [
+      "loginGift",
+      "ReqGetLoginGiftReward"
+    ],
+    "217101": [
+      "academy",
+      "ReqAcademyMain"
+    ],
+    "217102": [
+      "academy",
+      "ReqAcademyNPC"
+    ],
+    "217103": [
+      "academy",
+      "ReqAcademyStudyMain"
+    ],
+    "217104": [
+      "academy",
+      "ReqAcademyStudy"
+    ],
+    "217105": [
+      "academy",
+      "ReqAcademyEnd"
+    ],
+    "217106": [
+      "academy",
+      "ReqAcademyLog"
+    ],
+    "217107": [
+      "academy",
+      "ReqAcademyEnter"
+    ],
+    "217108": [
+      "academy",
+      "ReqAcademyInfo"
+    ],
+    "218101": [
+      "fishing",
+      "ReqFishingInfo"
+    ],
+    "218102": [
+      "fishing",
+      "ReqPrepareFishing"
+    ],
+    "218103": [
+      "fishing",
+      "ReqStartFishing"
+    ],
+    "218104": [
+      "fishing",
+      "ReqFishing"
+    ],
+    "218105": [
+      "fishing",
+      "ReqResultFishing"
+    ],
+    "218106": [
+      "fishing",
+      "ReqGetFishingAchievementReward"
+    ],
+    "218107": [
+      "fishing",
+      "ReqStopFishingGameTime"
+    ],
+    "219101": [
+      "market",
+      "ReqMarketInfo"
+    ],
+    "219102": [
+      "market",
+      "ReqBuyEnergy"
+    ],
+    "219103": [
+      "market",
+      "ReqBuyGameItem"
+    ],
+    "225101": [
+      "satin",
+      "ReqSatinMain"
+    ],
+    "225102": [
+      "satin",
+      "ReqSatinEnter"
+    ],
+    "225103": [
+      "satin",
+      "ReqSatinCommands"
+    ],
+    "225104": [
+      "satin",
+      "ReqSatinFreeProp"
+    ],
+    "227101": [
+      "questionnaire",
+      "ReqQuestionnaiMain"
+    ],
+    "227102": [
+      "questionnaire",
+      "ReqQuestionnaiSubmit"
+    ],
+    "227103": [
+      "questionnaire",
+      "ReqQuestionnaiReward"
+    ],
+    "228101": [
+      "palaceCharge",
+      "ReqPalaceChargeMain"
+    ],
+    "228102": [
+      "palaceCharge",
+      "ReqPalaceChargeFreeGift"
+    ],
+    "228103": [
+      "palaceCharge",
+      "ReqPalaceChargeTimeGift"
+    ],
+    "229101": [
+      "miner",
+      "ReqMinerInfo"
+    ],
+    "229102": [
+      "miner",
+      "ReqMinerSign"
+    ],
+    "229103": [
+      "miner",
+      "ReqMinerMap"
+    ],
+    "229104": [
+      "miner",
+      "ReqMinerFind"
+    ],
+    "229105": [
+      "miner",
+      "ReqMinerFight"
+    ],
+    "229106": [
+      "miner",
+      "ReqMinerEventReward"
+    ],
+    "229107": [
+      "miner",
+      "ReqRecommendHelper"
+    ],
+    "229108": [
+      "miner",
+      "ReqAssistHelperList"
+    ],
+    "229110": [
+      "miner",
+      "ReqMinerStartFind"
+    ],
+    "230101": [
+      "gemini",
+      "ReqGeminiInfo"
+    ],
+    "230102": [
+      "gemini",
+      "ReqGeminiSelectPlan"
+    ],
+    "230103": [
+      "gemini",
+      "ReqGeminiMakeSuit"
+    ],
+    "230104": [
+      "gemini",
+      "ReqGeminiDyeingSuit"
+    ],
+    "230105": [
+      "gemini",
+      "ReqGeminiRewardClothes"
+    ],
+    "230106": [
+      "gemini",
+      "ReqGeminiFreeReward"
+    ],
+    "231101": [
+      "newShow",
+      "ReqNewShowMain"
+    ],
+    "231102": [
+      "newShow",
+      "ReqNewShowSwap"
+    ],
+    "231103": [
+      "newShow",
+      "ReqNewShowDressMain"
+    ],
+    "231110": [
+      "newShow",
+      "ReqNewShowSubmit"
+    ],
+    "231111": [
+      "newShow",
+      "ReqNewShowCopy"
+    ],
+    "231112": [
+      "newShow",
+      "ReqNewShowCopyBuy"
+    ],
+    "231120": [
+      "newShow",
+      "ReqNewShowVote"
+    ],
+    "231121": [
+      "newShow",
+      "ReqNewShowHistory"
+    ],
+    "231122": [
+      "newShow",
+      "ReqNewShowReward"
+    ],
+    "231123": [
+      "newShow",
+      "ReqNewShowRefresh"
+    ],
+    "231124": [
+      "newShow",
+      "ReqNewShowBuy"
+    ],
+    "231125": [
+      "newShow",
+      "ReqNewShowBox"
+    ],
+    "231126": [
+      "newShow",
+      "ReqNewShowDress"
+    ],
+    "232101": [
+      "chip",
+      "ReqChipInfo"
+    ],
+    "232102": [
+      "chip",
+      "ReqSyntheticCloth"
+    ],
+    "234101": [
+      "auction",
+      "ReqAuctionInfo"
+    ],
+    "234102": [
+      "auction",
+      "ReqAuctionGridInfo"
+    ],
+    "234103": [
+      "auction",
+      "ReqAuction"
+    ],
+    "234104": [
+      "auction",
+      "ReqAuctionBoxReward"
+    ],
+    "234105": [
+      "auction",
+      "ReqAuctionRankReward"
+    ],
+    "234109": [
+      "auction",
+      "ReqAuctionGoldHammerLog"
+    ],
+    "235101": [
+      "tour",
+      "ReqTourMain"
+    ],
+    "235102": [
+      "tour",
+      "ReqTourBox"
+    ],
+    "235103": [
+      "tour",
+      "ReqTourTicket"
+    ],
+    "235104": [
+      "tour",
+      "ReqTourResource"
+    ],
+    "235105": [
+      "tour",
+      "ReqTourBook"
+    ],
+    "236101": [
+      "crossUnion",
+      "ReqCrossUnionSimpleInfo"
+    ],
+    "236102": [
+      "crossUnion",
+      "ReqCrossUnionInfo"
+    ],
+    "236103": [
+      "crossUnion",
+      "ReqCrossUnionRankInfo"
+    ],
+    "236104": [
+      "crossUnion",
+      "ReqCrossUnionAward"
+    ],
+    "236105": [
+      "crossUnion",
+      "ReqCrossUnionInnerRank"
+    ],
+    "238101": [
+      "mystery",
+      "ReqMysteryMain"
+    ],
+    "238102": [
+      "mystery",
+      "ReqMysteryDispatch"
+    ],
+    "238103": [
+      "mystery",
+      "ReqMysteryDispatchGet"
+    ],
+    "238104": [
+      "mystery",
+      "ReqMysteryMissionGet"
+    ],
+    "238105": [
+      "mystery",
+      "ReqMysteryRankReward"
+    ],
+    "238106": [
+      "mystery",
+      "ReqMysteryProp"
+    ],
+    "239101": [
+      "jugglingStand",
+      "ReqEnterJugglingStand"
+    ],
+    "239102": [
+      "jugglingStand",
+      "ReqStartJumpAround"
+    ],
+    "239103": [
+      "jugglingStand",
+      "ReqContinueJumpAround"
+    ],
+    "239104": [
+      "jugglingStand",
+      "ReqRewardFreeGift"
+    ],
+    "239105": [
+      "jugglingStand",
+      "ReqReviveGame"
+    ],
+    "239106": [
+      "jugglingStand",
+      "ReqDropReviveGame"
+    ],
+    "239107": [
+      "jugglingStand",
+      "ReqOperateJumpAround"
+    ],
+    "239108": [
+      "jugglingStand",
+      "ReqUseJumpAroundItem"
+    ],
+    "239110": [
+      "jugglingStand",
+      "ReqLeaveGame"
+    ],
+    "240101": [
+      "astrologer",
+      "ReqAstrologerMain"
+    ],
+    "240102": [
+      "astrologer",
+      "ReqAstrologerStar"
+    ],
+    "240103": [
+      "astrologer",
+      "ReqAstrologerNewStart"
+    ],
+    "240104": [
+      "astrologer",
+      "ReqAstrologerReward"
+    ],
+    "240105": [
+      "astrologer",
+      "ReqAstrologerRecord"
+    ],
+    "240106": [
+      "astrologer",
+      "ReqAstrologerLight"
+    ],
+    "241101": [
+      "alchemist",
+      "ReqAlchemistMake"
+    ],
+    "242101": [
+      "bindPhone",
+      "ReqBindPhoneInfo"
+    ],
+    "242102": [
+      "bindPhone",
+      "ReqBindPhoneSendVerifyCode"
+    ],
+    "242103": [
+      "bindPhone",
+      "ReqBindPhoneVerify"
+    ],
+    "242105": [
+      "bindPhone",
+      "ReqBindLocalPhoneNum"
+    ],
+    "244101": [
+      "arena",
+      "ReqArenaMain"
+    ],
+    "244102": [
+      "arena",
+      "ReqArenaDress"
+    ],
+    "244103": [
+      "arena",
+      "ReqArenaHelp"
+    ],
+    "244104": [
+      "arena",
+      "ReqArenaRefresh"
+    ],
+    "244105": [
+      "arena",
+      "ReqArenaBuy"
+    ],
+    "244106": [
+      "arena",
+      "ReqArenaChallenge"
+    ],
+    "244107": [
+      "arena",
+      "ReqArenaChallengeLog"
+    ],
+    "244108": [
+      "arena",
+      "ReqArenaExchange"
+    ],
+    "244110": [
+      "arena",
+      "ReqArenaSettmentLog"
+    ],
+    "244111": [
+      "arena",
+      "ReqArenaGradeGet"
+    ],
+    "245101": [
+      "cashCow",
+      "ReqCashCowInfo"
+    ],
+    "245102": [
+      "cashCow",
+      "ReqCashCowBoxReward"
+    ],
+    "245103": [
+      "cashCow",
+      "ReqCashCowBuySupplement"
+    ],
+    "246101": [
+      "fiveBlessing",
+      "ReqFiveBlessingInfo"
+    ],
+    "247101": [
+      "ishtar",
+      "ReqIshtarInfo"
+    ],
+    "247102": [
+      "ishtar",
+      "ReqIshtarCrownLight"
+    ],
+    "247103": [
+      "ishtar",
+      "ReqIshtarCrownLightReward"
+    ],
+    "247104": [
+      "ishtar",
+      "ReqIshtarLogs"
+    ],
+    "248101": [
+      "betsuin",
+      "ReqBetsuinInfo"
+    ],
+    "248102": [
+      "betsuin",
+      "ReqBetsuinRename"
+    ],
+    "248103": [
+      "betsuin",
+      "ReqBetsuinLayoutList"
+    ],
+    "248104": [
+      "betsuin",
+      "ReqSaveLayoutScheme"
+    ],
+    "248105": [
+      "betsuin",
+      "ReqdeleteLayoutScheme"
+    ],
+    "248106": [
+      "betsuin",
+      "ReqUpdateLayoutScheme"
+    ],
+    "248107": [
+      "betsuin",
+      "ReqFurnitureTypeUp"
+    ],
+    "248108": [
+      "betsuin",
+      "ReqUpdateBetsuinLevel"
+    ],
+    "248109": [
+      "betsuin",
+      "ReqUpdateBetsuinShow"
+    ],
+    "248113": [
+      "betsuin",
+      "ReqFriendBetsuin"
+    ],
+    "248114": [
+      "betsuin",
+      "ReqRecommendBetsuin"
+    ],
+    "248115": [
+      "betsuin",
+      "ReqMyBetsuinVisitRecord"
+    ],
+    "248116": [
+      "betsuin",
+      "ReqBetsuinBeVisitRecord"
+    ],
+    "248117": [
+      "betsuin",
+      "ReqEnterBetsuinRoom"
+    ],
+    "248118": [
+      "betsuin",
+      "ReqKickBetsuinRoomPlayer"
+    ],
+    "248119": [
+      "betsuin",
+      "ReqExitBetsuinRoom"
+    ],
+    "248120": [
+      "betsuin",
+      "ReqInteractiveFurniture"
+    ],
+    "248121": [
+      "betsuin",
+      "ReqExitInteractiveFurniture"
+    ],
+    "248122": [
+      "betsuin",
+      "ReqInteractiveFriendTree"
+    ],
+    "248124": [
+      "betsuin",
+      "ReqGetEastEggs"
+    ],
+    "248126": [
+      "betsuin",
+      "ReqGetNewBetsuinReward"
+    ],
+    "248127": [
+      "betsuin",
+      "ReqInteractiveTempRoomTree"
+    ],
+    "248128": [
+      "betsuin",
+      "ReqBetsuinMapInfo"
+    ],
+    "248129": [
+      "betsuin",
+      "ReqBuildBetsuin"
+    ],
+    "248130": [
+      "betsuin",
+      "ReqSettingBetsuin"
+    ],
+    "248132": [
+      "betsuin",
+      "ReqSwitchBetsuin"
+    ],
+    "248133": [
+      "betsuin",
+      "ReqTreeHoleInfo"
+    ],
+    "248134": [
+      "betsuin",
+      "ReqLikeRecord"
+    ],
+    "248135": [
+      "betsuin",
+      "ReqSendIdea"
+    ],
+    "248136": [
+      "betsuin",
+      "ReqDelIdea"
+    ],
+    "248137": [
+      "betsuin",
+      "ReqTopIdea"
+    ],
+    "248138": [
+      "betsuin",
+      "ReqShareIdea"
+    ],
+    "248139": [
+      "betsuin",
+      "ReqDoLike"
+    ],
+    "248141": [
+      "betsuin",
+      "ReqReceiveShow"
+    ],
+    "250101": [
+      "bigBoss",
+      "ReqBigBossMain"
+    ],
+    "250102": [
+      "bigBoss",
+      "ReqBigBossHelper"
+    ],
+    "250103": [
+      "bigBoss",
+      "ReqBigBossSkillUp"
+    ],
+    "250104": [
+      "bigBoss",
+      "ReqBigBossAttack"
+    ],
+    "250105": [
+      "bigBoss",
+      "ReqBigBossReward"
+    ],
+    "250106": [
+      "bigBoss",
+      "ReqBigBossRankInfo"
+    ],
+    "250107": [
+      "bigBoss",
+      "ReqBigBossInfo"
+    ],
+    "250108": [
+      "bigBoss",
+      "ReqBigBossClose"
+    ],
+    "250109": [
+      "bigBoss",
+      "ReqBigBossTipOper"
+    ],
+    "251101": [
+      "holyBeast",
+      "ReqHolyBeastInfo"
+    ],
+    "251102": [
+      "holyBeast",
+      "ReqHolyBeastEnterReward"
+    ],
+    "251103": [
+      "holyBeast",
+      "ReqHolyBeastLightAltar"
+    ],
+    "251104": [
+      "holyBeast",
+      "ReqHolyBeastAltarProcessReward"
+    ],
+    "251105": [
+      "holyBeast",
+      "ReqHolyBeastAltarGift"
+    ],
+    "251106": [
+      "holyBeast",
+      "ReqHolyBeastFinalReward"
+    ],
+    "251107": [
+      "holyBeast",
+      "ReqHolyBeastLogs"
+    ],
+    "252101": [
+      "catkin",
+      "ReqCatkinMain"
+    ],
+    "252102": [
+      "catkin",
+      "ReqCatkinTaskRecord"
+    ],
+    "252103": [
+      "catkin",
+      "ReqCatkinrResource"
+    ],
+    "252104": [
+      "catkin",
+      "ReqCatkinPayRecord"
+    ],
+    "252105": [
+      "catkin",
+      "ReqCatkinLight"
+    ],
+    "253101": [
+      "mirage",
+      "ReqMirageMain"
+    ],
+    "254101": [
+      "bestowLuck",
+      "ReqBestowLuckMain"
+    ],
+    "254102": [
+      "bestowLuck",
+      "ReqBestowLuckLottery"
+    ],
+    "254103": [
+      "bestowLuck",
+      "ReqBestowLuckRecord"
+    ],
+    "254104": [
+      "bestowLuck",
+      "ReqBestowLuckExit"
+    ],
+    "255101": [
+      "careU",
+      "ReqCareUInfo"
+    ],
+    "255102": [
+      "careU",
+      "ReqCareULogs"
+    ],
+    "256101": [
+      "derivatives",
+      "ReqDerivativesMain"
+    ],
+    "259101": [
+      "peony",
+      "ReqPeonyInfo"
+    ],
+    "260101": [
+      "fireworks",
+      "ReqFireworksInfo"
+    ],
+    "261101": [
+      "diary",
+      "ReqDiaryInfo"
+    ],
+    "261103": [
+      "diary",
+      "ReqDiaryReward"
+    ],
+    "262101": [
+      "prettyFigure",
+      "ReqPrettyFigureInfo"
+    ],
+    "262102": [
+      "prettyFigure",
+      "ReqPrettyFigureInvite"
+    ],
+    "262103": [
+      "prettyFigure",
+      "ReqPrettyFigureAnswerInvite"
+    ],
+    "262104": [
+      "prettyFigure",
+      "ReqPrettyFigureDoubleRoomInfo"
+    ],
+    "262105": [
+      "prettyFigure",
+      "ReqPrettyFigureDecorateChange"
+    ],
+    "262106": [
+      "prettyFigure",
+      "ReqPrettyFigurePlayerChange"
+    ],
+    "262107": [
+      "prettyFigure",
+      "ReqPrettyFigurePrintPhoto"
+    ],
+    "262108": [
+      "prettyFigure",
+      "ReqPrettyFigureExitRoom"
+    ],
+    "262109": [
+      "prettyFigure",
+      "ReqPrettyFigureCreateRoom"
+    ],
+    "262110": [
+      "prettyFigure",
+      "ReqPrettyFigureInviteInfo"
+    ],
+    "262111": [
+      "prettyFigure",
+      "ReqPrettyFigureBuyAlbumSize"
+    ],
+    "262112": [
+      "prettyFigure",
+      "ReqPrettyFigureThemeReward"
+    ],
+    "262113": [
+      "prettyFigure",
+      "ReqPrettyFigureDeletePhoto"
+    ],
+    "262114": [
+      "prettyFigure",
+      "ReqPrettyFigurePhoto"
+    ],
+    "262115": [
+      "prettyFigure",
+      "ReqPrettyFigurePhotoPermission"
+    ],
+    "262116": [
+      "prettyFigure",
+      "ReqPrettyFigureSharePhoto"
+    ],
+    "262117": [
+      "prettyFigure",
+      "ReqPrettyFigureOnePhoto"
+    ],
+    "262118": [
+      "prettyFigure",
+      "ReqPrettyFigureGuideReward"
+    ],
+    "262119": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceRoomInfo"
+    ],
+    "262120": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceRoomChange"
+    ],
+    "262121": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceJoinRoom"
+    ],
+    "262122": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceExitRoom"
+    ],
+    "262124": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceInfo"
+    ],
+    "262126": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceUpdatePositionPlan"
+    ],
+    "262127": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceRoomDown"
+    ],
+    "262128": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceRoomUp"
+    ],
+    "262129": [
+      "prettyFigure",
+      "ReqPrettyFigureAllianceRoomInvite"
+    ],
+    "262130": [
+      "prettyFigure",
+      "ReqPrettyFigureUnlockSeries"
+    ],
+    "262132": [
+      "prettyFigure",
+      "ReqPrettyFigureCheckNewItem"
+    ],
+    "262134": [
+      "prettyFigure",
+      "ReqPrettyFigureSetRate"
+    ],
+    "263101": [
+      "moon",
+      "ReqMoonInfo"
+    ],
+    "264101": [
+      "rabbit",
+      "ReqRabbitMain"
+    ],
+    "264102": [
+      "rabbit",
+      "ReqRabbitTaskRecord"
+    ],
+    "264104": [
+      "rabbit",
+      "ReqRabbitPayRecord"
+    ],
+    "264105": [
+      "rabbit",
+      "ReqRabbitLight"
+    ],
+    "264106": [
+      "rabbit",
+      "ReqOpenBlindBox"
+    ],
+    "265101": [
+      "lowcost",
+      "ReqLowCostInfo"
+    ],
+    "265102": [
+      "lowcost",
+      "ReqBuyLowCostGoods"
+    ],
+    "266101": [
+      "crossNoble",
+      "ReqCrossNobeInfo"
+    ],
+    "266102": [
+      "crossNoble",
+      "ReqCrossNobeRope"
+    ],
+    "266103": [
+      "crossNoble",
+      "ReqCrossNobleAlienativeList"
+    ],
+    "266104": [
+      "crossNoble",
+      "ReqCrossNobleAlienative"
+    ],
+    "266105": [
+      "crossNoble",
+      "ReqCrossNobleFriendShipChange"
+    ],
+    "266106": [
+      "crossNoble",
+      "ReqCrossNobleNewLog"
+    ],
+    "266107": [
+      "crossNoble",
+      "ReqCrossNobleHistory"
+    ],
+    "266108": [
+      "crossNoble",
+      "ReqCrossNobleRankInfo"
+    ],
+    "266109": [
+      "crossNoble",
+      "ReqCrossNobleAllianceRankInfo"
+    ],
+    "266110": [
+      "crossNoble",
+      "ReqCrossNobleReward"
+    ],
+    "266111": [
+      "crossNoble",
+      "ReqCrossNobleQuestionList"
+    ],
+    "266112": [
+      "crossNoble",
+      "ReqCrossNobleAnswer"
+    ],
+    "266113": [
+      "crossNoble",
+      "ReqCrossRefreshQuestion"
+    ],
+    "266114": [
+      "crossNoble",
+      "ReqCrossUnlockQuestionList"
+    ],
+    "266115": [
+      "crossNoble",
+      "ReqCrossWelCome"
+    ],
+    "267101": [
+      "winterSweet",
+      "ReqWinterSweetInfo"
+    ],
+    "267102": [
+      "winterSweet",
+      "ReqReceiveGift"
+    ],
+    "268101": [
+      "prosperous",
+      "ReqProsperousInfo"
+    ],
+    "268102": [
+      "prosperous",
+      "ReqSendBubble"
+    ],
+    "268103": [
+      "prosperous",
+      "ReqReceiveBoxReward"
+    ],
+    "268104": [
+      "prosperous",
+      "ReqRewardRecord"
+    ],
+    "269101": [
+      "happyNewYear",
+      "ReqHappyNewYearProtoInfo"
+    ],
+    "270101": [
+      "blessingHome",
+      "ReqBlessingHomeInfo"
+    ],
+    "270102": [
+      "blessingHome",
+      "ReqOpenBlessingWall"
+    ],
+    "270103": [
+      "blessingHome",
+      "ReqLanternsLit"
+    ],
+    "271101": [
+      "wishSign",
+      "ReqWishSignMain"
+    ],
+    "271102": [
+      "wishSign",
+      "ReqWishSignLottery"
+    ],
+    "271103": [
+      "wishSign",
+      "ReqWishSignRecord"
+    ],
+    "271104": [
+      "wishSign",
+      "ReqChooseBoxReward"
+    ],
+    "272101": [
+      "tameYearBeast",
+      "ReqYearBeastInfo"
+    ],
+    "272102": [
+      "tameYearBeast",
+      "ReqTameYearBeastLog"
+    ],
+    "272103": [
+      "tameYearBeast",
+      "ReqTameYearBeast"
+    ],
+    "273101": [
+      "crossSpaceLove",
+      "ReqCrossSpaceLoveInfo"
+    ],
+    "273102": [
+      "crossSpaceLove",
+      "ReqSendGift"
+    ],
+    "273104": [
+      "crossSpaceLove",
+      "ReqRewardLoveBox"
+    ],
+    "274102": [
+      "returnGift",
+      "ReqNewReturnGiftInfo"
+    ],
+    "274103": [
+      "returnGift",
+      "ReqNewReturnGiftReward"
+    ],
+    "274104": [
+      "returnGift",
+      "ReqNewReturnGiftRecord"
+    ],
+    "274105": [
+      "returnGift",
+      "ReqBuyReturnGiftScore"
+    ],
+    "275101": [
+      "collectPaintings",
+      "ReqCollectPaintingsInfo"
+    ],
+    "275102": [
+      "collectPaintings",
+      "ReqCollectPaintingsEnterReward"
+    ],
+    "275103": [
+      "collectPaintings",
+      "ReqCollectPaintingsAddPaint"
+    ],
+    "275104": [
+      "collectPaintings",
+      "ReqCollectPaintingsProcessReward"
+    ],
+    "275105": [
+      "collectPaintings",
+      "ReqCollectPaintingsGift"
+    ],
+    "275106": [
+      "collectPaintings",
+      "ReqCollectPaintingsFinalReward"
+    ],
+    "278101": [
+      "sleepingWhisper",
+      "ReqSleepingWhisperInfo"
+    ],
+    "278102": [
+      "sleepingWhisper",
+      "ReqSleepingWhisperSuperCall"
+    ],
+    "280101": [
+      "godLucky",
+      "ReqGodLuckyInfo"
+    ],
+    "280102": [
+      "godLucky",
+      "ReqGodLuckyLegendReward"
+    ],
+    "280103": [
+      "godLucky",
+      "ReqGodLuckyHolyGift"
+    ],
+    "280104": [
+      "godLucky",
+      "ReqGodLuckyCallUnicorn"
+    ],
+    "281101": [
+      "destiny",
+      "ReqDestinyInfo"
+    ],
+    "281102": [
+      "destiny",
+      "ReqDestinyFirstReward"
+    ],
+    "281103": [
+      "destiny",
+      "ReqDestinyFinishTask"
+    ],
+    "281104": [
+      "destiny",
+      "ReqDestinyGetSpTaskReward"
+    ],
+    "281105": [
+      "destiny",
+      "ReqDestinyPeriodReward"
+    ],
+    "281106": [
+      "destiny",
+      "ReqDestinyGetLog"
+    ],
+    "282101": [
+      "attachSpirit",
+      "ReqAttachSpiritUpLevel"
+    ],
+    "282102": [
+      "attachSpirit",
+      "ReqAttachSpiritInfo"
+    ],
+    "283101": [
+      "crossStylist",
+      "ReqStylistInfo"
+    ],
+    "283102": [
+      "crossStylist",
+      "ReqStylistWear"
+    ],
+    "283103": [
+      "crossStylist",
+      "ReqStylistUseHelper"
+    ],
+    "283104": [
+      "crossStylist",
+      "ReqStylistUseBook"
+    ],
+    "283105": [
+      "crossStylist",
+      "ReqStylistSpy"
+    ],
+    "283106": [
+      "crossStylist",
+      "ReqStylistRankReward"
+    ],
+    "283107": [
+      "crossStylist",
+      "ReqStylistCompete"
+    ],
+    "284101": [
+      "nightDawn",
+      "ReqNightDawnInfo"
+    ],
+    "284102": [
+      "nightDawn",
+      "ReqNightDawnProgressReward"
+    ],
+    "285101": [
+      "pictureBack",
+      "ReqPictureBackInfo"
+    ],
+    "285102": [
+      "pictureBack",
+      "ReqPictureBackAddProgress"
+    ],
+    "285103": [
+      "pictureBack",
+      "ReqPictureBackBuySuit"
+    ],
+    "286101": [
+      "inviteGift",
+      "ReqInviteGiftInfo"
+    ],
+    "286102": [
+      "inviteGift",
+      "ReqInviteGiftSetInviter"
+    ],
+    "286103": [
+      "inviteGift",
+      "ReqInviteGiftMission"
+    ],
+    "286104": [
+      "inviteGift",
+      "ReqInviteGiftRebate"
+    ],
+    "286105": [
+      "inviteGift",
+      "ReqInviteGiftUltimate"
+    ],
+    "286106": [
+      "inviteGift",
+      "ReqInviteGiftCheckInviteCode"
+    ],
+    "287101": [
+      "crossAdviser",
+      "ReqAdviserInfo"
+    ],
+    "287102": [
+      "crossAdviser",
+      "ReqAdviserChooseHelper"
+    ],
+    "287103": [
+      "crossAdviser",
+      "ReqAdviserFight"
+    ],
+    "287104": [
+      "crossAdviser",
+      "ReqAdviserRankReward"
+    ],
+    "287105": [
+      "crossAdviser",
+      "ReqAdviserFightRecord"
+    ],
+    "290101": [
+      "redMansionsDream",
+      "ReqRedMansionsDreamInfo"
+    ],
+    "290102": [
+      "redMansionsDream",
+      "ReqRedMansionsDreamTourReward"
+    ],
+    "292101": [
+      "moonLightPrayer",
+      "ReqMoonLightPrayerInfo"
+    ],
+    "292102": [
+      "moonLightPrayer",
+      "ReqMoonLightPrayerSelectPlan"
+    ],
+    "292103": [
+      "moonLightPrayer",
+      "ReqMoonLightPrayerMakeSuit"
+    ],
+    "292104": [
+      "moonLightPrayer",
+      "ReqMoonLightPrayerRewardClothes"
+    ],
+    "292105": [
+      "moonLightPrayer",
+      "ReqMoonLightPrayerFreeReward"
+    ],
+    "293101": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiInfo"
+    ],
+    "293102": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiHookAward"
+    ],
+    "293103": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiSeasonAward"
+    ],
+    "293104": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiItemConvert"
+    ],
+    "293105": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiWeekAward"
+    ],
+    "293106": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiAreaUnlock"
+    ],
+    "293107": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiFight"
+    ],
+    "293108": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiQuickFight"
+    ],
+    "293111": [
+      "baiXiaoSi",
+      "ReqBaiXiaoSiRankInfo"
+    ],
+    "294101": [
+      "ancientGuiCity",
+      "ReqAncientGuiCityInfo"
+    ],
+    "294102": [
+      "ancientGuiCity",
+      "ReqAncientGuiCityRepair"
+    ],
+    "294103": [
+      "ancientGuiCity",
+      "ReqAncientGuiCityReward"
+    ],
+    "294104": [
+      "ancientGuiCity",
+      "ReqAncientGuiCityDayReward"
+    ],
+    "297101": [
+      "informationCard",
+      "ReqInformationCardInfo"
+    ],
+    "297102": [
+      "informationCard",
+      "ReqUseInformationCardId"
+    ],
+    "297103": [
+      "informationCard",
+      "ReqActivatedInformationCard"
+    ],
+    "297104": [
+      "informationCard",
+      "ReqAddInformationCard"
+    ],
+    "297105": [
+      "informationCard",
+      "ReqSaveInformationCardPlan"
+    ],
+    "297106": [
+      "informationCard",
+      "ReqShowInformationCardPlan"
+    ],
+    "298101": [
+      "colorate",
+      "ReqClothesColorateInfo"
+    ],
+    "298102": [
+      "colorate",
+      "ReqClothesColorate"
+    ],
+    "298103": [
+      "colorate",
+      "ReqSuitColorateLevelUp"
+    ],
+    "298104": [
+      "colorate",
+      "ReqSuitColorate"
+    ],
+    "299101": [
+      "zhzExchange",
+      "ReqZhzExchangeInfo"
+    ],
+    "299102": [
+      "zhzExchange",
+      "ReqZhzExchangeDayReward"
+    ],
+    "299103": [
+      "zhzExchange",
+      "ReqZhzExchangeSend"
+    ],
+    "299104": [
+      "zhzExchange",
+      "ReqZhzExchangeReceive"
+    ],
+    "299105": [
+      "zhzExchange",
+      "ReqZhzExchangeOpen"
+    ],
+    "299106": [
+      "zhzExchange",
+      "ReqZhzExchangePuzzle"
+    ],
+    "303101": [
+      "zhzLinkage",
+      "ReqZhzLinkageInfo"
+    ],
+    "304101": [
+      "zhzGarden",
+      "ReqZhzGardenInfo"
+    ],
+    "304102": [
+      "zhzGarden",
+      "ReqZhzGardenPendant"
+    ],
+    "304103": [
+      "zhzGarden",
+      "ReqZhzGardenGetPendant"
+    ],
+    "304104": [
+      "zhzGarden",
+      "ReqZhzGardenLog"
+    ],
+    "305101": [
+      "zhzSatin",
+      "ReqZhzSatinMain"
+    ],
+    "305102": [
+      "zhzSatin",
+      "ReqZhzSatinEnter"
+    ],
+    "305103": [
+      "zhzSatin",
+      "ReqZhzSatinCommands"
+    ],
+    "305104": [
+      "zhzSatin",
+      "ReqZhzSatinFreeProp"
+    ],
+    "306101": [
+      "clothCode",
+      "ReqClothCodeInfo"
+    ],
+    "306102": [
+      "clothCode",
+      "ReqAddClothCode"
+    ],
+    "306103": [
+      "clothCode",
+      "ReqCreateClothCode"
+    ],
+    "306104": [
+      "clothCode",
+      "ReqRemoveClothCode"
+    ],
+    "306105": [
+      "clothCode",
+      "ReqClothCodeData"
+    ],
+    "307101": [
+      "eliminateNew",
+      "ReqEliminateNewInfo"
+    ],
+    "307102": [
+      "eliminateNew",
+      "ReqStartEliminateNew"
+    ],
+    "307104": [
+      "eliminateNew",
+      "ReqSettleEliminateNew"
+    ],
+    "307106": [
+      "eliminateNew",
+      "ReqEliminateNewCommands"
+    ],
+    "307107": [
+      "eliminateNew",
+      "ReqEliminateNewReward"
+    ],
+    "308101": [
+      "treasure",
+      "ReqTreasureInfo"
+    ],
+    "308102": [
+      "treasure",
+      "ReqDigTreasure"
+    ],
+    "308103": [
+      "treasure",
+      "ReqTreasureFree"
+    ]
+  },
+  "sc": {
+    "101201": [
+      "login",
+      "ResHeart"
+    ],
+    "101202": [
+      "login",
+      "ResError"
+    ],
+    "101203": [
+      "login",
+      "ResSubstitute"
+    ],
+    "101204": [
+      "login",
+      "ResCheckName"
+    ],
+    "101205": [
+      "login",
+      "ResCreatePlayer"
+    ],
+    "101206": [
+      "login",
+      "ResLoginPrepare"
+    ],
+    "102201": [
+      "player",
+      "ResPlayerInfo"
+    ],
+    "102202": [
+      "player",
+      "ResSucceed"
+    ],
+    "102203": [
+      "player",
+      "ResFailure"
+    ],
+    "102204": [
+      "player",
+      "ResAttribute"
+    ],
+    "102205": [
+      "player",
+      "ResAttributeUp"
+    ],
+    "102206": [
+      "player",
+      "ResTradeInfo"
+    ],
+    "102207": [
+      "player",
+      "ResWorkInfo"
+    ],
+    "102209": [
+      "player",
+      "ResLookOtherPlayer"
+    ],
+    "102210": [
+      "player",
+      "ResGameSetting"
+    ],
+    "102211": [
+      "player",
+      "ResServerNotice2Client"
+    ],
+    "102213": [
+      "player",
+      "ResHeadList"
+    ],
+    "102214": [
+      "player",
+      "ResChangeHead"
+    ],
+    "102215": [
+      "player",
+      "ResLvUp"
+    ],
+    "102216": [
+      "player",
+      "ResChangeAtt"
+    ],
+    "102217": [
+      "player",
+      "ResRollNotice"
+    ],
+    "102218": [
+      "player",
+      "ResAvatarList"
+    ],
+    "102219": [
+      "player",
+      "ResChangeAvatar"
+    ],
+    "102220": [
+      "player",
+      "ResHotUpdate"
+    ],
+    "102221": [
+      "player",
+      "ResChannelReward"
+    ],
+    "102222": [
+      "player",
+      "ResReport"
+    ],
+    "102223": [
+      "player",
+      "ResAttInfo"
+    ],
+    "102224": [
+      "player",
+      "ResLevelNotice"
+    ],
+    "102225": [
+      "player",
+      "ResGameNotice"
+    ],
+    "102226": [
+      "player",
+      "ResReturnCode"
+    ],
+    "102227": [
+      "player",
+      "ResEverydayTaskOver"
+    ],
+    "102228": [
+      "player",
+      "ResGmFuncOpen"
+    ],
+    "102229": [
+      "player",
+      "ResWxReward"
+    ],
+    "102230": [
+      "player",
+      "ResPlayerUpdateName"
+    ],
+    "102231": [
+      "player",
+      "ResClientParams"
+    ],
+    "102232": [
+      "player",
+      "ResReplyRedPoint"
+    ],
+    "102233": [
+      "player",
+      "ResServerZeroTime"
+    ],
+    "102234": [
+      "player",
+      "ResUseMainCitySkin"
+    ],
+    "102235": [
+      "player",
+      "ResUseMainCityEffect"
+    ],
+    "102236": [
+      "player",
+      "ResMainCityInfo"
+    ],
+    "102237": [
+      "player",
+      "ResSetUpMainCityEffectStatus"
+    ],
+    "102238": [
+      "player",
+      "ResSpecialMonthCardStatus"
+    ],
+    "102239": [
+      "player",
+      "ResGroupServerInfo"
+    ],
+    "102240": [
+      "player",
+      "ResRewardPop"
+    ],
+    "102241": [
+      "player",
+      "ResShowItems"
+    ],
+    "103201": [
+      "pay",
+      "ResPaySuccess"
+    ],
+    "103202": [
+      "pay",
+      "ResMeteorPay"
+    ],
+    "104201": [
+      "pack",
+      "ResPropInfo"
+    ],
+    "104202": [
+      "pack",
+      "ResPackProp"
+    ],
+    "104203": [
+      "pack",
+      "ResPropComposeInfo"
+    ],
+    "104204": [
+      "pack",
+      "ResPropCompose"
+    ],
+    "104205": [
+      "pack",
+      "ResUsePropMedicine"
+    ],
+    "104206": [
+      "pack",
+      "ResUsePropFashion"
+    ],
+    "104207": [
+      "pack",
+      "ResUsePropResource"
+    ],
+    "104208": [
+      "pack",
+      "ResUsePropHelperExp"
+    ],
+    "104209": [
+      "pack",
+      "ResUsePropRandomHelperExp"
+    ],
+    "104210": [
+      "pack",
+      "ResUsePropRandomWife"
+    ],
+    "104211": [
+      "pack",
+      "ResChangeName"
+    ],
+    "104212": [
+      "pack",
+      "ResLockList"
+    ],
+    "105201": [
+      "helper",
+      "ResHelperInfo"
+    ],
+    "105202": [
+      "helper",
+      "ResHelperUpLv"
+    ],
+    "105203": [
+      "helper",
+      "ResHelperUpAptitudeLv"
+    ],
+    "105204": [
+      "helper",
+      "ResHelperUpSkillLv"
+    ],
+    "105205": [
+      "helper",
+      "ResHelperUpNobility"
+    ],
+    "105206": [
+      "helper",
+      "ResHelperAttInfo"
+    ],
+    "105207": [
+      "helper",
+      "ResHelperExp"
+    ],
+    "105208": [
+      "helper",
+      "ResHelperLetterInfo"
+    ],
+    "105209": [
+      "helper",
+      "ResUseHelperLetter"
+    ],
+    "105210": [
+      "helper",
+      "ResOtherPlayerHelperInfo"
+    ],
+    "105211": [
+      "helper",
+      "ResHelperUpAuraLv"
+    ],
+    "105212": [
+      "helper",
+      "ResLikeHelper"
+    ],
+    "105213": [
+      "helper",
+      "ResChangeHelperSkin"
+    ],
+    "105214": [
+      "helper",
+      "ResHelperSkinChange"
+    ],
+    "105215": [
+      "helper",
+      "ResHelperSkinRed"
+    ],
+    "106201": [
+      "wife",
+      "ResWifeInfo"
+    ],
+    "106202": [
+      "wife",
+      "ResCallWifeInfo"
+    ],
+    "106203": [
+      "wife",
+      "ResAwardWife"
+    ],
+    "106204": [
+      "wife",
+      "ResCallWife"
+    ],
+    "106205": [
+      "wife",
+      "ResLoveWife"
+    ],
+    "106206": [
+      "wife",
+      "ResWifeSkillChange"
+    ],
+    "106207": [
+      "wife",
+      "ResChatNew"
+    ],
+    "106208": [
+      "wife",
+      "ResAddHappyValue"
+    ],
+    "106209": [
+      "wife",
+      "ResEndChat"
+    ],
+    "106210": [
+      "wife",
+      "ResRewardNearLv"
+    ],
+    "106211": [
+      "wife",
+      "ResNearUpLv"
+    ],
+    "106212": [
+      "wife",
+      "ResManScene"
+    ],
+    "106213": [
+      "wife",
+      "ResScenePlan"
+    ],
+    "106214": [
+      "wife",
+      "ResFightTypeTwo"
+    ],
+    "106215": [
+      "wife",
+      "ResFightTypeOne"
+    ],
+    "106216": [
+      "wife",
+      "ResFinishFight"
+    ],
+    "106217": [
+      "wife",
+      "ResRewardBox"
+    ],
+    "106218": [
+      "wife",
+      "ResRankFight"
+    ],
+    "106219": [
+      "wife",
+      "ResEnergyInfo"
+    ],
+    "106220": [
+      "wife",
+      "ResSetFavouriteWife"
+    ],
+    "106221": [
+      "wife",
+      "ResStarReward"
+    ],
+    "109201": [
+      "visit",
+      "ResVisitInfo"
+    ],
+    "109202": [
+      "visit",
+      "ResFootprint"
+    ],
+    "109203": [
+      "visit",
+      "ResBeginVisit"
+    ],
+    "109204": [
+      "visit",
+      "ResFinishVisit"
+    ],
+    "110201": [
+      "prison",
+      "ResPrisonerInfo"
+    ],
+    "110202": [
+      "prison",
+      "ResHitPrisoner"
+    ],
+    "111201": [
+      "chat",
+      "ResChatRecord"
+    ],
+    "111202": [
+      "chat",
+      "ResChat"
+    ],
+    "111204": [
+      "chat",
+      "ResOneSystemMsg"
+    ],
+    "111205": [
+      "chat",
+      "ResChatNotice"
+    ],
+    "111206": [
+      "chat",
+      "ResClearChatRecords"
+    ],
+    "111211": [
+      "chat",
+      "ResChatBubbleInfo"
+    ],
+    "111212": [
+      "chat",
+      "ResUseChatBubble"
+    ],
+    "111213": [
+      "chat",
+      "ResAddBubble"
+    ],
+    "111214": [
+      "chat",
+      "ResCancelBubbleRedPoint"
+    ],
+    "111215": [
+      "chat",
+      "ResUpdateVipChatInfo"
+    ],
+    "111216": [
+      "chat",
+      "ResHasVipChatNotice"
+    ],
+    "111217": [
+      "chat",
+      "ResVipChatConfigUpdate"
+    ],
+    "111218": [
+      "chat",
+      "ResCrossChatLimit"
+    ],
+    "111219": [
+      "chat",
+      "ResUnlockSticker"
+    ],
+    "112201": [
+      "scene",
+      "ResSceneInfo"
+    ],
+    "112202": [
+      "scene",
+      "ResSceneFight"
+    ],
+    "112203": [
+      "scene",
+      "ResSceneFightBoss"
+    ],
+    "112204": [
+      "scene",
+      "ResSceneHelperRefresh"
+    ],
+    "112205": [
+      "scene",
+      "ResSceneChoose"
+    ],
+    "112207": [
+      "scene",
+      "ResCheckSceneChoose"
+    ],
+    "112208": [
+      "scene",
+      "ResFightInfo"
+    ],
+    "112209": [
+      "scene",
+      "ResClothesFight"
+    ],
+    "112210": [
+      "scene",
+      "ResEnemyBossRank"
+    ],
+    "112211": [
+      "scene",
+      "ResEnemyBossFight"
+    ],
+    "112212": [
+      "scene",
+      "ResChangeBoss"
+    ],
+    "112213": [
+      "scene",
+      "ResResetBoss"
+    ],
+    "113201": [
+      "rank",
+      "ResRankLocalInfo"
+    ],
+    "113202": [
+      "rank",
+      "ResRankRemoteInfo"
+    ],
+    "113203": [
+      "rank",
+      "ResRankWorship"
+    ],
+    "113204": [
+      "rank",
+      "ResRankListInfo"
+    ],
+    "113205": [
+      "rank",
+      "ResCheckPlayerKeel"
+    ],
+    "113206": [
+      "rank",
+      "ResPlayerSelfRankInfo"
+    ],
+    "114201": [
+      "palace",
+      "ResPalaceInfo"
+    ],
+    "114202": [
+      "palace",
+      "ResPalaceHi"
+    ],
+    "114203": [
+      "palace",
+      "ResLookKing"
+    ],
+    "114204": [
+      "palace",
+      "ResPopularity"
+    ],
+    "114205": [
+      "palace",
+      "ResKingTitleInfo"
+    ],
+    "117202": [
+      "mail",
+      "ResMailAward"
+    ],
+    "117203": [
+      "mail",
+      "ResDelMail"
+    ],
+    "117205": [
+      "mail",
+      "ResMailInfo"
+    ],
+    "117206": [
+      "mail",
+      "ResHaveNewMail"
+    ],
+    "117207": [
+      "mail",
+      "ResCheckTitle"
+    ],
+    "117208": [
+      "mail",
+      "ResMailSettings"
+    ],
+    "119201": [
+      "court",
+      "ResCourtInfo"
+    ],
+    "119202": [
+      "court",
+      "ResCourtFightInfo"
+    ],
+    "119203": [
+      "court",
+      "ResCourtBuyProperty"
+    ],
+    "119204": [
+      "court",
+      "ResCourtFight"
+    ],
+    "119205": [
+      "court",
+      "ResCourtFightEnd"
+    ],
+    "119206": [
+      "court",
+      "ResCourtAward"
+    ],
+    "119207": [
+      "court",
+      "ResCourtVisit"
+    ],
+    "119208": [
+      "court",
+      "ResCourtSearch"
+    ],
+    "119209": [
+      "court",
+      "ResCourtLog"
+    ],
+    "119210": [
+      "court",
+      "ResCourtRank"
+    ],
+    "119212": [
+      "court",
+      "ResForbiddenHelper"
+    ],
+    "124201": [
+      "quest",
+      "ResQuestMainInfo"
+    ],
+    "124202": [
+      "quest",
+      "ResQuestMainAward"
+    ],
+    "124203": [
+      "quest",
+      "ResQuestEveryDayInfo"
+    ],
+    "124204": [
+      "quest",
+      "ResQuestEveryDayNewMsg"
+    ],
+    "124205": [
+      "quest",
+      "ResQuestEveryDayAward"
+    ],
+    "124206": [
+      "quest",
+      "ResQuestEveryDayActiveAward"
+    ],
+    "124207": [
+      "quest",
+      "ResPositionQuestInfo"
+    ],
+    "124208": [
+      "quest",
+      "ResQuestPositionAward"
+    ],
+    "124209": [
+      "quest",
+      "ResMainTaskFinish"
+    ],
+    "124210": [
+      "quest",
+      "ResQuestAllAward"
+    ],
+    "125201": [
+      "achievement",
+      "ResAchievementNewMsg"
+    ],
+    "125202": [
+      "achievement",
+      "ResAchievementInfo"
+    ],
+    "125203": [
+      "achievement",
+      "ResAchievementAward"
+    ],
+    "125204": [
+      "achievement",
+      "ResAchievementReachNew"
+    ],
+    "125205": [
+      "achievement",
+      "ResAchievementPointAward"
+    ],
+    "125401": [
+      "achievement",
+      "ResNewAllAchievement"
+    ],
+    "125402": [
+      "achievement",
+      "ResNewAchievement"
+    ],
+    "125403": [
+      "achievement",
+      "ResNewAchievementReward"
+    ],
+    "125404": [
+      "achievement",
+      "ResNewAchievementRedPoint"
+    ],
+    "125405": [
+      "achievement",
+      "ResAllNewAchievementRedPoint"
+    ],
+    "125406": [
+      "achievement",
+      "ResNewAddAchievement"
+    ],
+    "126201": [
+      "shop",
+      "ResShopInfo"
+    ],
+    "126202": [
+      "shop",
+      "ResShopBuy"
+    ],
+    "126203": [
+      "shop",
+      "ResNewShopInfo"
+    ],
+    "126204": [
+      "shop",
+      "ResBuyCommodity"
+    ],
+    "126205": [
+      "shop",
+      "ResCancelRedPoint"
+    ],
+    "127211": [
+      "activity",
+      "ResNewActivityInfoList"
+    ],
+    "127212": [
+      "activity",
+      "ResNewActivityInfo"
+    ],
+    "127213": [
+      "activity",
+      "ResActivityPack"
+    ],
+    "127214": [
+      "activity",
+      "ResActivityBags"
+    ],
+    "127215": [
+      "activity",
+      "ResActivityPackItemChange"
+    ],
+    "127216": [
+      "activity",
+      "ResActivityRankReward"
+    ],
+    "127217": [
+      "activity",
+      "ResActivityItemUse"
+    ],
+    "127218": [
+      "activity",
+      "ResActivityTaskLogs"
+    ],
+    "127219": [
+      "activity",
+      "ResActivityUnionInnerRank"
+    ],
+    "127220": [
+      "activity",
+      "ResActivityUnionRankReward"
+    ],
+    "127221": [
+      "activity",
+      "ResActivityUnionRank"
+    ],
+    "127222": [
+      "activity",
+      "ResActivityRankRewardStatus"
+    ],
+    "127223": [
+      "activity",
+      "ResActivityItemLogs"
+    ],
+    "128201": [
+      "lottery",
+      "ResLotteryList"
+    ],
+    "128202": [
+      "lottery",
+      "RespLotteryCdTime"
+    ],
+    "128203": [
+      "lottery",
+      "ResChangeWishCard"
+    ],
+    "128204": [
+      "lottery",
+      "ResWishCardLottery"
+    ],
+    "128205": [
+      "lottery",
+      "ResUpdateClothId"
+    ],
+    "129201": [
+      "clothes",
+      "ResClothesInfo"
+    ],
+    "129202": [
+      "clothes",
+      "ResWearClothes"
+    ],
+    "129203": [
+      "clothes",
+      "ResClothesShopBuy"
+    ],
+    "129204": [
+      "clothes",
+      "ResClothesFindRecordInfo"
+    ],
+    "129205": [
+      "clothes",
+      "ResClothesFind"
+    ],
+    "129206": [
+      "clothes",
+      "ResClothesShopInfo"
+    ],
+    "129207": [
+      "clothes",
+      "ResWardrobeInfo"
+    ],
+    "129208": [
+      "clothes",
+      "ResDetailsMsg"
+    ],
+    "129209": [
+      "clothes",
+      "ResDressUpInfo"
+    ],
+    "129210": [
+      "clothes",
+      "ResIllustration"
+    ],
+    "129211": [
+      "clothes",
+      "ResIllustrationInfo"
+    ],
+    "129212": [
+      "clothes",
+      "ResRewardIllustration"
+    ],
+    "129213": [
+      "clothes",
+      "ResChangeManClothesInfo"
+    ],
+    "129214": [
+      "clothes",
+      "ResChangeManClothes"
+    ],
+    "129215": [
+      "clothes",
+      "ResClearRedPoint"
+    ],
+    "129216": [
+      "clothes",
+      "ResAddNewClothes"
+    ],
+    "129217": [
+      "clothes",
+      "ResManSuitShop"
+    ],
+    "129218": [
+      "clothes",
+      "ResChange"
+    ],
+    "129219": [
+      "clothes",
+      "ResDIYSuitOpen"
+    ],
+    "129220": [
+      "clothes",
+      "ResSuit"
+    ],
+    "129221": [
+      "clothes",
+      "ResBreakDownClothes"
+    ],
+    "129222": [
+      "clothes",
+      "ResChangeBackDrop"
+    ],
+    "129223": [
+      "clothes",
+      "ResClothesConfigs"
+    ],
+    "129224": [
+      "clothes",
+      "ResClothesLevelUpData"
+    ],
+    "129225": [
+      "clothes",
+      "ResClothesLevelUp"
+    ],
+    "129226": [
+      "clothes",
+      "ResClothesBriefInfo"
+    ],
+    "129227": [
+      "clothes",
+      "ResPreviewSuit"
+    ],
+    "129228": [
+      "clothes",
+      "ResRewardCollect"
+    ],
+    "129229": [
+      "clothes",
+      "ResClothNumByType"
+    ],
+    "129230": [
+      "clothes",
+      "ResWifeSuitKeel"
+    ],
+    "129231": [
+      "clothes",
+      "ResUpdateClothNum"
+    ],
+    "129232": [
+      "clothes",
+      "ResSuitKeel"
+    ],
+    "129233": [
+      "clothes",
+      "ResRecentInfo"
+    ],
+    "129234": [
+      "clothes",
+      "ResPickSnap"
+    ],
+    "129235": [
+      "clothes",
+      "ResLikeCloth"
+    ],
+    "129236": [
+      "clothes",
+      "ResChangeAmbient"
+    ],
+    "129237": [
+      "clothes",
+      "ResChangeEffect"
+    ],
+    "129238": [
+      "clothes",
+      "ResRedSuitEffect"
+    ],
+    "130201": [
+      "assignTask",
+      "ResAssignTaskInfo"
+    ],
+    "130202": [
+      "assignTask",
+      "ResAssignTaskReward"
+    ],
+    "131201": [
+      "harem",
+      "ResHaremInfo"
+    ],
+    "131203": [
+      "harem",
+      "ResDealWithMsg"
+    ],
+    "131204": [
+      "harem",
+      "ResChooseHaremList"
+    ],
+    "131205": [
+      "harem",
+      "ResHarem"
+    ],
+    "131206": [
+      "harem",
+      "ResSelectPlayer"
+    ],
+    "131207": [
+      "harem",
+      "ResPurchases"
+    ],
+    "131208": [
+      "harem",
+      "ResRankInfo"
+    ],
+    "131209": [
+      "harem",
+      "ResCanHarem"
+    ],
+    "132201": [
+      "title",
+      "ResTitleInfo"
+    ],
+    "132202": [
+      "title",
+      "ResUseTitleId"
+    ],
+    "132203": [
+      "title",
+      "ResActivatedTitle"
+    ],
+    "132204": [
+      "title",
+      "ResAddTitle"
+    ],
+    "133201": [
+      "dressing",
+      "ResDressingSimpleInfo"
+    ],
+    "133202": [
+      "dressing",
+      "ResDressingInfo"
+    ],
+    "133203": [
+      "dressing",
+      "ResDressingRank"
+    ],
+    "133204": [
+      "dressing",
+      "ResDressing"
+    ],
+    "133205": [
+      "dressing",
+      "ResDressingReward"
+    ],
+    "135201": [
+      "activitySprint",
+      "ResActivitySprintSimpleInfo"
+    ],
+    "135202": [
+      "activitySprint",
+      "ResActivitySprintInfo"
+    ],
+    "135203": [
+      "activitySprint",
+      "ResActivitySprintRankInfo"
+    ],
+    "135204": [
+      "activitySprint",
+      "ResActivitySprintAward"
+    ],
+    "136201": [
+      "activityLimit",
+      "ResActivityLimitSimpleInfo"
+    ],
+    "136202": [
+      "activityLimit",
+      "ResActivityLimitInfo"
+    ],
+    "136203": [
+      "activityLimit",
+      "ResActivityLimitAward"
+    ],
+    "136204": [
+      "activityLimit",
+      "ResActivityLimitRankInfo"
+    ],
+    "136205": [
+      "activityLimit",
+      "ResActivityLimitTypeAward"
+    ],
+    "137201": [
+      "activityHelper",
+      "ResActivityHelperExchangeInfo"
+    ],
+    "137202": [
+      "activityHelper",
+      "ResActivityHelperExchange"
+    ],
+    "139201": [
+      "activityFree",
+      "ResActivityFreeInfo"
+    ],
+    "139202": [
+      "activityFree",
+      "ResActivityFreeAward"
+    ],
+    "139203": [
+      "activityFree",
+      "ResBuyActivity"
+    ],
+    "140201": [
+      "eventRankPoint",
+      "ResEventActivityInfo"
+    ],
+    "140202": [
+      "eventRankPoint",
+      "ResEventActivityUseInfo"
+    ],
+    "140203": [
+      "eventRankPoint",
+      "ResEventActivityNotice"
+    ],
+    "140204": [
+      "eventRankPoint",
+      "ResEventActivityItemUse"
+    ],
+    "140205": [
+      "eventRankPoint",
+      "ResEventActivityExchangeInfo"
+    ],
+    "140206": [
+      "eventRankPoint",
+      "ResEventActivityExchange"
+    ],
+    "140207": [
+      "eventRankPoint",
+      "ResEventActivityRankRewardInfo"
+    ],
+    "140208": [
+      "eventRankPoint",
+      "ResEventActivityRankReward"
+    ],
+    "140209": [
+      "eventRankPoint",
+      "ResEventActivityShopInfo"
+    ],
+    "140210": [
+      "eventRankPoint",
+      "ResBuyEventActivityGoods"
+    ],
+    "141201": [
+      "map",
+      "ResMapInfo"
+    ],
+    "141202": [
+      "map",
+      "ResRewardMap"
+    ],
+    "142201": [
+      "manor",
+      "ResManorInfo"
+    ],
+    "142202": [
+      "manor",
+      "ResOperatePlot"
+    ],
+    "142203": [
+      "manor",
+      "ResPlantCrop"
+    ],
+    "142204": [
+      "manor",
+      "ResOperateCrop"
+    ],
+    "142205": [
+      "manor",
+      "ResReapCrop"
+    ],
+    "142206": [
+      "manor",
+      "ResManorShop"
+    ],
+    "142207": [
+      "manor",
+      "ResShopBuyManor"
+    ],
+    "142208": [
+      "manor",
+      "ResDepotInfo"
+    ],
+    "142209": [
+      "manor",
+      "ResSendPropChange"
+    ],
+    "142211": [
+      "manor",
+      "ResOneKeyFertilize"
+    ],
+    "143201": [
+      "pet",
+      "ResPetInfo"
+    ],
+    "143202": [
+      "pet",
+      "ResPetSetName"
+    ],
+    "143203": [
+      "pet",
+      "ResPetEatFood"
+    ],
+    "143204": [
+      "pet",
+      "ResPetExtend"
+    ],
+    "143205": [
+      "pet",
+      "ResPetGrowUp"
+    ],
+    "143206": [
+      "pet",
+      "ResMarriageInfo"
+    ],
+    "143207": [
+      "pet",
+      "ResMarry"
+    ],
+    "143208": [
+      "pet",
+      "ResMarriageReject"
+    ],
+    "143209": [
+      "pet",
+      "ResMarriageConsent"
+    ],
+    "143210": [
+      "pet",
+      "ResMarriageAskList"
+    ],
+    "143211": [
+      "pet",
+      "ResMarriageAskOtherList"
+    ],
+    "143212": [
+      "pet",
+      "ResMarriageStop"
+    ],
+    "143213": [
+      "pet",
+      "ResMarriedMoreList"
+    ],
+    "143214": [
+      "pet",
+      "ResMarriageSuc"
+    ],
+    "143215": [
+      "pet",
+      "ResPetRed"
+    ],
+    "143216": [
+      "pet",
+      "ResSinglePetInfo"
+    ],
+    "144201": [
+      "cook",
+      "ResCookInfo"
+    ],
+    "144202": [
+      "cook",
+      "ResOperateCook"
+    ],
+    "144203": [
+      "cook",
+      "ResCookingFood"
+    ],
+    "144204": [
+      "cook",
+      "ResReapCook"
+    ],
+    "144205": [
+      "cook",
+      "ResCookShop"
+    ],
+    "144206": [
+      "cook",
+      "ResShopBuyCook"
+    ],
+    "145201": [
+      "funcData",
+      "ResFuncDataInfo"
+    ],
+    "146201": [
+      "alliance",
+      "ResCreateAlliance"
+    ],
+    "146202": [
+      "alliance",
+      "ResAllianceRandomJoin"
+    ],
+    "146203": [
+      "alliance",
+      "ResAllianceSelect"
+    ],
+    "146204": [
+      "alliance",
+      "ResAllianceJoin"
+    ],
+    "146205": [
+      "alliance",
+      "ResAllianceRank"
+    ],
+    "146206": [
+      "alliance",
+      "ResAllianceLookInfo"
+    ],
+    "146207": [
+      "alliance",
+      "ResAllianceLogList"
+    ],
+    "146208": [
+      "alliance",
+      "ResAllianceChangeInfo"
+    ],
+    "146209": [
+      "alliance",
+      "ResAllianceChangeName"
+    ],
+    "146210": [
+      "alliance",
+      "ResAllianceChange"
+    ],
+    "146211": [
+      "alliance",
+      "ResAllianceJoinInfo"
+    ],
+    "146212": [
+      "alliance",
+      "ResAllianceJoinCheck"
+    ],
+    "146213": [
+      "alliance",
+      "ResAllianceInfo"
+    ],
+    "146214": [
+      "alliance",
+      "ResAllianceHeirInfo"
+    ],
+    "146215": [
+      "alliance",
+      "ResAllianceChangeMaster"
+    ],
+    "146217": [
+      "alliance",
+      "ResAllianceDelete"
+    ],
+    "146218": [
+      "alliance",
+      "ResAllianceBuild"
+    ],
+    "146219": [
+      "alliance",
+      "ResAllianceMemberList"
+    ],
+    "146220": [
+      "alliance",
+      "ResAllianceQuit"
+    ],
+    "146221": [
+      "alliance",
+      "ResAllianceChangeJob"
+    ],
+    "146222": [
+      "alliance",
+      "ResAllianceShop"
+    ],
+    "146223": [
+      "alliance",
+      "ResAllianceShopExchange"
+    ],
+    "146224": [
+      "alliance",
+      "ResAllianceBossList"
+    ],
+    "146225": [
+      "alliance",
+      "ResAllianceOpenBoss"
+    ],
+    "146226": [
+      "alliance",
+      "ResAllianceFightBoss"
+    ],
+    "146227": [
+      "alliance",
+      "ResAllianceBossRank"
+    ],
+    "146228": [
+      "alliance",
+      "ResAllianceBossLog"
+    ],
+    "146229": [
+      "alliance",
+      "ResAllianceHelperRefresh"
+    ],
+    "146230": [
+      "alliance",
+      "ResAllianceSettingRandomJoin"
+    ],
+    "146231": [
+      "alliance",
+      "ResAllianceBossNotice"
+    ],
+    "146232": [
+      "alliance",
+      "ResAllianceCancelApply"
+    ],
+    "146233": [
+      "alliance",
+      "ResAlliancePermissionUpdate"
+    ],
+    "146234": [
+      "alliance",
+      "ResAlliancePermission"
+    ],
+    "146235": [
+      "alliance",
+      "ResAllianceBossChange"
+    ],
+    "146236": [
+      "alliance",
+      "ResAllianceChangeBg"
+    ],
+    "147201": [
+      "activityLottery",
+      "ResActivityLotteryInfo"
+    ],
+    "147202": [
+      "activityLottery",
+      "ResFlop"
+    ],
+    "147203": [
+      "activityLottery",
+      "ResMsgInfoList"
+    ],
+    "148201": [
+      "friend",
+      "ResFriendInfo"
+    ],
+    "148202": [
+      "friend",
+      "ResPrivateChat"
+    ],
+    "148203": [
+      "friend",
+      "ResAddFriend"
+    ],
+    "148204": [
+      "friend",
+      "ResAddBlackList"
+    ],
+    "148205": [
+      "friend",
+      "ResFindRole"
+    ],
+    "148206": [
+      "friend",
+      "ResDelFriend"
+    ],
+    "148207": [
+      "friend",
+      "ResAgreeFriend"
+    ],
+    "148209": [
+      "friend",
+      "ResSendFlower"
+    ],
+    "148210": [
+      "friend",
+      "ResBroadcast"
+    ],
+    "148211": [
+      "friend",
+      "ResAllFriendChat"
+    ],
+    "148212": [
+      "friend",
+      "ResClearChat"
+    ],
+    "148213": [
+      "friend",
+      "ResDeleteFriend"
+    ],
+    "148214": [
+      "friend",
+      "ResSetLimitLv"
+    ],
+    "148215": [
+      "friend",
+      "ResFlowerLog"
+    ],
+    "148216": [
+      "friend",
+      "ResReadFlowerLog"
+    ],
+    "148217": [
+      "friend",
+      "ResPrivateChatLimit"
+    ],
+    "149201": [
+      "fsmatch",
+      "ResFsmatchSimpleInfo"
+    ],
+    "149202": [
+      "fsmatch",
+      "ResFsmatchInfo"
+    ],
+    "149203": [
+      "fsmatch",
+      "ResFsmatchRank"
+    ],
+    "149204": [
+      "fsmatch",
+      "ResFsmatchRankPlayerInfo"
+    ],
+    "149205": [
+      "fsmatch",
+      "ResFsmatchShopBuy"
+    ],
+    "149206": [
+      "fsmatch",
+      "ResFsmatchJoin"
+    ],
+    "149207": [
+      "fsmatch",
+      "ResFsmatchSelectionInfo"
+    ],
+    "149208": [
+      "fsmatch",
+      "ResFsmatchSelection"
+    ],
+    "149209": [
+      "fsmatch",
+      "ResBuyFsmatchCount"
+    ],
+    "149210": [
+      "fsmatch",
+      "ResReceiveSelectionReward"
+    ],
+    "149211": [
+      "fsmatch",
+      "ResFsmatchShopInfo"
+    ],
+    "149212": [
+      "fsmatch",
+      "ResFsmatchRankHistory"
+    ],
+    "149213": [
+      "fsmatch",
+      "ResFsmatchClothesInfo"
+    ],
+    "150201": [
+      "activityDessert",
+      "ResDessertInfo"
+    ],
+    "150202": [
+      "activityDessert",
+      "ResDessertActivityInfo"
+    ],
+    "150203": [
+      "activityDessert",
+      "ResGetDessert"
+    ],
+    "150206": [
+      "activityDessert",
+      "ResDessertResult"
+    ],
+    "150207": [
+      "activityDessert",
+      "ResDessertRankInfo"
+    ],
+    "150208": [
+      "activityDessert",
+      "ResDessertSprintInfo"
+    ],
+    "150209": [
+      "activityDessert",
+      "ResDessertSprintRankInfo"
+    ],
+    "150210": [
+      "activityDessert",
+      "ResDessertSprintAward"
+    ],
+    "150211": [
+      "activityDessert",
+      "ResReadyDessert"
+    ],
+    "151201": [
+      "online",
+      "ResOnlineInfo"
+    ],
+    "151202": [
+      "online",
+      "ResOnlineReward"
+    ],
+    "152201": [
+      "sevenDay",
+      "ResSevenDayInfo"
+    ],
+    "152202": [
+      "sevenDay",
+      "ResSevenDayReward"
+    ],
+    "153201": [
+      "embroidery",
+      "ResEmbroideredGardenInfo"
+    ],
+    "153202": [
+      "embroidery",
+      "ResEmbroideredGardenSimpleInfo"
+    ],
+    "153203": [
+      "embroidery",
+      "ResCollectNeedleworkBubble"
+    ],
+    "153204": [
+      "embroidery",
+      "ResClickNeedleworkBubble"
+    ],
+    "153209": [
+      "embroidery",
+      "ResStartEmbroider"
+    ],
+    "153210": [
+      "embroidery",
+      "ResEmbroider"
+    ],
+    "153211": [
+      "embroidery",
+      "ResReceiveEmbroideryAward"
+    ],
+    "153213": [
+      "embroidery",
+      "ResNeedleworkBubbleUpdate"
+    ],
+    "153214": [
+      "embroidery",
+      "ResEmbroideredGardenMessageUpdate"
+    ],
+    "153215": [
+      "embroidery",
+      "ResEmbroideredGardenNews"
+    ],
+    "153216": [
+      "embroidery",
+      "ResEmbroideryBean"
+    ],
+    "153217": [
+      "embroidery",
+      "ResMedelRankList"
+    ],
+    "154201": [
+      "preferentialPack",
+      "ResPreferentialPackInfo"
+    ],
+    "154202": [
+      "preferentialPack",
+      "ResPreferentialPackInfos"
+    ],
+    "155201": [
+      "activityAllianceSprint",
+      "ResActivityAllianceSprintSimpleInfo"
+    ],
+    "155202": [
+      "activityAllianceSprint",
+      "ResActivityAllianceSprintInfo"
+    ],
+    "155203": [
+      "activityAllianceSprint",
+      "ResActivityAllianceSprintRankInfo"
+    ],
+    "155204": [
+      "activityAllianceSprint",
+      "ResActivityAllianceSprintAward"
+    ],
+    "155205": [
+      "activityAllianceSprint",
+      "ResActivityAllianceInnerSprint"
+    ],
+    "156201": [
+      "activityBack",
+      "ResActivityBackInfo"
+    ],
+    "156202": [
+      "activityBack",
+      "ResBackReward"
+    ],
+    "156203": [
+      "activityBack",
+      "ResChangePoint"
+    ],
+    "157201": [
+      "mission",
+      "ResAllMissionInfo"
+    ],
+    "157202": [
+      "mission",
+      "ResMissionSourceTypeInfo"
+    ],
+    "157203": [
+      "mission",
+      "ResAcceptMission"
+    ],
+    "157204": [
+      "mission",
+      "ResSubmitMission"
+    ],
+    "157205": [
+      "mission",
+      "ResAbortMission"
+    ],
+    "157206": [
+      "mission",
+      "ResUpdateMissionInfo"
+    ],
+    "158201": [
+      "coloredGlaze",
+      "ResColoredGlazeShopInfo"
+    ],
+    "158202": [
+      "coloredGlaze",
+      "ResRefreshColoredGlazeShop"
+    ],
+    "158203": [
+      "coloredGlaze",
+      "ResExchangeColoredGlaze"
+    ],
+    "159201": [
+      "invite",
+      "ResInviteInfo"
+    ],
+    "159202": [
+      "invite",
+      "ResInviteReward"
+    ],
+    "160201": [
+      "milleCelebration",
+      "ResMilleCelebrationInfo"
+    ],
+    "160202": [
+      "milleCelebration",
+      "ResMilleCelebrationSpruceUp"
+    ],
+    "160203": [
+      "milleCelebration",
+      "ResMilleCelebrationReceiveStageReward"
+    ],
+    "160204": [
+      "milleCelebration",
+      "ResMilleCelebrationReceiveRankReward"
+    ],
+    "160205": [
+      "milleCelebration",
+      "ResMilleCelebrationHistory"
+    ],
+    "160206": [
+      "milleCelebration",
+      "ResTargetMilleCelebrationInfo"
+    ],
+    "161201": [
+      "meet",
+      "ResMeetInfo"
+    ],
+    "161202": [
+      "meet",
+      "ResUnlockMission"
+    ],
+    "161203": [
+      "meet",
+      "ResMeetReward"
+    ],
+    "161204": [
+      "meet",
+      "ResCompleteMission"
+    ],
+    "161205": [
+      "meet",
+      "ResMeetCardInfo"
+    ],
+    "162201": [
+      "sevenGoal",
+      "ResSevenGoalInfo"
+    ],
+    "162202": [
+      "sevenGoal",
+      "ResSevenGoalReward"
+    ],
+    "162203": [
+      "sevenGoal",
+      "ResBuySevenGoal"
+    ],
+    "162204": [
+      "sevenGoal",
+      "ResGetSevenGoalScore"
+    ],
+    "162205": [
+      "sevenGoal",
+      "ResSevenGoalTaskComplete"
+    ],
+    "162206": [
+      "sevenGoal",
+      "ResSevenGoalScore"
+    ],
+    "163201": [
+      "resource",
+      "ResAllResourceInfo"
+    ],
+    "163202": [
+      "resource",
+      "ResResourceInfo"
+    ],
+    "163203": [
+      "resource",
+      "ResResourceChange"
+    ],
+    "164201": [
+      "lookAdvert",
+      "ResLookAdvertReward"
+    ],
+    "164202": [
+      "lookAdvert",
+      "ResLookAdvertInfo"
+    ],
+    "164203": [
+      "lookAdvert",
+      "ResLookAdvert"
+    ],
+    "165201": [
+      "subscribe",
+      "ResAllSubcribeInfos"
+    ],
+    "165202": [
+      "subscribe",
+      "ResSubcribeSuccess"
+    ],
+    "165203": [
+      "subscribe",
+      "ResSubcribeInfo"
+    ],
+    "166201": [
+      "dailySpecial",
+      "ResDailySpecialInfo"
+    ],
+    "166202": [
+      "dailySpecial",
+      "ResBuySpecialGift"
+    ],
+    "166203": [
+      "dailySpecial",
+      "ResBuySpecialGiftUpdate"
+    ],
+    "167201": [
+      "chargeRebate",
+      "ResAccumulateChargeInfo"
+    ],
+    "167202": [
+      "chargeRebate",
+      "ResAccumulateChargeReward"
+    ],
+    "167211": [
+      "chargeRebate",
+      "ResAccumulateDayChargeInfo"
+    ],
+    "167212": [
+      "chargeRebate",
+      "ResAccumulateDayChargeReward"
+    ],
+    "167221": [
+      "chargeRebate",
+      "ResDailyChargeInfo"
+    ],
+    "167222": [
+      "chargeRebate",
+      "ResDailyChargeReward"
+    ],
+    "168201": [
+      "cardStory",
+      "ResCardScene"
+    ],
+    "168202": [
+      "cardStory",
+      "ResCardPlan"
+    ],
+    "168203": [
+      "cardStory",
+      "ResCardFightTypeOne"
+    ],
+    "168204": [
+      "cardStory",
+      "ResCardFightTypeTwo"
+    ],
+    "168205": [
+      "cardStory",
+      "ResCardFinishFight"
+    ],
+    "168206": [
+      "cardStory",
+      "ResCardRewardBox"
+    ],
+    "168207": [
+      "cardStory",
+      "ResCardEnergyInfo"
+    ],
+    "168208": [
+      "cardStory",
+      "ResCardMenScene"
+    ],
+    "169201": [
+      "collectGift",
+      "ResCollectReward"
+    ],
+    "169202": [
+      "collectGift",
+      "ResCollectGiftInfo"
+    ],
+    "169203": [
+      "collectGift",
+      "ResCollectSuccess"
+    ],
+    "170201": [
+      "extraIns",
+      "ResExtraInsInfo"
+    ],
+    "170202": [
+      "extraIns",
+      "ResOpenBox"
+    ],
+    "170204": [
+      "extraIns",
+      "ResOpenChapter"
+    ],
+    "170205": [
+      "extraIns",
+      "ResChapterFight"
+    ],
+    "170206": [
+      "extraIns",
+      "ResSelectOption"
+    ],
+    "170207": [
+      "extraIns",
+      "ResSceneReward"
+    ],
+    "170208": [
+      "extraIns",
+      "ResEffectLevel"
+    ],
+    "171201": [
+      "rushToPurchase",
+      "ResRushToPurchaseInfo"
+    ],
+    "172201": [
+      "puzzle",
+      "ResPuzzleInfo"
+    ],
+    "172202": [
+      "puzzle",
+      "ResPuzzleInfos"
+    ],
+    "172203": [
+      "puzzle",
+      "ResRewardPuzzleBox"
+    ],
+    "172204": [
+      "puzzle",
+      "ResSendPuzzleInfo"
+    ],
+    "173202": [
+      "share",
+      "ResShareInfo"
+    ],
+    "174201": [
+      "perfectMovement",
+      "ResPerfectMovementInfo"
+    ],
+    "174202": [
+      "perfectMovement",
+      "ResBuyClothes"
+    ],
+    "174203": [
+      "perfectMovement",
+      "ResGetReward"
+    ],
+    "174204": [
+      "perfectMovement",
+      "ResMysteryBox"
+    ],
+    "175201": [
+      "eliminate",
+      "ResEliminateInfo"
+    ],
+    "175202": [
+      "eliminate",
+      "ResStartEliminate"
+    ],
+    "175203": [
+      "eliminate",
+      "ResBuyEliminateStep"
+    ],
+    "175204": [
+      "eliminate",
+      "ResSettleEliminate"
+    ],
+    "175205": [
+      "eliminate",
+      "ResEliminateRankReward"
+    ],
+    "175206": [
+      "eliminate",
+      "ResEliminateCommands"
+    ],
+    "176201": [
+      "loginReward",
+      "ResLoginRewardInfo"
+    ],
+    "176202": [
+      "loginReward",
+      "ResGetLoginReward"
+    ],
+    "177201": [
+      "realName",
+      "ResRealNameInfo"
+    ],
+    "177202": [
+      "realName",
+      "ResRealNameOffline"
+    ],
+    "177203": [
+      "realName",
+      "ResRealNameOpen"
+    ],
+    "177204": [
+      "realName",
+      "ResRealNameBirth"
+    ],
+    "178201": [
+      "findGoods",
+      "ResFindGoodsInfo"
+    ],
+    "178202": [
+      "findGoods",
+      "ResQuestionInfo"
+    ],
+    "178203": [
+      "findGoods",
+      "ResSelectIcon"
+    ],
+    "178204": [
+      "findGoods",
+      "ResUseItem"
+    ],
+    "178205": [
+      "findGoods",
+      "ResGetRankReward"
+    ],
+    "178206": [
+      "findGoods",
+      "ResResultGame"
+    ],
+    "178207": [
+      "findGoods",
+      "ResValueChange"
+    ],
+    "178208": [
+      "findGoods",
+      "ResFinishQuestion"
+    ],
+    "178209": [
+      "findGoods",
+      "ResStartGameConfirm"
+    ],
+    "179201": [
+      "payRenewal",
+      "ResPayRenewalReward"
+    ],
+    "179202": [
+      "payRenewal",
+      "ResPayRenewalSuccess"
+    ],
+    "180201": [
+      "redPacket",
+      "ResRedPacketList"
+    ],
+    "180202": [
+      "redPacket",
+      "ResSendPacket"
+    ],
+    "180203": [
+      "redPacket",
+      "ResTakeRedPacket"
+    ],
+    "180204": [
+      "redPacket",
+      "ResPlayerLog"
+    ],
+    "180205": [
+      "redPacket",
+      "ResRedPacketLog"
+    ],
+    "180206": [
+      "redPacket",
+      "ResNewRedPacket"
+    ],
+    "180207": [
+      "redPacket",
+      "ResRedPacketInfo"
+    ],
+    "180208": [
+      "redPacket",
+      "ResPushTakeRedPacket"
+    ],
+    "180209": [
+      "redPacket",
+      "ResTakeRedPacketCount"
+    ],
+    "181201": [
+      "noble",
+      "ResNobeInfo"
+    ],
+    "181202": [
+      "noble",
+      "ResNobeRope"
+    ],
+    "181203": [
+      "noble",
+      "ResNobleAlienativeList"
+    ],
+    "181204": [
+      "noble",
+      "ResNobleAlienative"
+    ],
+    "181205": [
+      "noble",
+      "ResNobleFriendShipChange"
+    ],
+    "181206": [
+      "noble",
+      "ResNobleNewLog"
+    ],
+    "181207": [
+      "noble",
+      "ResNobleHistory"
+    ],
+    "181208": [
+      "noble",
+      "ResNobleRankInfo"
+    ],
+    "181209": [
+      "noble",
+      "ResNobleAllianceRankInfo"
+    ],
+    "181210": [
+      "noble",
+      "ResNobleReward"
+    ],
+    "181211": [
+      "noble",
+      "ResNobleQuestionList"
+    ],
+    "181212": [
+      "noble",
+      "ResNobleAnswer"
+    ],
+    "181213": [
+      "noble",
+      "ResRefreshQuestion"
+    ],
+    "181214": [
+      "noble",
+      "ResUnlockQuestionList"
+    ],
+    "182201": [
+      "replace",
+      "ResReplaceDown"
+    ],
+    "182202": [
+      "replace",
+      "ResReplaceGet"
+    ],
+    "182203": [
+      "replace",
+      "ResReplaceSwith"
+    ],
+    "183201": [
+      "hotSpring",
+      "ResChooseManHot"
+    ],
+    "183202": [
+      "hotSpring",
+      "ResCreateRoom"
+    ],
+    "183203": [
+      "hotSpring",
+      "ResJoinRoom"
+    ],
+    "183205": [
+      "hotSpring",
+      "ResPlayerHost"
+    ],
+    "183206": [
+      "hotSpring",
+      "ResRewardEgg"
+    ],
+    "183207": [
+      "hotSpring",
+      "ResRewardHotSpring"
+    ],
+    "183208": [
+      "hotSpring",
+      "ResBackRoom"
+    ],
+    "183209": [
+      "hotSpring",
+      "ResPlayerHotSpringInfo"
+    ],
+    "183210": [
+      "hotSpring",
+      "ResHotSpringInfo"
+    ],
+    "184201": [
+      "discount",
+      "ResDiscountInfo"
+    ],
+    "184202": [
+      "discount",
+      "ResBuyDiscountGoods"
+    ],
+    "185201": [
+      "crossActivity2Client",
+      "ResCrossChat"
+    ],
+    "185202": [
+      "crossActivity2Client",
+      "ResCrossGroupInfo"
+    ],
+    "185204": [
+      "crossActivity2Client",
+      "ResCrossActivityStageChange"
+    ],
+    "185205": [
+      "crossActivity2Client",
+      "ResCrossChatInfo"
+    ],
+    "186201": [
+      "goddessCome",
+      "ResGoddessInfo"
+    ],
+    "186202": [
+      "goddessCome",
+      "ResGetFreeItem"
+    ],
+    "187201": [
+      "gashapon",
+      "ResGashaponMain"
+    ],
+    "187202": [
+      "gashapon",
+      "ResGashaponLottery"
+    ],
+    "187203": [
+      "gashapon",
+      "ResGashaponOpen"
+    ],
+    "188201": [
+      "cmShow",
+      "ResCmShowInfo"
+    ],
+    "188202": [
+      "cmShow",
+      "ResJoinCmShow"
+    ],
+    "188203": [
+      "cmShow",
+      "ResCmShowCode"
+    ],
+    "189201": [
+      "rewardactivity",
+      "ResTakeReward"
+    ],
+    "190201": [
+      "crossSoloRankActivity",
+      "ResCrossSoloRankActivitySimpleInfo"
+    ],
+    "190202": [
+      "crossSoloRankActivity",
+      "ResCrossSoloRankActivityInfo"
+    ],
+    "190203": [
+      "crossSoloRankActivity",
+      "ResCrossSoloRankInfo"
+    ],
+    "190204": [
+      "crossSoloRankActivity",
+      "ResCrossSoloRankReward"
+    ],
+    "191201": [
+      "buff",
+      "ResBuffChange"
+    ],
+    "192201": [
+      "birthday",
+      "ResBirthdayInfo"
+    ],
+    "192202": [
+      "birthday",
+      "ResBirthdayDailyAward"
+    ],
+    "192203": [
+      "birthday",
+      "ResBirthdayTargetAward"
+    ],
+    "192204": [
+      "birthday",
+      "ResSendAward"
+    ],
+    "192205": [
+      "birthday",
+      "ResMakeGift"
+    ],
+    "192206": [
+      "birthday",
+      "ResTaskComplete"
+    ],
+    "192207": [
+      "birthday",
+      "ResBuyMaterial"
+    ],
+    "193201": [
+      "learnCommunity",
+      "ResLearnCommunityInfo"
+    ],
+    "193202": [
+      "learnCommunity",
+      "ResReceiveReward"
+    ],
+    "193203": [
+      "learnCommunity",
+      "ResReceiveCommandExp"
+    ],
+    "193204": [
+      "learnCommunity",
+      "ResBuyLearnCommunity"
+    ],
+    "193205": [
+      "learnCommunity",
+      "ResFastAddExp"
+    ],
+    "193206": [
+      "learnCommunity",
+      "ResOldLearnCommunity"
+    ],
+    "193207": [
+      "learnCommunity",
+      "ResBuyOldLearnCommunity"
+    ],
+    "194201": [
+      "trial",
+      "ResTrialMain"
+    ],
+    "194202": [
+      "trial",
+      "ResTrialDispatch"
+    ],
+    "194203": [
+      "trial",
+      "ResTrialDispatchGet"
+    ],
+    "194204": [
+      "trial",
+      "ResTrialMissionGet"
+    ],
+    "194205": [
+      "trial",
+      "ResTrialprop"
+    ],
+    "194206": [
+      "trial",
+      "ResTrialBigReward"
+    ],
+    "194207": [
+      "trial",
+      "ResTrialRankReward"
+    ],
+    "194208": [
+      "trial",
+      "ResTrialNum"
+    ],
+    "195201": [
+      "verifyName",
+      "ResVerifyNameBase"
+    ],
+    "195202": [
+      "verifyName",
+      "ResVerifyNameBirth"
+    ],
+    "195203": [
+      "verifyName",
+      "ResVerifyNameCharge"
+    ],
+    "195204": [
+      "verifyName",
+      "ResVerifyNameButton"
+    ],
+    "195205": [
+      "verifyName",
+      "ResVerifyNameTime"
+    ],
+    "196201": [
+      "mysteryTrade",
+      "ResMysteryTradeGiftInfo"
+    ],
+    "196202": [
+      "mysteryTrade",
+      "ResBuyMysteryTradeGift"
+    ],
+    "196203": [
+      "mysteryTrade",
+      "ResMysteryTradeGiftChange"
+    ],
+    "197201": [
+      "antifraudActivity",
+      "ResTakeAntifraudReward"
+    ],
+    "197202": [
+      "antifraudActivity",
+      "ResAntifraudInfo"
+    ],
+    "197203": [
+      "antifraudActivity",
+      "ResUpdateAntifraudStatus"
+    ],
+    "198201": [
+      "foxLegend",
+      "ResFoxLegendMain"
+    ],
+    "198202": [
+      "foxLegend",
+      "ResFoxLegendDice"
+    ],
+    "198203": [
+      "foxLegend",
+      "ResFoxLegendReject"
+    ],
+    "198204": [
+      "foxLegend",
+      "ResFoxLegendStart"
+    ],
+    "198205": [
+      "foxLegend",
+      "ResFoxLegendMission"
+    ],
+    "198206": [
+      "foxLegend",
+      "ResFoxLegendDiceInfo"
+    ],
+    "199202": [
+      "gm",
+      "ResGmReturnMsg"
+    ],
+    "202201": [
+      "user",
+      "ResUserCode"
+    ],
+    "202202": [
+      "user",
+      "ResCheckVersion"
+    ],
+    "202203": [
+      "user",
+      "ResServerList"
+    ],
+    "202204": [
+      "user",
+      "ResServerInfo"
+    ],
+    "202206": [
+      "user",
+      "ResValid"
+    ],
+    "210201": [
+      "foxWish",
+      "ResFoxWishInfo"
+    ],
+    "210202": [
+      "foxWish",
+      "ResFoxWish"
+    ],
+    "210203": [
+      "foxWish",
+      "ResFoxWishList"
+    ],
+    "210204": [
+      "foxWish",
+      "ResFoxStageReward"
+    ],
+    "210205": [
+      "foxWish",
+      "ResNewWish"
+    ],
+    "211201": [
+      "cumulativeSign",
+      "ResCumulativeSignMain"
+    ],
+    "211202": [
+      "cumulativeSign",
+      "ResCumulativeSignGet"
+    ],
+    "211203": [
+      "cumulativeSign",
+      "ResCumulativeSignReset"
+    ],
+    "211204": [
+      "cumulativeSign",
+      "ResCumulativeFundReset"
+    ],
+    "212201": [
+      "fairTeam",
+      "ResFairTeamInfo"
+    ],
+    "212202": [
+      "fairTeam",
+      "ResTeamTokenAddLog"
+    ],
+    "213201": [
+      "fairDragon",
+      "ResFairDragonInfo"
+    ],
+    "213202": [
+      "fairDragon",
+      "ResGetFairBigGift"
+    ],
+    "213203": [
+      "fairDragon",
+      "ResGetFairTicketGift"
+    ],
+    "214201": [
+      "fairLogin",
+      "ResFairLoginInfo"
+    ],
+    "214202": [
+      "fairLogin",
+      "ResReceiveDayReward"
+    ],
+    "214204": [
+      "fairLogin",
+      "ResBuyGiftBox"
+    ],
+    "215201": [
+      "apply",
+      "ResApplyMain"
+    ],
+    "215202": [
+      "apply",
+      "ResApply"
+    ],
+    "215203": [
+      "apply",
+      "ResApplyReward"
+    ],
+    "216201": [
+      "loginGift",
+      "ResLoginGiftInfo"
+    ],
+    "216202": [
+      "loginGift",
+      "ResGetLoginGiftReward"
+    ],
+    "217201": [
+      "academy",
+      "ResAcademyMain"
+    ],
+    "217202": [
+      "academy",
+      "ResAcademyNPC"
+    ],
+    "217203": [
+      "academy",
+      "ResAcademyStudyMain"
+    ],
+    "217204": [
+      "academy",
+      "ResAcademyStudy"
+    ],
+    "217205": [
+      "academy",
+      "ResAcademyEnd"
+    ],
+    "217206": [
+      "academy",
+      "ResAcademyLog"
+    ],
+    "217207": [
+      "academy",
+      "ResAcademyEnter"
+    ],
+    "217208": [
+      "academy",
+      "ResAcademyInfo"
+    ],
+    "217209": [
+      "academy",
+      "ResAcademyReward"
+    ],
+    "217210": [
+      "academy",
+      "ResAcademySeat"
+    ],
+    "218201": [
+      "fishing",
+      "ResFishingInfo"
+    ],
+    "218202": [
+      "fishing",
+      "ResPrepareFishing"
+    ],
+    "218203": [
+      "fishing",
+      "ResStartFishing"
+    ],
+    "218204": [
+      "fishing",
+      "ResFishing"
+    ],
+    "218205": [
+      "fishing",
+      "ResResultFishing"
+    ],
+    "218206": [
+      "fishing",
+      "ResGetFishingAchievementReward"
+    ],
+    "218207": [
+      "fishing",
+      "ResStopFishingGameTime"
+    ],
+    "219201": [
+      "market",
+      "ResMarketInfo"
+    ],
+    "219203": [
+      "market",
+      "ResBuyGameItem"
+    ],
+    "225201": [
+      "satin",
+      "ResSatinMain"
+    ],
+    "225202": [
+      "satin",
+      "ResSatinEnter"
+    ],
+    "225203": [
+      "satin",
+      "ResSatinCommands"
+    ],
+    "225204": [
+      "satin",
+      "ResSatinFreeProp"
+    ],
+    "225210": [
+      "satin",
+      "ResSatinTest"
+    ],
+    "227201": [
+      "questionnaire",
+      "ResQuestionnaiMain"
+    ],
+    "227202": [
+      "questionnaire",
+      "ResQuestionnaiSubmit"
+    ],
+    "227203": [
+      "questionnaire",
+      "ResQuestionnaiReward"
+    ],
+    "227204": [
+      "questionnaire",
+      "ResQuestionnaireVersionUpdate"
+    ],
+    "228201": [
+      "palaceCharge",
+      "ResPalaceChargeMain"
+    ],
+    "228202": [
+      "palaceCharge",
+      "ResPalaceChargeFreeGift"
+    ],
+    "228203": [
+      "palaceCharge",
+      "ResPalaceChargeTimeGift"
+    ],
+    "228204": [
+      "palaceCharge",
+      "ResPalaceChargeVipPayment"
+    ],
+    "228205": [
+      "palaceCharge",
+      "ResPalaceChargeLvPayment"
+    ],
+    "228206": [
+      "palaceCharge",
+      "ResPalaceChargeTimePayment"
+    ],
+    "229201": [
+      "miner",
+      "ResMinerInfo"
+    ],
+    "229202": [
+      "miner",
+      "ResMinerSign"
+    ],
+    "229203": [
+      "miner",
+      "ResMinerMap"
+    ],
+    "229204": [
+      "miner",
+      "ResMinerFind"
+    ],
+    "229205": [
+      "miner",
+      "ResMinerFight"
+    ],
+    "229206": [
+      "miner",
+      "ResMinerEventReward"
+    ],
+    "229207": [
+      "miner",
+      "ResRecommendHelper"
+    ],
+    "229208": [
+      "miner",
+      "ResAssistHelperList"
+    ],
+    "229209": [
+      "miner",
+      "ResGridStatusChange"
+    ],
+    "229210": [
+      "miner",
+      "ResMinerStartFind"
+    ],
+    "229211": [
+      "miner",
+      "ResMinerHelperRecovery"
+    ],
+    "230201": [
+      "gemini",
+      "ResGeminiInfo"
+    ],
+    "230202": [
+      "gemini",
+      "ResGeminiSelectPlan"
+    ],
+    "230203": [
+      "gemini",
+      "ResGeminiMakeSuit"
+    ],
+    "230204": [
+      "gemini",
+      "ResGeminiDyeingSuit"
+    ],
+    "230205": [
+      "gemini",
+      "ResGeminiRewardClothes"
+    ],
+    "230206": [
+      "gemini",
+      "ResGeminiFreeReward"
+    ],
+    "230207": [
+      "gemini",
+      "ResGeminiFreeRewardUpdate"
+    ],
+    "230208": [
+      "gemini",
+      "ResGeminiDaiyReset"
+    ],
+    "231201": [
+      "newShow",
+      "ResNewShowMain"
+    ],
+    "231202": [
+      "newShow",
+      "ResNewShowSwap"
+    ],
+    "231203": [
+      "newShow",
+      "ResNewShowDressMain"
+    ],
+    "231210": [
+      "newShow",
+      "ResNewShowSubmit"
+    ],
+    "231211": [
+      "newShow",
+      "ResNewShowCopy"
+    ],
+    "231212": [
+      "newShow",
+      "ResNewShowCopyBuy"
+    ],
+    "231220": [
+      "newShow",
+      "ResNewShowVote"
+    ],
+    "231221": [
+      "newShow",
+      "ResNewShowHistory"
+    ],
+    "231222": [
+      "newShow",
+      "ResNewShowReward"
+    ],
+    "231223": [
+      "newShow",
+      "ResNewShowRefresh"
+    ],
+    "231224": [
+      "newShow",
+      "ResNewShowBuy"
+    ],
+    "231225": [
+      "newShow",
+      "ResNewShowBox"
+    ],
+    "231226": [
+      "newShow",
+      "ResNewShowDress"
+    ],
+    "231230": [
+      "newShow",
+      "ResNewShowPush"
+    ],
+    "232201": [
+      "chip",
+      "ResChipInfo"
+    ],
+    "232202": [
+      "chip",
+      "ResSyntheticCloth"
+    ],
+    "232203": [
+      "chip",
+      "ResChangeChip"
+    ],
+    "234201": [
+      "auction",
+      "ResAuctionInfo"
+    ],
+    "234202": [
+      "auction",
+      "ResAuctionGridInfo"
+    ],
+    "234203": [
+      "auction",
+      "ResAuction"
+    ],
+    "234204": [
+      "auction",
+      "ResAuctionBoxReward"
+    ],
+    "234205": [
+      "auction",
+      "ResAuctionRankReward"
+    ],
+    "234206": [
+      "auction",
+      "ResAuctionGridChange"
+    ],
+    "234207": [
+      "auction",
+      "ResAuctionStartNewRound"
+    ],
+    "234208": [
+      "auction",
+      "ResAuctionFinalReward"
+    ],
+    "234209": [
+      "auction",
+      "ResAuctionGoldHammerLog"
+    ],
+    "235201": [
+      "tour",
+      "ResTourMain"
+    ],
+    "235202": [
+      "tour",
+      "ResTourBox"
+    ],
+    "235203": [
+      "tour",
+      "ResTourTicket"
+    ],
+    "235204": [
+      "tour",
+      "ResTourResource"
+    ],
+    "235205": [
+      "tour",
+      "ResTourBook"
+    ],
+    "236201": [
+      "crossUnion",
+      "ResCrossUnionSimpleInfo"
+    ],
+    "236202": [
+      "crossUnion",
+      "ResCrossUnionInfo"
+    ],
+    "236203": [
+      "crossUnion",
+      "ResCrossUnionRankInfo"
+    ],
+    "236204": [
+      "crossUnion",
+      "ResCrossUnionAward"
+    ],
+    "236205": [
+      "crossUnion",
+      "ResCrossUnionInnerRank"
+    ],
+    "236206": [
+      "crossUnion",
+      "ResCrossUnionChampionPopup"
+    ],
+    "237201": [
+      "vitalityGift",
+      "ResBuyVitalityGift"
+    ],
+    "238201": [
+      "mystery",
+      "ResMysteryMain"
+    ],
+    "238202": [
+      "mystery",
+      "ResMysteryDispatch"
+    ],
+    "238203": [
+      "mystery",
+      "ResMysteryDispatchGet"
+    ],
+    "238204": [
+      "mystery",
+      "ResMysteryMissionGet"
+    ],
+    "238205": [
+      "mystery",
+      "ResMysteryRankReward"
+    ],
+    "238206": [
+      "mystery",
+      "ResMysteryProp"
+    ],
+    "238207": [
+      "mystery",
+      "ResMysteryAutoOpen"
+    ],
+    "238208": [
+      "mystery",
+      "ResMysteryNum"
+    ],
+    "239201": [
+      "jugglingStand",
+      "ResEnterJugglingStand"
+    ],
+    "239202": [
+      "jugglingStand",
+      "ResStartJumpAround"
+    ],
+    "239203": [
+      "jugglingStand",
+      "ResContinueJumpAround"
+    ],
+    "239204": [
+      "jugglingStand",
+      "ResRewardFreeGift"
+    ],
+    "239205": [
+      "jugglingStand",
+      "ResReviveGame"
+    ],
+    "239206": [
+      "jugglingStand",
+      "ResDropReviveGame"
+    ],
+    "239207": [
+      "jugglingStand",
+      "ResOperateJumpAround"
+    ],
+    "239208": [
+      "jugglingStand",
+      "ResUseJumpAroundItem"
+    ],
+    "239209": [
+      "jugglingStand",
+      "ResOverJumpAround"
+    ],
+    "240201": [
+      "astrologer",
+      "ResAstrologerMain"
+    ],
+    "240202": [
+      "astrologer",
+      "ResAstrologerStar"
+    ],
+    "240203": [
+      "astrologer",
+      "ResAstrologerNewStart"
+    ],
+    "240204": [
+      "astrologer",
+      "ResAstrologerReward"
+    ],
+    "240205": [
+      "astrologer",
+      "ResAstrologerRecord"
+    ],
+    "240206": [
+      "astrologer",
+      "ResAstrologerLight"
+    ],
+    "241201": [
+      "alchemist",
+      "ResAlchemistMake"
+    ],
+    "242201": [
+      "bindPhone",
+      "ResBindPhoneInfo"
+    ],
+    "242202": [
+      "bindPhone",
+      "ResBindPhoneSendVerifyCode"
+    ],
+    "242203": [
+      "bindPhone",
+      "ResBindPhoneVerify"
+    ],
+    "242204": [
+      "bindPhone",
+      "ResBindPhonErrorCode"
+    ],
+    "242205": [
+      "bindPhone",
+      "ResBindLocalPhoneNum"
+    ],
+    "244201": [
+      "arena",
+      "ResArenaMain"
+    ],
+    "244202": [
+      "arena",
+      "ResArenaDress"
+    ],
+    "244203": [
+      "arena",
+      "ResArenaHelp"
+    ],
+    "244204": [
+      "arena",
+      "ResArenaRefresh"
+    ],
+    "244205": [
+      "arena",
+      "ResArenaBuy"
+    ],
+    "244206": [
+      "arena",
+      "ResArenaChallenge"
+    ],
+    "244207": [
+      "arena",
+      "ResArenaChallengeLog"
+    ],
+    "244208": [
+      "arena",
+      "ResArenaExchange"
+    ],
+    "244210": [
+      "arena",
+      "ResArenaSettmentLog"
+    ],
+    "244211": [
+      "arena",
+      "ResArenaGradeGet"
+    ],
+    "244212": [
+      "arena",
+      "ResArenaConfigChange"
+    ],
+    "245201": [
+      "cashCow",
+      "ResCashCowInfo"
+    ],
+    "245202": [
+      "cashCow",
+      "ResCashCowBoxReward"
+    ],
+    "245203": [
+      "cashCow",
+      "ResCashCowBuySupplement"
+    ],
+    "245204": [
+      "cashCow",
+      "ResCashCowSignReward"
+    ],
+    "246201": [
+      "fiveBlessing",
+      "ResFiveBlessingInfo"
+    ],
+    "247201": [
+      "ishtar",
+      "ResIshtarInfo"
+    ],
+    "247202": [
+      "ishtar",
+      "ResIshtarCrownLight"
+    ],
+    "247203": [
+      "ishtar",
+      "ResIshtarCrownLightReward"
+    ],
+    "247204": [
+      "ishtar",
+      "ResIshtarLogs"
+    ],
+    "247205": [
+      "ishtar",
+      "ResIshtarRewadStatus"
+    ],
+    "248201": [
+      "betsuin",
+      "ResBetsuinInfo"
+    ],
+    "248202": [
+      "betsuin",
+      "ResBetsuinRename"
+    ],
+    "248203": [
+      "betsuin",
+      "ResBetsuinLayoutList"
+    ],
+    "248206": [
+      "betsuin",
+      "ResUpdateLayoutScheme"
+    ],
+    "248207": [
+      "betsuin",
+      "ResFurnitureTypeUp"
+    ],
+    "248208": [
+      "betsuin",
+      "ResUpdateBetsuinLevel"
+    ],
+    "248209": [
+      "betsuin",
+      "ResUpdateBetsuinShow"
+    ],
+    "248210": [
+      "betsuin",
+      "ResAddBetsuinShow"
+    ],
+    "248211": [
+      "betsuin",
+      "ResAddFurniture"
+    ],
+    "248213": [
+      "betsuin",
+      "ResFriendBetsuin"
+    ],
+    "248214": [
+      "betsuin",
+      "ResRecommondBetsuin"
+    ],
+    "248215": [
+      "betsuin",
+      "ResMyBetsuinVisitRecord"
+    ],
+    "248216": [
+      "betsuin",
+      "ResBetsuinBeVisitRecord"
+    ],
+    "248217": [
+      "betsuin",
+      "ResBetsuinRoomInfo"
+    ],
+    "248218": [
+      "betsuin",
+      "ResKickBetsuinRoomPlayer"
+    ],
+    "248219": [
+      "betsuin",
+      "ResExitBetsuinRoom"
+    ],
+    "248220": [
+      "betsuin",
+      "ResInteractiveFurniture"
+    ],
+    "248221": [
+      "betsuin",
+      "ResExitInteractiveFurniture"
+    ],
+    "248222": [
+      "betsuin",
+      "ResInteractiveFriendTree"
+    ],
+    "248223": [
+      "betsuin",
+      "ResInteractiveReward"
+    ],
+    "248224": [
+      "betsuin",
+      "ResGetEastEggs"
+    ],
+    "248225": [
+      "betsuin",
+      "ResEnterBetsuinRoom"
+    ],
+    "248226": [
+      "betsuin",
+      "ResGetNewBetsuinReward"
+    ],
+    "248227": [
+      "betsuin",
+      "ResInteractiveTempRoomTree"
+    ],
+    "248228": [
+      "betsuin",
+      "ResBetsuinMapInfo"
+    ],
+    "248229": [
+      "betsuin",
+      "ResBuildBetsuin"
+    ],
+    "248230": [
+      "betsuin",
+      "ResSettingBetsuin"
+    ],
+    "248232": [
+      "betsuin",
+      "ResSwitchBetsuin"
+    ],
+    "248233": [
+      "betsuin",
+      "ResTreeHoleInfo"
+    ],
+    "248234": [
+      "betsuin",
+      "ResLikeRecord"
+    ],
+    "248235": [
+      "betsuin",
+      "ResSendIdea"
+    ],
+    "248236": [
+      "betsuin",
+      "ResDelIdea"
+    ],
+    "248237": [
+      "betsuin",
+      "ResTopIdea"
+    ],
+    "248239": [
+      "betsuin",
+      "ResDoLike"
+    ],
+    "248240": [
+      "betsuin",
+      "ResBetsuinBroadCast"
+    ],
+    "248241": [
+      "betsuin",
+      "ResReceiveShow"
+    ],
+    "250201": [
+      "bigBoss",
+      "ResBigBossMain"
+    ],
+    "250202": [
+      "bigBoss",
+      "ResBigBossHelper"
+    ],
+    "250203": [
+      "bigBoss",
+      "ResBigBossSkillUp"
+    ],
+    "250204": [
+      "bigBoss",
+      "ResBigBossAttack"
+    ],
+    "250205": [
+      "bigBoss",
+      "ResBigBossReward"
+    ],
+    "250206": [
+      "bigBoss",
+      "ResBigBossRankInfo"
+    ],
+    "250207": [
+      "bigBoss",
+      "ResBigBossInfo"
+    ],
+    "250210": [
+      "bigBoss",
+      "ResBigBossId"
+    ],
+    "250211": [
+      "bigBoss",
+      "ResBigBossRecord"
+    ],
+    "250212": [
+      "bigBoss",
+      "ResBigBosssState"
+    ],
+    "250213": [
+      "bigBoss",
+      "ResBigBossOver"
+    ],
+    "250214": [
+      "bigBoss",
+      "ResBigBossCloseTime"
+    ],
+    "250215": [
+      "bigBoss",
+      "ResBigBossTip"
+    ],
+    "250216": [
+      "bigBoss",
+      "ResBigBossTotalLife"
+    ],
+    "250217": [
+      "bigBoss",
+      "ResBigBossEgg"
+    ],
+    "251201": [
+      "holyBeast",
+      "ResHolyBeastInfo"
+    ],
+    "251202": [
+      "holyBeast",
+      "ResHolyBeastEnterReward"
+    ],
+    "251203": [
+      "holyBeast",
+      "ResHolyBeastLightAltar"
+    ],
+    "251204": [
+      "holyBeast",
+      "ResHolyBeastAltarProcessReward"
+    ],
+    "251205": [
+      "holyBeast",
+      "ResHolyBeastAltarGift"
+    ],
+    "251206": [
+      "holyBeast",
+      "ResHolyBeastFinalReward"
+    ],
+    "251207": [
+      "holyBeast",
+      "ResHolyBeastLogs"
+    ],
+    "252201": [
+      "catkin",
+      "ResCatkinMain"
+    ],
+    "252202": [
+      "catkin",
+      "ResCatkinTaskRecord"
+    ],
+    "252203": [
+      "catkin",
+      "ResCatkinrResource"
+    ],
+    "252204": [
+      "catkin",
+      "ResCatkinPayRecord"
+    ],
+    "252205": [
+      "catkin",
+      "ResCatkinLight"
+    ],
+    "253201": [
+      "mirage",
+      "ResMirageMain"
+    ],
+    "253202": [
+      "mirage",
+      "ResMirageCard"
+    ],
+    "254201": [
+      "bestowLuck",
+      "ResBestowLuckMain"
+    ],
+    "254202": [
+      "bestowLuck",
+      "ResBestowLuckLottery"
+    ],
+    "254203": [
+      "bestowLuck",
+      "ResBestowLuckRecord"
+    ],
+    "254204": [
+      "bestowLuck",
+      "ResBestowLuckExit"
+    ],
+    "254205": [
+      "bestowLuck",
+      "ResBestowNews"
+    ],
+    "255201": [
+      "careU",
+      "ResCareUInfo"
+    ],
+    "255202": [
+      "careU",
+      "ResCareULogs"
+    ],
+    "256201": [
+      "derivatives",
+      "ResDerivativesMain"
+    ],
+    "256202": [
+      "derivatives",
+      "ResDerivativesRed"
+    ],
+    "259201": [
+      "peony",
+      "ResPeonyInfo"
+    ],
+    "259202": [
+      "peony",
+      "ResAddPeonyReward"
+    ],
+    "260201": [
+      "fireworks",
+      "ResFireworksInfo"
+    ],
+    "260202": [
+      "fireworks",
+      "ResFireworksEffect"
+    ],
+    "261201": [
+      "diary",
+      "ResDiaryInfo"
+    ],
+    "261203": [
+      "diary",
+      "ResDiaryReward"
+    ],
+    "262201": [
+      "prettyFigure",
+      "ResPrettyFigureInfo"
+    ],
+    "262202": [
+      "prettyFigure",
+      "ResPrettyFigureInvite"
+    ],
+    "262203": [
+      "prettyFigure",
+      "ResPrettyFigureAnswerInvite"
+    ],
+    "262204": [
+      "prettyFigure",
+      "ResPrettyFigureDoubleRoomInfo"
+    ],
+    "262205": [
+      "prettyFigure",
+      "ResPrettyFigureDecorateChange"
+    ],
+    "262206": [
+      "prettyFigure",
+      "ResPrettyFigurePlayerChange"
+    ],
+    "262207": [
+      "prettyFigure",
+      "ResPrettyFigurePrintPhoto"
+    ],
+    "262208": [
+      "prettyFigure",
+      "ResPrettyFigureExitRoom"
+    ],
+    "262209": [
+      "prettyFigure",
+      "ResPrettyFigureCreateRoom"
+    ],
+    "262210": [
+      "prettyFigure",
+      "ResPrettyFigureInviteNotice"
+    ],
+    "262211": [
+      "prettyFigure",
+      "ResPrettyFigureBuyAlbumSize"
+    ],
+    "262212": [
+      "prettyFigure",
+      "ResPrettyFigureThemeReward"
+    ],
+    "262213": [
+      "prettyFigure",
+      "ResPrettyFigureDeletePhoto"
+    ],
+    "262214": [
+      "prettyFigure",
+      "ResPrettyFigurePhoto"
+    ],
+    "262215": [
+      "prettyFigure",
+      "ResPrettyFigurePhotoPermission"
+    ],
+    "262216": [
+      "prettyFigure",
+      "ResPrettyFigureSharePhoto"
+    ],
+    "262217": [
+      "prettyFigure",
+      "ResPrettyFigureOnePhoto"
+    ],
+    "262218": [
+      "prettyFigure",
+      "ResPrettyFigureGuideReward"
+    ],
+    "262219": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceRoomInfo"
+    ],
+    "262220": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceRoomChange"
+    ],
+    "262221": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceJoinRoom"
+    ],
+    "262222": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceExitRoom"
+    ],
+    "262224": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceInfo"
+    ],
+    "262225": [
+      "prettyFigure",
+      "ResPrettyFigureCreateAllianceRoom"
+    ],
+    "262226": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceUpdatePositionPlan"
+    ],
+    "262227": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceRoomDown"
+    ],
+    "262228": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceRoomUp"
+    ],
+    "262229": [
+      "prettyFigure",
+      "ResPrettyFigureAllianceRoomInvite"
+    ],
+    "262230": [
+      "prettyFigure",
+      "ResPrettyFigureUnlockSeries"
+    ],
+    "262231": [
+      "prettyFigure",
+      "ResPrettyFigureItemChange"
+    ],
+    "262232": [
+      "prettyFigure",
+      "ResPrettyFigureCheckNewItem"
+    ],
+    "262233": [
+      "prettyFigure",
+      "ResPrettyFigureNewItemList"
+    ],
+    "262234": [
+      "prettyFigure",
+      "ResPrettyFigureSetRate"
+    ],
+    "263201": [
+      "moon",
+      "ResMoonInfo"
+    ],
+    "263202": [
+      "moon",
+      "ResAddMoonReward"
+    ],
+    "264201": [
+      "rabbit",
+      "ResRabbitMain"
+    ],
+    "264202": [
+      "rabbit",
+      "ResRabbitTaskRecord"
+    ],
+    "264204": [
+      "rabbit",
+      "ResRabbitPayRecord"
+    ],
+    "264205": [
+      "rabbit",
+      "ResRabbitLight"
+    ],
+    "264206": [
+      "rabbit",
+      "ResOpenBlindBox"
+    ],
+    "265201": [
+      "lowcost",
+      "ResLowCostInfo"
+    ],
+    "265202": [
+      "lowcost",
+      "ResBuyLowCostGoods"
+    ],
+    "266201": [
+      "crossNoble",
+      "ResCrossNobeInfo"
+    ],
+    "266202": [
+      "crossNoble",
+      "ResCrossNobeRope"
+    ],
+    "266203": [
+      "crossNoble",
+      "ResCrossNobleAlienativeList"
+    ],
+    "266204": [
+      "crossNoble",
+      "ResCrossNobleAlienative"
+    ],
+    "266205": [
+      "crossNoble",
+      "ResCrossNobleFriendShipChange"
+    ],
+    "266206": [
+      "crossNoble",
+      "ResCrossNobleNewLog"
+    ],
+    "266207": [
+      "crossNoble",
+      "ResCrossNobleHistory"
+    ],
+    "266208": [
+      "crossNoble",
+      "ResCrossNobleRankInfo"
+    ],
+    "266209": [
+      "crossNoble",
+      "ResCrossNobleAllianceRankInfo"
+    ],
+    "266210": [
+      "crossNoble",
+      "ResCrossNobleReward"
+    ],
+    "266211": [
+      "crossNoble",
+      "ResCrossNobleQuestionList"
+    ],
+    "266212": [
+      "crossNoble",
+      "ResCrossNobleAnswer"
+    ],
+    "266213": [
+      "crossNoble",
+      "ResCrossRefreshQuestion"
+    ],
+    "266214": [
+      "crossNoble",
+      "ResCrossUnlockQuestionList"
+    ],
+    "266215": [
+      "crossNoble",
+      "ResCrossWelCome"
+    ],
+    "266229": [
+      "crossNoble",
+      "ResCrossNobleChampionPopup"
+    ],
+    "266230": [
+      "crossNoble",
+      "ResCrossNobleExchangeItem"
+    ],
+    "267201": [
+      "winterSweet",
+      "ResWinterSweetInfo"
+    ],
+    "267202": [
+      "winterSweet",
+      "ResReceiveGift"
+    ],
+    "267203": [
+      "winterSweet",
+      "ResUpdateSuitDiscount"
+    ],
+    "268201": [
+      "prosperous",
+      "ResProsperousInfo"
+    ],
+    "268202": [
+      "prosperous",
+      "ResSendBubble"
+    ],
+    "268203": [
+      "prosperous",
+      "ResReceiveBoxReward"
+    ],
+    "268204": [
+      "prosperous",
+      "ResRewardRecord"
+    ],
+    "268205": [
+      "prosperous",
+      "ResDailyResetInfo"
+    ],
+    "269201": [
+      "happyNewYear",
+      "ReshappyNewYearProtoInfo"
+    ],
+    "270201": [
+      "blessingHome",
+      "ResBlessingHomeInfo"
+    ],
+    "270202": [
+      "blessingHome",
+      "ResOpenBlessingWall"
+    ],
+    "270203": [
+      "blessingHome",
+      "ResLanternsLit"
+    ],
+    "271201": [
+      "wishSign",
+      "ResWishSignMain"
+    ],
+    "271202": [
+      "wishSign",
+      "ResWishSignLottery"
+    ],
+    "271203": [
+      "wishSign",
+      "ResWishSignRecord"
+    ],
+    "271204": [
+      "wishSign",
+      "ResChooseBoxReward"
+    ],
+    "272201": [
+      "tameYearBeast",
+      "ResYearBeastInfo"
+    ],
+    "272202": [
+      "tameYearBeast",
+      "ResTameYearBeastLog"
+    ],
+    "272203": [
+      "tameYearBeast",
+      "ResTameYearBeast"
+    ],
+    "272204": [
+      "tameYearBeast",
+      "ResYearBeastHpSync"
+    ],
+    "272205": [
+      "tameYearBeast",
+      "ResYearBeastStatusChange"
+    ],
+    "273201": [
+      "crossSpaceLove",
+      "ResCrossSpaceLoveInfo"
+    ],
+    "273202": [
+      "crossSpaceLove",
+      "ResSendGift"
+    ],
+    "273204": [
+      "crossSpaceLove",
+      "ResRewardLoveBox"
+    ],
+    "274201": [
+      "returnGift",
+      "ResReturnGiftInfo"
+    ],
+    "274202": [
+      "returnGift",
+      "ResNewReturnGiftInfo"
+    ],
+    "274203": [
+      "returnGift",
+      "ResNewReturnGiftReward"
+    ],
+    "274204": [
+      "returnGift",
+      "ResNewReturnGiftRecord"
+    ],
+    "274205": [
+      "returnGift",
+      "ResBuyReturnGiftScore"
+    ],
+    "275201": [
+      "collectPaintings",
+      "ResCollectPaintingsInfo"
+    ],
+    "275202": [
+      "collectPaintings",
+      "ResCollectPaintingsEnterReward"
+    ],
+    "275203": [
+      "collectPaintings",
+      "ResCollectPaintingsAddPaint"
+    ],
+    "275204": [
+      "collectPaintings",
+      "ResCollectPaintingsProcessReward"
+    ],
+    "275205": [
+      "collectPaintings",
+      "ResCollectPaintingsGift"
+    ],
+    "275206": [
+      "collectPaintings",
+      "ResCollectPaintingsFinalReward"
+    ],
+    "278201": [
+      "sleepingWhisper",
+      "ResSleepingWhisperInfo"
+    ],
+    "278202": [
+      "sleepingWhisper",
+      "ResSleepingWhisperSuperCall"
+    ],
+    "280201": [
+      "godLucky",
+      "ResGodLuckyInfo"
+    ],
+    "280202": [
+      "godLucky",
+      "ResGodLuckyLegendReward"
+    ],
+    "280203": [
+      "godLucky",
+      "ResGodLuckyHolyGift"
+    ],
+    "280204": [
+      "godLucky",
+      "ResGodLuckyCallUnicorn"
+    ],
+    "281201": [
+      "destiny",
+      "ResDestinyInfo"
+    ],
+    "281202": [
+      "destiny",
+      "ResDestinyFirstReward"
+    ],
+    "281203": [
+      "destiny",
+      "ResDestinyFinishTask"
+    ],
+    "281204": [
+      "destiny",
+      "ResDestinyGetSpTaskReward"
+    ],
+    "281205": [
+      "destiny",
+      "ResDestinyPeriodReward"
+    ],
+    "281206": [
+      "destiny",
+      "ResDestinyGetLog"
+    ],
+    "281207": [
+      "destiny",
+      "ResDestinySpTaskProgress"
+    ],
+    "282201": [
+      "attachSpirit",
+      "ResAttachSpiritUpLevel"
+    ],
+    "282202": [
+      "attachSpirit",
+      "ResAttachSpiritInfo"
+    ],
+    "283201": [
+      "crossStylist",
+      "ResStylistInfo"
+    ],
+    "283202": [
+      "crossStylist",
+      "ResStylistWear"
+    ],
+    "283203": [
+      "crossStylist",
+      "ResStylistUseHelper"
+    ],
+    "283204": [
+      "crossStylist",
+      "ResStylistUseBook"
+    ],
+    "283205": [
+      "crossStylist",
+      "ResStylistSpy"
+    ],
+    "283206": [
+      "crossStylist",
+      "ResStylistRankReward"
+    ],
+    "283207": [
+      "crossStylist",
+      "ResStylistCompete"
+    ],
+    "283208": [
+      "crossStylist",
+      "ResStylistStatusChange"
+    ],
+    "283209": [
+      "crossStylist",
+      "ResStylistChange"
+    ],
+    "284201": [
+      "nightDawn",
+      "ResNightDawnInfo"
+    ],
+    "284202": [
+      "nightDawn",
+      "ResNightDawnProgressReward"
+    ],
+    "284203": [
+      "nightDawn",
+      "ResNightDawnProgress"
+    ],
+    "285201": [
+      "pictureBack",
+      "ResPictureBackInfo"
+    ],
+    "285202": [
+      "pictureBack",
+      "ResPictureBackAddProgress"
+    ],
+    "285203": [
+      "pictureBack",
+      "ResPictureBackBuySuit"
+    ],
+    "286201": [
+      "inviteGift",
+      "ResInviteGiftInfo"
+    ],
+    "286202": [
+      "inviteGift",
+      "ResInviteGiftSetInviter"
+    ],
+    "286203": [
+      "inviteGift",
+      "ResInviteGiftMission"
+    ],
+    "286204": [
+      "inviteGift",
+      "ResInviteGiftRebate"
+    ],
+    "286205": [
+      "inviteGift",
+      "ResInviteGiftUltimate"
+    ],
+    "286206": [
+      "inviteGift",
+      "ResInviteGiftCheckInviteCode"
+    ],
+    "287201": [
+      "crossAdviser",
+      "ResAdviserInfo"
+    ],
+    "287202": [
+      "crossAdviser",
+      "ResAdviserChooseHelper"
+    ],
+    "287203": [
+      "crossAdviser",
+      "ResAdviserFight"
+    ],
+    "287204": [
+      "crossAdviser",
+      "ResAdviserRankReward"
+    ],
+    "287205": [
+      "crossAdviser",
+      "ResAdviserFightRecord"
+    ],
+    "287208": [
+      "crossAdviser",
+      "ResAdviserStatusChange"
+    ],
+    "290201": [
+      "redMansionsDream",
+      "ResRedMansionsDreamInfo"
+    ],
+    "290202": [
+      "redMansionsDream",
+      "ResRedMansionsDreamTourReward"
+    ],
+    "290203": [
+      "redMansionsDream",
+      "ResRedMansionsDreamScoreChange"
+    ],
+    "292201": [
+      "moonLightPrayer",
+      "ResMoonLightPrayerInfo"
+    ],
+    "292202": [
+      "moonLightPrayer",
+      "ResMoonLightPrayerSelectPlan"
+    ],
+    "292203": [
+      "moonLightPrayer",
+      "ResMoonLightPrayerMakeSuit"
+    ],
+    "292204": [
+      "moonLightPrayer",
+      "ResMoonLightPrayerRewardClothes"
+    ],
+    "292205": [
+      "moonLightPrayer",
+      "ResMoonLightPrayerFreeReward"
+    ],
+    "293201": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiInfo"
+    ],
+    "293202": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiHookAward"
+    ],
+    "293203": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiSeasonAward"
+    ],
+    "293204": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiItemConvert"
+    ],
+    "293205": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiWeekAward"
+    ],
+    "293206": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiAreaUnlock"
+    ],
+    "293207": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiFight"
+    ],
+    "293208": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiHookChange"
+    ],
+    "293209": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiAchieveChange"
+    ],
+    "293210": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiGainItemChange"
+    ],
+    "293211": [
+      "baiXiaoSi",
+      "ResBaiXiaoSiRankInfo"
+    ],
+    "294201": [
+      "ancientGuiCity",
+      "ResAncientGuiCityInfo"
+    ],
+    "294202": [
+      "ancientGuiCity",
+      "ResAncientGuiCityRepair"
+    ],
+    "294203": [
+      "ancientGuiCity",
+      "ResAncientGuiCityReward"
+    ],
+    "294204": [
+      "ancientGuiCity",
+      "ResAncientGuiCityDayReward"
+    ],
+    "297201": [
+      "informationCard",
+      "ResInformationCardInfo"
+    ],
+    "297202": [
+      "informationCard",
+      "ResUseInformationCardId"
+    ],
+    "297203": [
+      "informationCard",
+      "ResActivatedInformationCard"
+    ],
+    "297204": [
+      "informationCard",
+      "ResAddInformationCard"
+    ],
+    "297205": [
+      "informationCard",
+      "ResSaveInformationCardPlan"
+    ],
+    "297206": [
+      "informationCard",
+      "ResShowInformationCardPlan"
+    ],
+    "298201": [
+      "colorate",
+      "ResClothesColorateInfo"
+    ],
+    "298202": [
+      "colorate",
+      "ResClothesColorate"
+    ],
+    "298203": [
+      "colorate",
+      "ResSuitColorateLevelUp"
+    ],
+    "298204": [
+      "colorate",
+      "ResSuitColorate"
+    ],
+    "299201": [
+      "zhzExchange",
+      "ResZhzExchangeInfo"
+    ],
+    "299202": [
+      "zhzExchange",
+      "ResZhzExchangeDayReward"
+    ],
+    "299203": [
+      "zhzExchange",
+      "ResZhzExchangeSend"
+    ],
+    "299204": [
+      "zhzExchange",
+      "ResZhzExchangeReceive"
+    ],
+    "299205": [
+      "zhzExchange",
+      "ResZhzExchangeOpen"
+    ],
+    "299206": [
+      "zhzExchange",
+      "ResZhzExchangePuzzle"
+    ],
+    "299207": [
+      "zhzExchange",
+      "ResAddZhzExchangeLog"
+    ],
+    "303201": [
+      "zhzLinkage",
+      "ResZhzLinkageInfo"
+    ],
+    "304201": [
+      "zhzGarden",
+      "ResZhzGardenInfo"
+    ],
+    "304202": [
+      "zhzGarden",
+      "ResZhzGardenPendant"
+    ],
+    "304203": [
+      "zhzGarden",
+      "ResZhzGardenGetPendant"
+    ],
+    "304204": [
+      "zhzGarden",
+      "ResZhzGardenLog"
+    ],
+    "305201": [
+      "zhzSatin",
+      "ResZhzSatinMain"
+    ],
+    "305202": [
+      "zhzSatin",
+      "ResZhzSatinEnter"
+    ],
+    "305203": [
+      "zhzSatin",
+      "ResZhzSatinCommands"
+    ],
+    "305204": [
+      "zhzSatin",
+      "ResZhzSatinFreeProp"
+    ],
+    "305210": [
+      "zhzSatin",
+      "ResZhzSatinTest"
+    ],
+    "306201": [
+      "clothCode",
+      "ResClothCodeInfo"
+    ],
+    "306202": [
+      "clothCode",
+      "ResAddClothCode"
+    ],
+    "306203": [
+      "clothCode",
+      "ResCreateClothCode"
+    ],
+    "306204": [
+      "clothCode",
+      "ResRemoveClothCode"
+    ],
+    "306205": [
+      "clothCode",
+      "ResClothCodeData"
+    ],
+    "307201": [
+      "eliminateNew",
+      "ResEliminateNewInfo"
+    ],
+    "307202": [
+      "eliminateNew",
+      "ResStartEliminateNew"
+    ],
+    "307204": [
+      "eliminateNew",
+      "ResSettleEliminateNew"
+    ],
+    "307206": [
+      "eliminateNew",
+      "ResEliminateNewCommands"
+    ],
+    "307207": [
+      "eliminateNew",
+      "ResEliminateNewReward"
+    ],
+    "308201": [
+      "treasure",
+      "ResTreasureInfo"
+    ],
+    "308202": [
+      "treasure",
+      "ResDigTreasure"
+    ],
+    "308203": [
+      "treasure",
+      "ResTreasureFree"
+    ]
+  }
+}
