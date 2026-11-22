@@ -103,7 +103,7 @@ async function main() {
 
       if (isBlackout) {
         if (shouldLogStatus) {
-          console.log('[Scheduler] ⏸️ Đang trong khung giờ nghỉ (18h29 - 21h00 GMT+7). Tuyệt đối không login game. Tiếp tục chạy lúc 21h01.');
+          console.log('[Scheduler] ⏸️ Đang trong khung giờ nghỉ (18h29 - 22h31 GMT+7). Tuyệt đối không login game. Tiếp tục chạy lúc 22h31.');
         }
         for (const acc of activeAccounts) {
           if (runningAccounts.has(acc.accKey)) {

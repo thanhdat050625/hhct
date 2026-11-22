@@ -41,7 +41,7 @@ class TaskRunner {
 
     if (isInBlackoutWindow()) {
       const resumeTime = getBlackoutResumeTime();
-      console.log(`[${account.email}] ⏸️ Đang trong khung giờ nghỉ (18h29 - 21h00). Tự động đặt lịch chạy tiếp lúc 21h01.`);
+      console.log(`[${account.email}] ⏸️ Đang trong khung giờ nghỉ (18h29 - 22h31). Tự động đặt lịch chạy tiếp lúc 22h31.`);
       await this.noteManager.updateAccountRun(account, {
         roleName: accRecord?.name || '',
         nextRunTime: resumeTime,
@@ -85,7 +85,7 @@ class TaskRunner {
     try {
       if (isInBlackoutWindow()) {
         const resumeTime = getBlackoutResumeTime();
-        console.log(`[${account.email}] ⏸️ Đang trong khung giờ nghỉ (18h29 - 21h00 GMT+7). Tuyệt đối không login game. Tự động đặt lịch chạy tiếp lúc 21h01.`);
+        console.log(`[${account.email}] ⏸️ Đang trong khung giờ nghỉ (18h29 - 22h31 GMT+7). Tuyệt đối không login game. Tự động đặt lịch chạy tiếp lúc 22h31.`);
         await this.noteManager.updateAccountRun(account, {
           roleName: accRecord?.name || '',
           nextRunTime: resumeTime,
@@ -142,7 +142,7 @@ class TaskRunner {
       if (isInBlackoutWindow()) {
         client.close();
         const resumeTime = getBlackoutResumeTime();
-        console.log(`[${account.email}] ⏸️ Chạm mốc 18h29 trong khi chạy. Cưỡng chế ngắt WebSocket và đặt lịch chạy tiếp lúc 21h01.`);
+        console.log(`[${account.email}] ⏸️ Chạm mốc 18h29 trong khi chạy. Cưỡng chế ngắt WebSocket và đặt lịch chạy tiếp lúc 22h31.`);
         await this.noteManager.updateAccountRun(account, {
           roleName,
           nextRunTime: resumeTime,
@@ -169,7 +169,7 @@ class TaskRunner {
       if (isInBlackoutWindow()) {
         client.close();
         const resumeTime = getBlackoutResumeTime();
-        console.log(`[${account.email}] ⏸️ Chạm mốc 18h29 trong khi chạy. Cưỡng chế ngắt WebSocket và đặt lịch chạy tiếp lúc 21h01.`);
+        console.log(`[${account.email}] ⏸️ Chạm mốc 18h29 trong khi chạy. Cưỡng chế ngắt WebSocket và đặt lịch chạy tiếp lúc 22h31.`);
         await this.noteManager.updateAccountRun(account, {
           roleName,
           nextRunTime: resumeTime,
@@ -253,7 +253,7 @@ class TaskRunner {
         const calculatedNext = new Date(Date.now() + effectiveCooldown * 1000);
         if (isInBlackoutWindow(calculatedNext)) {
           nextRunTime = getBlackoutResumeTime(calculatedNext);
-          console.log(`[${account.email}] ⚠️ Thiếu nguyên liệu nấu đan nhưng rơi vào khung giờ nghỉ (18h29 - 21h00), chuyển lịch sang 21h01 (${nextRunTime.toISOString()})`);
+          console.log(`[${account.email}] ⚠️ Thiếu nguyên liệu nấu đan nhưng rơi vào khung giờ nghỉ (18h29 - 22h31), chuyển lịch sang 22h31 (${nextRunTime.toISOString()})`);
         } else {
           nextRunTime = calculatedNext;
           console.log(`[${account.email}] ⚠️ Thiếu nguyên liệu nấu đan. Lên lịch kiểm tra lại sau 10 phút (${nextRunTime.toISOString()})`);
@@ -264,7 +264,7 @@ class TaskRunner {
         const calculatedNext = new Date(Date.now() + effectiveCooldown * 1000);
         if (isInBlackoutWindow(calculatedNext)) {
           nextRunTime = getBlackoutResumeTime(calculatedNext);
-          console.log(`[${account.email}] 🍲 Đang chờ toàn bộ bếp đan chín. Thời gian chín rơi vào khung giờ nghỉ (18h29 - 21h00), chuyển lịch sang 21h01 (${nextRunTime.toISOString()})`);
+          console.log(`[${account.email}] 🍲 Đang chờ toàn bộ bếp đan chín. Thời gian chín rơi vào khung giờ nghỉ (18h29 - 22h31), chuyển lịch sang 22h31 (${nextRunTime.toISOString()})`);
         } else {
           nextRunTime = calculatedNext;
           console.log(`[${account.email}] 🍲 Đang chờ toàn bộ bếp đan chín (bếp cuối cùng + 30s đệm). Lượt chạy tiếp theo sau ${Math.round(effectiveCooldown / 60)} phút (${nextRunTime.toISOString()})`);

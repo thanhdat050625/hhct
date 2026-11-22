@@ -37,14 +37,14 @@ function isInBlackoutWindow(dateInput = new Date()) {
   const vnMs = d.getTime() + (7 * 3600 * 1000);
   const vnDate = new Date(vnMs);
   const totalMin = vnDate.getUTCHours() * 60 + vnDate.getUTCMinutes();
-  return totalMin >= 1109 && totalMin <= 1260;
+  return totalMin >= 1109 && totalMin < 1351;
 }
 
 function getBlackoutResumeTime(dateInput = new Date()) {
   const d = dateInput instanceof Date ? dateInput : new Date(dateInput);
   const vnMs = d.getTime() + (7 * 3600 * 1000);
   const vnDate = new Date(vnMs);
-  vnDate.setUTCHours(21, 1, 0, 0);
+  vnDate.setUTCHours(22, 31, 0, 0);
   return new Date(vnDate.getTime() - (7 * 3600 * 1000));
 }
 

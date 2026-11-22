@@ -53,7 +53,7 @@ class GameClient {
   connect() {
     return new Promise((resolve, reject) => {
       if (isInBlackoutWindow()) {
-        return reject(new Error(`[${this.email}] Từ chối kết nối: Đang trong khung giờ nghỉ (18h29 - 21h00 GMT+7).`));
+        return reject(new Error(`[${this.email}] Từ chối kết nối: Đang trong khung giờ nghỉ (18h29 - 22h31 GMT+7).`));
       }
       let isSettled = false;
       this.connectTimer = setTimeout(() => {
@@ -95,7 +95,7 @@ class GameClient {
 
       this.blackoutWatchdog = setInterval(() => {
         if (isInBlackoutWindow()) {
-          console.warn(`[${this.email}] ⛔ Chạm khung giờ nghỉ (18h29 - 21h00 GMT+7). Cưỡng chế ngắt WebSocket ngay lập tức!`);
+          console.warn(`[${this.email}] ⛔ Chạm khung giờ nghỉ (18h29 - 22h31 GMT+7). Cưỡng chế ngắt WebSocket ngay lập tức!`);
           this.close();
         }
       }, 1000);
@@ -249,7 +249,7 @@ class GameClient {
 
   sendRaw(buffer) {
     if (isInBlackoutWindow()) {
-      console.warn(`[${this.email}] ⛔ Chạm khung giờ nghỉ (18h29 - 21h00 GMT+7). Cưỡng chế ngắt WebSocket!`);
+      console.warn(`[${this.email}] ⛔ Chạm khung giờ nghỉ (18h29 - 22h31 GMT+7). Cưỡng chế ngắt WebSocket!`);
       this.close();
       return false;
     }
