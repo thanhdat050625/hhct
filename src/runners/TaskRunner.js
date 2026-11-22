@@ -301,6 +301,7 @@ class TaskRunner {
           noivu: { hasAction: false }
         });
       } catch (noteErr) {
+        console.error(`[${account.email}] ❌ Lỗi cập nhật Web Note khi xử lý ngoại lệ: ${noteErr.message}`);
       }
       return { success: false, error: err.message, nextRunTime: fallbackNext };
     } finally {

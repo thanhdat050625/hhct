@@ -24,175 +24,335 @@ function getVnToday() {
   }).format(new Date());
 }
 
+function getVnDateOffset(daysAgo) {
+  return new Intl.DateTimeFormat('sv-SE', {
+    timeZone: 'Asia/Ho_Chi_Minh',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000));
+}
+
 class NoteManager {
   constructor(options = {}) {
-    this.noteUrl = options.noteUrl || CONFIG.NOTE_URL;
-    this.loginUrl = options.loginUrl || CONFIG.NOTE_LOGIN_URL;
-    this.saveUrl = options.saveUrl || CONFIG.NOTE_SAVE_URL;
-    this.notePassword = options.notePassword || CONFIG.NOTE_PASSWORD;
-    this.noteId = options.noteId || CONFIG.NOTE_ID;
-    this.noteTitle = options.noteTitle || CONFIG.NOTE_TITLE;
+    this.noteUrl = typeof options.noteUrl === 'string' && options.noteUrl.length > 0 ? options.noteUrl : CONFIG.NOTE_URL;
+    this.loginUrl = typeof options.loginUrl === 'string' && options.loginUrl.length > 0 ? options.loginUrl : CONFIG.NOTE_LOGIN_URL;
+    this.saveUrl = typeof options.saveUrl === 'string' && options.saveUrl.length > 0 ? options.saveUrl : CONFIG.NOTE_SAVE_URL;
+    this.notePassword = typeof options.notePassword === 'string' && options.notePassword.length > 0 ? options.notePassword : CONFIG.NOTE_PASSWORD;
+    this.noteId = typeof options.noteId === 'string' && options.noteId.length > 0 ? options.noteId : CONFIG.NOTE_ID;
+    this.noteTitle = typeof options.noteTitle === 'string' && options.noteTitle.length > 0 ? options.noteTitle : CONFIG.NOTE_TITLE;
 
-    this.sessionCookie = null;
-    this.sessionCookieExpiresAt = 0;
-    this.loginPromise = null;
+    this.requestTimeoutMs = 20000;
+    this._writeQueue = Promise.resolve();
   }
 
   decodeHtmlEntities(str) {
     if (!str) return '';
+    const namedMap = {
+      '&#34;': '"',
+      '&quot;': '"',
+      '&#39;': "'",
+      '&apos;': "'",
+      '&#43;': '+',
+      '&lt;': '<',
+      '&gt;': '>',
+      '&nbsp;': ' ',
+      '&amp;': '&'
+    };
     return str
-      .replace(/&#34;|&quot;/g, '"')
-      .replace(/&#39;|&apos;/g, "'")
-      .replace(/&#43;/g, '+')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
-      .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(dec))
+      .replace(/&#34;|&quot;|&#39;|&apos;|&#43;|&lt;|&gt;|&nbsp;|&amp;|&#(\d+);|&#x([0-9a-f]+);/gi, (match, dec, hex) => {
+        if (dec !== undefined) {
+          return String.fromCharCode(parseInt(dec, 10));
+        }
+        if (hex !== undefined) {
+          return String.fromCharCode(parseInt(hex, 16));
+        }
+        const key = match.toLowerCase();
+        return Object.prototype.hasOwnProperty.call(namedMap, key) ? namedMap[key] : match;
+      })
       .trim();
   }
 
-  async ensureValidSession(force = false) {
-    const isExpired = !this.sessionCookie || Date.now() >= (this.sessionCookieExpiresAt - 120000);
-    if (force || isExpired) {
-      await this.login(force);
-    }
-    return this.sessionCookie;
-  }
+  extractSessionCookie(res) {
+    const rawCookies = typeof res.headers.getSetCookie === 'function'
+      ? res.headers.getSetCookie()
+      : (res.headers.get('set-cookie') ? [res.headers.get('set-cookie')] : []);
 
-  async login(force = false) {
-    if (!force && this.sessionCookie && Date.now() < (this.sessionCookieExpiresAt - 120000)) {
-      return this.sessionCookie;
-    }
-
-    if (this.loginPromise) {
-      return await this.loginPromise;
-    }
-
-    this.loginPromise = (async () => {
-      try {
-        console.log('[NoteManager] Đang xác thực phiên quản trị Web Note...');
-        const res = await fetch(this.loginUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
-          },
-          body: new URLSearchParams({ password: this.notePassword }).toString(),
-          redirect: 'manual'
-        });
-
-        const setCookie = res.headers.get('set-cookie');
-        if (setCookie) {
-          const cookieMatch = setCookie.match(/note_session=[^;]+/);
-          if (cookieMatch) {
-            this.sessionCookie = cookieMatch[0];
-            let maxAgeSeconds = 3600;
-            const maxAgeMatch = setCookie.match(/Max-Age=(\d+)/i);
-            if (maxAgeMatch) {
-              maxAgeSeconds = parseInt(maxAgeMatch[1], 10) || 3600;
-            }
-            this.sessionCookieExpiresAt = Date.now() + (maxAgeSeconds * 1000);
-            return this.sessionCookie;
-          }
-        }
-
-        const rawCookie = res.headers.get('set-cookie');
-        if (rawCookie) {
-          this.sessionCookie = rawCookie.split(';')[0];
-          this.sessionCookieExpiresAt = Date.now() + (3600 * 1000);
-          return this.sessionCookie;
-        }
-
-        throw new Error('[NoteManager] Không tìm thấy cookie phiên sau khi đăng nhập Web Note.');
-      } finally {
-        this.loginPromise = null;
+    for (const raw of rawCookies) {
+      const cookieMatch = raw.match(/note_session=[^;]+/);
+      if (cookieMatch) {
+        return cookieMatch[0];
       }
-    })();
+    }
 
-    return await this.loginPromise;
+    if (rawCookies.length > 0) {
+      const firstPair = rawCookies[0].split(';')[0].trim();
+      if (firstPair.length > 0) {
+        return firstPair;
+      }
+    }
+
+    return null;
   }
 
-  async fetchRawContent() {
-    const res = await fetch(this.noteUrl, {
+  extractCsrfToken(html) {
+    if (typeof html !== 'string' || html.length === 0) return null;
+    const patterns = [
+      /<input[^>]*name=["']csrf_token["'][^>]*value=["']([^"']+)["']/i,
+      /<input[^>]*value=["']([^"']+)["'][^>]*name=["']csrf_token["']/i,
+      /<meta[^>]*name=["']csrf-token["'][^>]*content=["']([^"']+)["']/i,
+      /<meta[^>]*content=["']([^"']+)["'][^>]*name=["']csrf-token["']/i
+    ];
+    for (const pattern of patterns) {
+      const match = html.match(pattern);
+      if (match && match[1]) {
+        return match[1];
+      }
+    }
+    return null;
+  }
+
+  extractFormMode(html) {
+    if (typeof html !== 'string' || html.length === 0) return null;
+    const patterns = [
+      /<input[^>]*name=["']mode["'][^>]*value=["']([^"']+)["']/i,
+      /<input[^>]*value=["']([^"']+)["'][^>]*name=["']mode["']/i
+    ];
+    for (const pattern of patterns) {
+      const match = html.match(pattern);
+      if (match && match[1]) {
+        return match[1];
+      }
+    }
+    return null;
+  }
+
+  getAdminBaseUrl() {
+    return this.saveUrl.replace(/\/action\/save\/?$/, '');
+  }
+
+  async login() {
+    console.log('[NoteManager] Đang xác thực phiên quản trị Web Note...');
+    const getRes = await fetch(this.loginUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
         'Cache-Control': 'no-cache, no-store'
-      }
+      },
+      signal: AbortSignal.timeout(this.requestTimeoutMs)
     });
 
-    if (!res.ok) {
-      throw new Error(`[NoteManager] HTTP ${res.status} ${res.statusText} khi đọc ${this.noteUrl}`);
+    if (!getRes.ok) {
+      throw new Error(`[NoteManager] Không thể tải trang đăng nhập Web Note (HTTP ${getRes.status}).`);
     }
 
-    const html = await res.text();
-    const match = html.match(/<div class="content-text">([\s\S]*?)<\/div>/i);
-    if (!match) {
-      if (html.startsWith('[') || html.startsWith('{')) {
-        return this.decodeHtmlEntities(html);
+    const initCookie = this.extractSessionCookie(getRes);
+    const loginHtml = await getRes.text();
+    const csrfToken = this.extractCsrfToken(loginHtml);
+
+    if (!initCookie) {
+      throw new Error('[NoteManager] Không tìm thấy cookie khởi tạo trên trang đăng nhập Web Note.');
+    }
+    if (!csrfToken) {
+      throw new Error('[NoteManager] Không tìm thấy csrf_token trên trang đăng nhập Web Note.');
+    }
+
+    const loginOrigin = new URL(this.loginUrl).origin;
+    const res = await fetch(this.loginUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Cookie': initCookie,
+        'Origin': loginOrigin,
+        'Referer': this.loginUrl,
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+      },
+      body: new URLSearchParams({
+        csrf_token: csrfToken,
+        password: this.notePassword
+      }).toString(),
+      redirect: 'manual',
+      signal: AbortSignal.timeout(this.requestTimeoutMs)
+    });
+
+    const loc = res.headers.get('location') || '';
+    const isAuthenticatedRedirect = res.status === 302 && loc.length > 0 && !loc.includes('/auth/login');
+
+    if (!isAuthenticatedRedirect) {
+      const errBody = (await res.text().catch(() => '')).slice(0, 200).trim();
+      throw new Error(`[NoteManager] Đăng nhập Web Note thất bại. HTTP Status: ${res.status} Location: ${loc}${errBody ? ` Body: ${errBody}` : ''}`);
+    }
+
+    const postCookie = this.extractSessionCookie(res);
+    return postCookie ? postCookie : initCookie;
+  }
+
+  async fetchRawContent() {
+    let lastErr = null;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const res = await fetch(this.noteUrl, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+            'Cache-Control': 'no-cache, no-store'
+          },
+          signal: AbortSignal.timeout(this.requestTimeoutMs)
+        });
+
+        if (res.status >= 500) {
+          throw new Error(`[NoteManager] HTTP ${res.status} ${res.statusText} khi đọc ${this.noteUrl}`);
+        }
+
+        if (!res.ok) {
+          throw new Error(`[NoteManager] HTTP ${res.status} ${res.statusText} khi đọc ${this.noteUrl}`);
+        }
+
+        const html = await res.text();
+        const match = html.match(/<div class="content-text">([\s\S]*?)<\/div>/i);
+        if (match) {
+          return this.decodeHtmlEntities(match[1]);
+        }
+
+        const trimmed = html.trim();
+        if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+          return this.decodeHtmlEntities(html);
+        }
+
+        throw new Error('[NoteManager] Trang Web Note không chứa nội dung hợp lệ (thiếu content-text).');
+      } catch (err) {
+        lastErr = err;
+        if (attempt < 3) {
+          await new Promise(r => setTimeout(r, 1500));
+        }
       }
-      return '';
     }
-
-    return this.decodeHtmlEntities(match[1]);
+    throw lastErr;
   }
 
   async fetchNoteData() {
-    try {
-      const rawText = await this.fetchRawContent();
-      if (!rawText || !rawText.trim()) {
-        return {};
-      }
-      const parsed = JSON.parse(rawText);
-      if (typeof parsed === 'object' && parsed !== null) {
-        if (parsed.accounts && typeof parsed.accounts === 'object') {
-          return parsed.accounts;
-        }
-        return parsed;
-      }
-    } catch (err) {
-      console.warn('[NoteManager] Lưu ý: Dữ liệu Note chưa có hoặc không phải JSON hợp lệ. Khởi tạo cấu trúc mới.');
+    const rawText = await this.fetchRawContent();
+    if (!rawText || !rawText.trim()) {
+      return {};
     }
-    return {};
+
+    let parsed;
+    try {
+      parsed = JSON.parse(rawText);
+    } catch (err) {
+      throw new Error(`[NoteManager] Dữ liệu Note không phải JSON hợp lệ: ${err.message}`);
+    }
+
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+      throw new Error('[NoteManager] Dữ liệu Note không đúng cấu trúc đối tượng JSON.');
+    }
+
+    if (parsed.accounts && typeof parsed.accounts === 'object' && !Array.isArray(parsed.accounts)) {
+      return parsed.accounts;
+    }
+    return parsed;
+  }
+
+  async fetchSaveFormContext(cookie) {
+    const adminBase = this.getAdminBaseUrl();
+    const editUrl = `${adminBase}/action/edit/${encodeURIComponent(this.noteId)}`;
+    const editRes = await fetch(editUrl, {
+      headers: {
+        'Cookie': cookie,
+        'Cache-Control': 'no-cache, no-store',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+      },
+      redirect: 'manual',
+      signal: AbortSignal.timeout(this.requestTimeoutMs)
+    });
+
+    const editLoc = editRes.headers.get('location') || '';
+    const rotatedEditCookie = this.extractSessionCookie(editRes);
+    let currentCookie = rotatedEditCookie ? rotatedEditCookie : cookie;
+
+    if (editRes.status === 200) {
+      const editHtml = await editRes.text();
+      const csrfToken = this.extractCsrfToken(editHtml);
+      if (!csrfToken) {
+        throw new Error('[NoteManager] Không tìm thấy csrf_token trong trang chỉnh sửa Web Note.');
+      }
+      const mode = this.extractFormMode(editHtml);
+      return {
+        csrfToken,
+        mode: typeof mode === 'string' && mode.length > 0 ? mode : 'edit',
+        referer: editUrl,
+        cookie: currentCookie
+      };
+    }
+
+    if (editRes.status === 404) {
+      const managerRes = await fetch(adminBase, {
+        headers: {
+          'Cookie': currentCookie,
+          'Cache-Control': 'no-cache, no-store',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+        },
+        redirect: 'manual',
+        signal: AbortSignal.timeout(this.requestTimeoutMs)
+      });
+
+      const managerLoc = managerRes.headers.get('location') || '';
+      const rotatedManagerCookie = this.extractSessionCookie(managerRes);
+      if (rotatedManagerCookie) {
+        currentCookie = rotatedManagerCookie;
+      }
+
+      if (managerRes.status === 200) {
+        const managerHtml = await managerRes.text();
+        const csrfToken = this.extractCsrfToken(managerHtml);
+        if (!csrfToken) {
+          throw new Error('[NoteManager] Không tìm thấy csrf_token trên trang quản trị Web Note.');
+        }
+        return {
+          csrfToken,
+          mode: 'create',
+          referer: adminBase,
+          cookie: currentCookie
+        };
+      }
+
+      throw new Error(`[NoteManager] Không thể tải trang quản trị Web Note (HTTP ${managerRes.status} Location: ${managerLoc}).`);
+    }
+
+    throw new Error(`[NoteManager] Không thể tải trang chỉnh sửa Web Note (HTTP ${editRes.status} Location: ${editLoc}).`);
   }
 
   async saveRawContent(contentStr) {
-    const cookie = await this.ensureValidSession();
+    const cookie = await this.login();
+    const ctx = await this.fetchSaveFormContext(cookie);
+    const saveOrigin = new URL(this.saveUrl).origin;
 
-    const postData = async (activeCookie) => {
-      const body = new URLSearchParams({
-        note_id: this.noteId,
-        title: this.noteTitle,
-        content: contentStr
-      });
+    const body = new URLSearchParams({
+      csrf_token: ctx.csrfToken,
+      mode: ctx.mode,
+      note_id: this.noteId,
+      title: this.noteTitle,
+      content: contentStr
+    });
 
-      return await fetch(this.saveUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Cookie': activeCookie,
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
-        },
-        body: body.toString(),
-        redirect: 'manual'
-      });
-    };
+    const res = await fetch(this.saveUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Cookie': ctx.cookie,
+        'Origin': saveOrigin,
+        'Referer': ctx.referer,
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+      },
+      body: body.toString(),
+      redirect: 'manual',
+      signal: AbortSignal.timeout(this.requestTimeoutMs)
+    });
 
-    let res = await postData(cookie);
     const loc = res.headers.get('location') || '';
-    const isSessionExpired = res.status === 401 || res.status === 403 || (res.status === 302 && loc.includes('/auth/login'));
-
-    if (isSessionExpired) {
-      console.warn('[NoteManager] Phiên Web Note hết hạn. Đang đăng nhập lại...');
-      const newCookie = await this.ensureValidSession(true);
-      res = await postData(newCookie);
-    }
-
-    const newLoc = res.headers.get('location') || '';
-    const isSuccess = (res.status === 200 || res.status === 302) && !newLoc.includes('/auth/login');
+    const isSuccess = (res.status === 200 || res.status === 302) && !loc.includes('/auth/login');
 
     if (!isSuccess) {
-      throw new Error(`[NoteManager] Lưu Web Note thất bại. HTTP Status: ${res.status} Location: ${newLoc}`);
+      const bodySnippet = (await res.text().catch(() => '')).slice(0, 200).trim();
+      throw new Error(`[NoteManager] Lưu Web Note thất bại. HTTP Status: ${res.status} Location: ${loc}${bodySnippet ? ` Body: ${bodySnippet}` : ''}`);
     }
 
     return true;
@@ -200,7 +360,7 @@ class NoteManager {
 
   pruneOldHistory(historyMap, maxDays = 31) {
     if (!historyMap || typeof historyMap !== 'object') return;
-    const cutoffDate = new Date(Date.now() - maxDays * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const cutoffDate = getVnDateOffset(maxDays);
     for (const d of Object.keys(historyMap)) {
       if (d < cutoffDate) {
         delete historyMap[d];
@@ -218,17 +378,19 @@ class NoteManager {
       const historyKeys = Object.keys(acc.history || {}).sort().reverse();
       const historyLines = historyKeys.map(d => {
         const item = acc.history[d];
-        return `      "${d}": { "dan": ${item.dan || 0}, "cung": ${item.cung || 0}, "noi": ${item.noi || 0} }`;
+        return `      ${JSON.stringify(d)}: { "dan": ${item.dan || 0}, "cung": ${item.cung || 0}, "noi": ${item.noi || 0} }`;
       });
 
       const historyStr = historyLines.length > 0
         ? `{\n${historyLines.join(',\n')}\n    }`
         : '{}';
 
+      const accName = typeof acc.name === 'string' ? acc.name : '';
+      const accNextRun = typeof acc.nextRun === 'string' ? acc.nextRun : '';
       const block = [
-        `  "${k}": {`,
-        `    "name": "${acc.name || ''}",`,
-        `    "nextRun": "${acc.nextRun || ''}",`,
+        `  ${JSON.stringify(k)}: {`,
+        `    "name": ${JSON.stringify(accName)},`,
+        `    "nextRun": ${JSON.stringify(accNextRun)},`,
         `    "history": ${historyStr}`,
         `  }`
       ].join('\n');
@@ -239,50 +401,59 @@ class NoteManager {
     return `{\n${accBlocks.join(',\n')}\n}`;
   }
 
-  async updateAccountRun(account, runResult) {
-    const noteData = await this.fetchNoteData();
-    const accKey = account.accKey;
-    const todayStr = getVnToday();
+  updateAccountRun(account, runResult) {
+    const task = async () => {
+      const noteData = await this.fetchNoteData();
+      const accKey = account.accKey;
+      const todayStr = getVnToday();
 
-    if (!noteData[accKey]) {
-      noteData[accKey] = {
-        name: runResult.roleName || '',
-        nextRun: formatVnTime(runResult.nextRunTime),
-        history: {}
-      };
-    }
+      if (!noteData[accKey]) {
+        noteData[accKey] = {
+          name: runResult.roleName || '',
+          nextRun: formatVnTime(runResult.nextRunTime),
+          history: {}
+        };
+      }
 
-    const accData = noteData[accKey];
-    if (runResult.roleName) {
-      accData.name = runResult.roleName;
-    }
-    accData.nextRun = formatVnTime(runResult.nextRunTime);
+      const accData = noteData[accKey];
+      if (!accData.history || typeof accData.history !== 'object') {
+        accData.history = {};
+      }
+      if (runResult.roleName) {
+        accData.name = runResult.roleName;
+      }
+      accData.nextRun = formatVnTime(runResult.nextRunTime);
 
-    if (!accData.history[todayStr]) {
-      accData.history[todayStr] = { dan: 0, cung: 0, noi: 0 };
-    }
+      if (!accData.history[todayStr]) {
+        accData.history[todayStr] = { dan: 0, cung: 0, noi: 0 };
+      }
 
-    const dayRecord = accData.history[todayStr];
-    dayRecord.dan = typeof dayRecord.dan === 'number' ? dayRecord.dan : (typeof dayRecord.naudan === 'number' ? dayRecord.naudan : 0);
-    dayRecord.cung = typeof dayRecord.cung === 'number' ? dayRecord.cung : (typeof dayRecord.cungvu === 'number' ? dayRecord.cungvu : 0);
-    dayRecord.noi = typeof dayRecord.noi === 'number' ? dayRecord.noi : (typeof dayRecord.noivu === 'number' ? dayRecord.noivu : 0);
+      const dayRecord = accData.history[todayStr];
+      dayRecord.dan = typeof dayRecord.dan === 'number' ? dayRecord.dan : (typeof dayRecord.naudan === 'number' ? dayRecord.naudan : 0);
+      dayRecord.cung = typeof dayRecord.cung === 'number' ? dayRecord.cung : (typeof dayRecord.cungvu === 'number' ? dayRecord.cungvu : 0);
+      dayRecord.noi = typeof dayRecord.noi === 'number' ? dayRecord.noi : (typeof dayRecord.noivu === 'number' ? dayRecord.noivu : 0);
 
-    if (runResult.naudan && runResult.naudan.hasAction) {
-      dayRecord.dan = Math.min(6, dayRecord.dan + 1);
-    }
-    if (runResult.cungvu && runResult.cungvu.hasAction) {
-      dayRecord.cung = dayRecord.cung + 1;
-    }
-    if (runResult.noivu && runResult.noivu.hasAction) {
-      dayRecord.noi = dayRecord.noi + 1;
-    }
+      if (runResult.naudan && runResult.naudan.hasAction) {
+        dayRecord.dan = Math.min(6, dayRecord.dan + 1);
+      }
+      if (runResult.cungvu && runResult.cungvu.hasAction) {
+        dayRecord.cung = dayRecord.cung + 1;
+      }
+      if (runResult.noivu && runResult.noivu.hasAction) {
+        dayRecord.noi = dayRecord.noi + 1;
+      }
 
-    this.pruneOldHistory(accData.history, 31);
+      this.pruneOldHistory(accData.history, 31);
 
-    const formattedJson = this.formatCompactJson(noteData);
-    await this.saveRawContent(formattedJson);
-    console.log(`[NoteManager] ✅ Đã lưu Web Note [${accKey}]. Tiến độ: Đan: ${dayRecord.dan}/6, Cung: ${dayRecord.cung}, Nội: ${dayRecord.noi} | Tiếp theo: ${accData.nextRun}`);
-    return accData;
+      const formattedJson = this.formatCompactJson(noteData);
+      await this.saveRawContent(formattedJson);
+      console.log(`[NoteManager] ✅ Đã lưu Web Note [${accKey}]. Tiến độ: Đan: ${dayRecord.dan}/6, Cung: ${dayRecord.cung}, Nội: ${dayRecord.noi} | Tiếp theo: ${accData.nextRun}`);
+      return accData;
+    };
+
+    const run = this._writeQueue.then(task, task);
+    this._writeQueue = run.catch(() => {});
+    return run;
   }
 }
 
