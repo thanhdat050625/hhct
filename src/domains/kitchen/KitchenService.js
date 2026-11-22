@@ -242,8 +242,9 @@ class KitchenService extends BaseService {
       };
     }
 
+    const targetStoves = (this.cookList || []).filter(s => s.status === STOVE_STATUS.EMPTY);
     let cookedCount = 0;
-    for (const stove of emptyStoves) {
+    for (const stove of targetStoves) {
       this.lastCookResult = null;
       this.send(144103, {
         cookId: stove.cookId,
